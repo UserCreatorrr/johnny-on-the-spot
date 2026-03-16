@@ -15,36 +15,82 @@ const navItems = [
   { label: "Contacto", href: "/contacto" },
 ];
 
+const NAV_H = 80;
+
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      // Show logo only after hero has faded (~35% of viewport scrolled)
+      setLogoVisible(scrollY > vh * 0.3);
+
+      // Detect which section sits behind the nav bar
+      const sections = document.querySelectorAll("[data-nav-theme]");
+      let detected: "dark" | "light" = "dark";
+      sections.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= NAV_H && rect.bottom > NAV_H) {
+          detected = (el.getAttribute("data-nav-theme") as "dark" | "light") ?? "dark";
+        }
+      });
+      setTheme(detected);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // When overlay is open always use dark (white) colors
+  const effectiveTheme = open ? "dark" : theme;
+  const isDark = effectiveTheme === "dark";
+  const lineColor = isDark ? "bg-white" : "bg-black";
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8" role="banner">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
+          {/* Logo — hidden until hero is gone */}
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="relative z-[60]"
+            className={`relative z-[60] transition-opacity duration-500 ${
+              logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
             aria-label="Johnny on the Spot: Inicio"
+            tabIndex={logoVisible ? 0 : -1}
           >
+            {/* White logo for dark sections */}
             <Image
-              src="/logo-white.png"
+              src="/logo-hero.png"
               alt="Johnny on the Spot"
               width={160}
               height={48}
-              className="h-9 w-auto object-contain"
+              className={`h-9 w-auto object-contain absolute top-0 left-0 transition-opacity duration-300 ${
+                isDark ? "opacity-100" : "opacity-0"
+              }`}
+              priority
+            />
+            {/* Black logo for light sections */}
+            <Image
+              src="/logo-hero-negro.png"
+              alt="Johnny on the Spot"
+              width={160}
+              height={48}
+              className={`h-9 w-auto object-contain transition-opacity duration-300 ${
+                isDark ? "opacity-0" : "opacity-100"
+              }`}
               priority
             />
           </Link>
 
-          {/* Hamburger — always visible */}
+          {/* Hamburger — always visible, color adapts */}
           <button
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -52,12 +98,12 @@ export default function Navigation() {
             className="relative z-[60] w-10 h-10 flex flex-col justify-center items-center gap-[7px]"
           >
             <span
-              className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${lineColor} ${
                 open ? "rotate-45 translate-y-[3.5px]" : ""
               }`}
             />
             <span
-              className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${
+              className={`block w-6 h-px transition-all duration-300 origin-center ${lineColor} ${
                 open ? "-rotate-45 -translate-y-[3.5px]" : ""
               }`}
             />

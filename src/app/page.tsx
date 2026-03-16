@@ -58,7 +58,7 @@ export default function HomePage() {
         <HeroSection />
 
         {/* INTRO */}
-        <section className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">
+        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
               <div>
@@ -89,10 +89,10 @@ export default function HomePage() {
         </section>
 
         {/* SCROLLYTELLING: SERVICIOS */}
-        <HomeScrollytelling />
+        <div data-nav-theme="dark"><HomeScrollytelling /></div>
 
         {/* SERVICIOS GRID */}
-        <section className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="services-heading">
+        <section data-nav-theme="dark" className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="services-heading">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -146,7 +146,7 @@ export default function HomePage() {
         </section>
 
         {/* CIFRAS */}
-        <section className="py-20 lg:py-28 bg-white" aria-label="Cifras clave">
+        <section data-nav-theme="light" className="py-20 lg:py-28 bg-white" aria-label="Cifras clave">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
               <div>
@@ -178,7 +178,7 @@ export default function HomePage() {
         </section>
 
         {/* CASOS DE ÉXITO */}
-        <section className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="cases-heading">
+        <section data-nav-theme="dark" className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="cases-heading">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -236,7 +236,7 @@ export default function HomePage() {
         </section>
 
         {/* DIFERENCIAL */}
-        <section className="py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="diferencial-heading">
+        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="diferencial-heading">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-2xl mb-16">
               <h2
@@ -279,7 +279,7 @@ export default function HomePage() {
         </section>
 
         {/* BLOG */}
-        <section className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="blog-heading">
+        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="blog-heading">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -322,17 +322,17 @@ export default function HomePage() {
         </section>
 
         {/* FAQs */}
-        <FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" />
+        <div data-nav-theme="dark"><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
 
         {/* CTA Final */}
-        <CTASection
+        <div data-nav-theme="dark"><CTASection
           title="¿Tienes un proyecto urgente?"
           subtitle="Perfecto. Somos Johnny on the Spot. Cuéntanoslo hoy y trabajamos mañana."
           primaryCTA="Hablemos ahora"
           secondaryCTA="Ver casos de éxito"
           primaryHref="/contacto"
           secondaryHref="/casos-de-exito"
-        />
+        /></div>
       </main>
       <Footer />
     </>

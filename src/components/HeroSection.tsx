@@ -20,6 +20,7 @@ export default function HeroSection() {
 
   return (
     <section
+      data-nav-theme="dark"
       className="relative min-h-screen flex flex-col items-center justify-center px-6"
       aria-labelledby="hero-heading"
     >

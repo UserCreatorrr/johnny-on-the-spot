@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
@@ -6,7 +6,7 @@ import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-
 const sections = [
   {
     id: "estrategia",
-    eyebrow: "01 — Estrategia",
+    eyebrow: "01: Estrategia",
     title: "Primero pensamos. Después hacemos.",
     body: "Antes de producir una sola pieza, entendemos el negocio, el mercado y el objetivo real. Diseño de estrategia 360°, plataforma de marca, brand storytelling. La estrategia no es un extra: es la razón por la que las campañas funcionan.",
     visual: {
@@ -17,7 +17,7 @@ const sections = [
   },
   {
     id: "creatividad",
-    eyebrow: "02 — Dirección Creativa",
+    eyebrow: "02: Dirección Creativa",
     title: "Ideas que construyen marcas.",
     body: "Dirección de arte, branding, naming, identidad corporativa, producción gráfica y packaging. Creatividad al servicio de un propósito. Con estándar de grandes marcas y la agilidad de un equipo pequeño.",
     visual: {
@@ -28,7 +28,7 @@ const sections = [
   },
   {
     id: "eventos",
-    eyebrow: "03 — Eventos y Activaciones",
+    eyebrow: "03: Eventos y Activaciones",
     title: "Presencia donde importa.",
     body: "Eventos corporativos nacionales e internacionales, convenciones, desfiles, road shows, ferias y trade shows. Activación de marca, brand experience y acciones que conectan con el consumidor en el lugar y el momento exactos.",
     visual: {
@@ -39,7 +39,7 @@ const sections = [
   },
   {
     id: "digital",
-    eyebrow: "04 — Digital e IA",
+    eyebrow: "04: Digital e IA",
     title: "La tecnología al servicio de la marca.",
     body: "Marketing digital, estrategia de redes sociales, shooting foto y vídeo, guión y edición. Más automatización de procesos, generación de contenido visual con IA y monitorización de marca.",
     visual: {
@@ -96,10 +96,10 @@ export default function HomeScrollytelling() {
         className="relative"
         style={{ minHeight: `${sections.length * 100}vh` }}
       >
-        {/* Sticky right-panel — full viewport height, centered within max-w */}
+        {/* Sticky right-panel: full viewport height, centered within max-w */}
         <div className="sticky top-0 h-screen z-10 pointer-events-none">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex">
-            {/* Left spacer — mirrors left column width */}
+            {/* Left spacer: mirrors left column width */}
             <div className="hidden lg:block lg:w-1/2" />
             {/* Right panel */}
             <div className="hidden lg:flex lg:w-1/2 border-l border-white/5 items-center pointer-events-auto">
@@ -119,7 +119,7 @@ export default function HomeScrollytelling() {
           </div>
         </div>
 
-        {/* Scrolling left content — absolute, full height */}
+        {/* Scrolling left content: absolute, full height */}
         <div className="absolute top-0 left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="lg:w-1/2">

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
@@ -50,7 +50,7 @@ const caseDetails: Record<string, {
   },
   "coca-cola-grandvalira": {
     intro: "Coca-Cola necesitaba activar su marca en las pistas de esquí de Grandvalira vinculando la experiencia al consumo del producto.",
-    challenge: "Crear una acción memorable en un entorno físicamente complejo —altura, frío, logística de montaña— que generara engagement orgánico y estuviera vinculada directamente al consumo.",
+    challenge: "Crear una acción memorable en un entorno físicamente complejo altura, frío, logística de montaña que generara engagement orgánico y estuviera vinculada directamente al consumo.",
     solution: "Activación de marca en las pistas de Grandvalira con mecánica de marketing de guerrilla vinculada al consumo. Conceptualización, desarrollo de marca y producción de materiales para la acción en las pistas.",
     result: "Activación en temporada alta de esquí. Acción vinculada al consumo con alta participación. Impacto de marca en uno de los contextos de mayor disfrute del año.",
   },
@@ -63,7 +63,7 @@ const caseDetails: Record<string, {
   "novartis-certican-360": {
     intro: "Novartis necesitaba crear el concepto de campaña para Certican y aplicarlo en todos los soportes de comunicación: vídeo, eventos profesionales, materiales gráficos y stand de congreso.",
     challenge: "Desarrollar un concepto creativo diferenciado para un producto de trasplante renal dentro del estricto marco regulatorio farmacéutico, que funcionara en todos los canales simultáneamente con coherencia visual y narrativa.",
-    solution: "Creación del concepto de campaña 'Transplant Tomorrow — Mañana Empieza Hoy' para Certican. Aplicación en todos los soportes: vídeo, eventos profesionales, materiales gráficos, stand de congreso. Creación del guión, animaciones y edición de vídeos de presentación del concepto.",
+    solution: "Creación del concepto de campaña 'Transplant Tomorrow: Mañana Empieza Hoy' para Certican. Aplicación en todos los soportes: vídeo, eventos profesionales, materiales gráficos, stand de congreso. Creación del guión, animaciones y edición de vídeos de presentación del concepto.",
     result: "Concepto integral implementado en todos los canales. Campaña gráfica, vídeo y stand de congreso producidos. Material validado por Medical Affairs y distribuido a nivel nacional.",
   },
   "meliá-60-aniversario": {
@@ -86,7 +86,7 @@ const caseDetails: Record<string, {
   },
   "applus-mwc": {
     intro: "Applus necesitaba una presencia de alto impacto en el Mobile World Congress de Barcelona y un Family Day corporativo para sus empleados.",
-    challenge: "Diseñar y producir un stand que destacara en el MWC —el evento tecnológico de mayor densidad de marcas del mundo— y además organizar un Family Day con actividades, staff y logística para los empleados.",
+    challenge: "Diseñar y producir un stand que destacara en el MWC el evento tecnológico de mayor densidad de marcas del mundo y además organizar un Family Day con actividades, staff y logística para los empleados.",
     solution: "Diseño, conceptualización, gestión y coordinación del stand para el MWC. Concepto visual diferenciado del estándar tecnológico. Family Day corporativo: concepto gráfico, actividades, staff y logística.",
     result: "Stand MWC diferenciado y reconocido. Family Day producido con alto nivel de satisfacción. Generación de leads cualificados durante el evento de Barcelona.",
   },
@@ -105,7 +105,7 @@ const caseDetails: Record<string, {
   "novartis-transplant-tomorrow": {
     intro: "Novartis necesitaba crear el concepto y la campaña de producto para Certican en el área de trasplante renal, con aplicación en eventos profesionales, materiales gráficos y vídeo.",
     challenge: "Desarrollar un concepto emocional y clínicamente riguroso para comunicar los beneficios de Certican a nefrólogos y trasplantólogos, con producción de vídeo de alto impacto y presencia en congresos de referencia.",
-    solution: "Concepto creativo, campaña gráfica, eventos y producción de vídeo. El concepto 'Transplant Tomorrow — Mañana Empieza Hoy' con historias de trasplantados reales (Andrés, Mercedes, Lydia). Guión, animaciones y edición de vídeos. Producción de eventos profesionales.",
+    solution: "Concepto creativo, campaña gráfica, eventos y producción de vídeo. El concepto 'Transplant Tomorrow: Mañana Empieza Hoy' con historias de trasplantados reales (Andrés, Mercedes, Lydia). Guión, animaciones y edición de vídeos. Producción de eventos profesionales.",
     result: "Campaña con concepto diferenciador en el sector farma. Vídeo emocional producido. Presencia destacada en congresos de nefrología y trasplante.",
   },
   "ergobaby-orbit-packaging": {
@@ -117,7 +117,7 @@ const caseDetails: Record<string, {
   "gft-mwc-4yfn": {
     intro: "GFT, empresa de servicios tecnológicos y transformación digital, necesitaba una presencia de impacto en el 4YFN dentro del Mobile World Congress de Barcelona.",
     challenge: "Diseñar y producir un stand para el 4YFN que diferenciara a GFT de startups y corporates con mayor notoriedad, transmitiendo su posicionamiento de empresa innovadora con capacidad global.",
-    solution: "Diseño, conceptualización, gestión y coordinación del stand para el 4YFN en Barcelona. Concepto visual centrado en un globo LED esférico con proyección de contenidos — un elemento de alto impacto visual en el contexto del evento.",
+    solution: "Diseño, conceptualización, gestión y coordinación del stand para el 4YFN en Barcelona. Concepto visual centrado en un globo LED esférico con proyección de contenidos: un elemento de alto impacto visual en el contexto del evento.",
     result: "Stand diferenciado y reconocido en el 4YFN. El globo LED se convirtió en un elemento de atracción de asistentes. Generación de leads cualificados durante el evento.",
   },
   "porsche-interclassics-brussels": {
@@ -128,7 +128,7 @@ const caseDetails: Record<string, {
   },
   "carolina-herrera-desfile-ss2026": {
     intro: "Carolina Herrera confió a Johnny on the Spot la producción ejecutiva de su desfile Spring-Summer 2026, celebrado en la Plaza Mayor de Madrid.",
-    challenge: "Gestionar la producción ejecutiva de un desfile de alta moda en un espacio emblemático —la Plaza Mayor de Madrid— coordinando todos los elementos productivos con los estándares de excelencia de la casa.",
+    challenge: "Gestionar la producción ejecutiva de un desfile de alta moda en un espacio emblemático la Plaza Mayor de Madrid coordinando todos los elementos productivos con los estándares de excelencia de la casa.",
     solution: "Producción ejecutiva integral: gestión de proveedores, logística y producción técnica, pasarela, montaje y coordinación de backstage, producción y coordinación de fittings, coordinación de catering, localización y logística y traslados.",
     result: "Desfile Carolina Herrera producido en la Plaza Mayor de Madrid. Producción ejecutiva integral sin incidencias. Cobertura de prensa internacional de moda.",
   },

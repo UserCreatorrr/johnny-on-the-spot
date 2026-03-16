@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Nosotros — Agencia de Comunicación Integral | Johnny on the Spot",
+  title: "Nosotros: Agencia de Comunicación Integral | Johnny on the Spot",
   description:
     "Johnny on the Spot: agencia de comunicación integral en Barcelona. Equipo sénior, red internacional y el modelo de trabajo que hace que los proyectos funcionen.",
   alternates: { canonical: "https://www.johnnyonthespot.es/nosotros" },
@@ -43,7 +43,7 @@ export default function NosotrosPage() {
               <blockquote className="text-black font-black text-3xl lg:text-4xl tracking-tighter leading-tight mb-6">
                 &ldquo;Johnny on the Spot&rdquo;
                 <span className="block text-xl font-light text-black/40 mt-4 tracking-normal">
-                  /noun/ DATED — INFORMAL
+                  /noun/ DATED: INFORMAL
                 </span>
               </blockquote>
               <p className="text-black/50 text-lg leading-relaxed">

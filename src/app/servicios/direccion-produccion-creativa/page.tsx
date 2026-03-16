@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Dirección y Producción Creativa | Johnny on the Spot — Barcelona",
+  title: "Dirección y Producción Creativa | Johnny on the Spot: Barcelona",
   description:
     "Dirección creativa integral desde el concepto hasta la entrega. Ideamos, dirigimos y producimos campañas de comunicación para marcas que exigen el máximo nivel. Barcelona.",
   alternates: { canonical: "https://www.johnnyonthespot.es/servicios/direccion-produccion-creativa" },
@@ -102,7 +102,7 @@ export default function DireccionCreativaPage() {
                   Nuestros directores creativos sénior lideran el proyecto desde el primer brief hasta la aprobación final. Eso significa que el concepto que diseñamos es el mismo que llegará al mercado: sin diluciones, sin compromiso entre lo que se imaginó y lo que se produjo.
                 </p>
                 <p>
-                  Trabajamos con una red de profesionales especializados — fotógrafos, realizadores, diseñadores, ilustradores, productoras — que activamos según las necesidades de cada proyecto. El cliente no gestiona esa red. La gestionamos nosotros.
+                  Trabajamos con una red de profesionales especializados: fotógrafos, realizadores, diseñadores, ilustradores, productoras: que activamos según las necesidades de cada proyecto. El cliente no gestiona esa red. La gestionamos nosotros.
                 </p>
               </div>
             </div>

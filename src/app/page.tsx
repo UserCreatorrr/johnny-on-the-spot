@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ import { NumberTicker } from "@/components/ui/NumberTicker";
 import { SERVICES, CASES, BLOG_POSTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Johnny on the Spot — Agencia de Comunicación Integral | Barcelona",
+  title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
   description:
     "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar. Alcon, SAP, Coca-Cola, Novartis.",
   alternates: {
@@ -27,7 +27,7 @@ const homeFaqs = [
   {
     question: "¿Cuál es vuestro proceso de trabajo?",
     answer:
-      "Empezamos por entender el problema real. Después diseñamos la solución más eficiente —no la más cara ni la más aparente—. Y luego producimos con el estándar más alto que el presupuesto permita. Cada proyecto tiene un partner senior responsable del principio al final.",
+      "Empezamos por entender el problema real. Después diseñamos la solución más eficiente no la más cara ni la más aparente. Y luego producimos con el estándar más alto que el presupuesto permita. Cada proyecto tiene un partner senior responsable del principio al final.",
   },
   {
     question: "¿Trabajáis solo con grandes empresas?",
@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="max-w-5xl">
               <p className="text-white/30 text-xs tracking-widest uppercase font-medium mb-8">
-                Agencia de comunicación integral — Barcelona
+                Agencia de comunicación integral: Barcelona
               </p>
               <TypingAnimation
                 as="h1"
@@ -142,7 +142,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SCROLLYTELLING — SERVICIOS */}
+        {/* SCROLLYTELLING: SERVICIOS */}
         <HomeScrollytelling />
 
         {/* SERVICIOS GRID */}

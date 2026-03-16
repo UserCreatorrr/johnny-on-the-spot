@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Johnny on the Spot — Agencia de Comunicación Integral | Barcelona",
+    default: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
     template: "%s | Johnny on the Spot",
   },
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://www.johnnyonthespot.es",
     siteName: "Johnny on the Spot",
-    title: "Johnny on the Spot — Agencia de Comunicación Integral | Barcelona",
+    title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
     description:
       "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar.",
     images: [
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Johnny on the Spot — Agencia de Comunicación Integral",
+        alt: "Johnny on the Spot: Agencia de Comunicación Integral",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Johnny on the Spot — Agencia de Comunicación Integral | Barcelona",
+    title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
     description:
       "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar.",
     images: ["/og-image.jpg"],

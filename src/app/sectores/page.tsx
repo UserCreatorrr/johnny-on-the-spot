@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SECTORS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Sectores — Agencia de Comunicación por Sector | Johnny on the Spot",
+  title: "Sectores: Agencia de Comunicación por Sector | Johnny on the Spot",
   description:
     "Comunicación especializada por sector: farmacéutico, lujo, tecnología, gran consumo, automoción, hostelería y alimentación. Experiencia real en cada mercado.",
   alternates: { canonical: "https://www.johnnyonthespot.es/sectores" },

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import SectorPageTemplate from "@/components/SectorPageTemplate";
 
 export const metadata: Metadata = {
@@ -23,13 +23,13 @@ export default function AlimentacionBebidasPage() {
       services={["Branding y naming", "Packaging design", "Eventos y catas premium", "Activaciones en hostelería", "Fotografía de producto", "Contenido para social y digital", "Identidad corporativa", "Street marketing gastronómico"]}
       clients="Perrier · Glenfiddich · Petit Farm · Meliá (F&B)"
       cases={[
-        { title: "Identidad corporativa integral — Petit Farm", client: "Petit Farm", href: "/casos/metaembalatges-branding", desc: "Identidad completa, web y posicionamiento para marca de gastronomía artesanal." },
+        { title: "Identidad corporativa integral: Petit Farm", client: "Petit Farm", href: "/casos/metaembalatges-branding", desc: "Identidad completa, web y posicionamiento para marca de gastronomía artesanal." },
       ]}
       faqs={[
         { question: "¿Podéis diseñar packaging para productos alimentarios?", answer: "Sí. Diseñamos packaging pensando tanto en la estética como en los requisitos legales del etiquetado alimentario: ingredientes, alérgenos, información nutricional. Coordinamos con los proveedores de impresión adecuados para cada tipo de envase." },
         { question: "¿Hacéis eventos de presentación de producto para el canal horeca?", answer: "Sí. Catas, degustaciones, presentaciones a distribuidores, eventos de canal: conocemos el lenguaje del horeca y cómo hacer que una presentación de producto genere pedidos." },
         { question: "¿Podéis hacer fotografía de producto para catálogos y redes?", answer: "Sí. Fotografía de alimentos y bebidas con dirección de arte específica para la categoría. Tanto en estudio como en localizaciones reales." },
-        { question: "¿Tenéis experiencia con spirits y bebidas alcohólicas premium?", answer: "Sí. Glenfiddich y Perrier son buenos ejemplos. Las marcas de spirits premium tienen reglas específicas en comunicación —regulación publicitaria del alcohol— que conocemos y respetamos." },
+        { question: "¿Tenéis experiencia con spirits y bebidas alcohólicas premium?", answer: "Sí. Glenfiddich y Perrier son buenos ejemplos. Las marcas de spirits premium tienen reglas específicas en comunicación regulación publicitaria del alcohol que conocemos y respetamos." },
       ]}
       ctaTitle="¿Tienes un proyecto en food & beverage?"
       ctaSubtitle="Cuéntanoslo. Sabemos hacer que los productos de alimentación y bebida sean irresistibles en comunicación."

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: "¿Qué necesitáis del cliente para empezar?",
-    answer: "El briefing más útil incluye: descripción del producto o servicio, audiencia objetivo, tono deseado con referencias que lo ilustren, canales de uso y cualquier restricción relevante —regulatoria, legal, de competencia—. Cuanto más concreto, mejor el copy resultante.",
+    answer: "El briefing más útil incluye: descripción del producto o servicio, audiencia objetivo, tono deseado con referencias que lo ilustren, canales de uso y cualquier restricción relevante regulatoria, legal, de competencia. Cuanto más concreto, mejor el copy resultante.",
   },
   {
     question: "¿Incluye SEO copywriting?",

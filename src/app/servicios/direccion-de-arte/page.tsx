@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Dirección de Arte | Johnny on the Spot — Barcelona",
+  title: "Dirección de Arte | Johnny on the Spot: Barcelona",
   description:
     "Dirección de arte para campañas, eventos y producción audiovisual. Decisiones visuales que comunican con precisión. Equipo sénior en Barcelona.",
   alternates: { canonical: "https://www.johnnyonthespot.es/servicios/direccion-de-arte" },

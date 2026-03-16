@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { CASES } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Casos de Éxito — Proyectos Reales | Johnny on the Spot",
+  title: "Casos de Éxito: Proyectos Reales | Johnny on the Spot",
   description:
     "Proyectos reales con resultados reales. Alcon, SAP, Coca-Cola, Puig, Novartis, Meliá, Chopard. Comunicación integral que ha funcionado.",
   alternates: { canonical: "https://www.johnnyonthespot.es/casos-de-exito" },

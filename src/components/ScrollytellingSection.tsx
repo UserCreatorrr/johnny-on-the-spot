@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
@@ -67,7 +67,7 @@ export default function ScrollytellingSection({
         </div>
       </div>
 
-      {/* Left scrolling content — absolute so it stacks behind sticky */}
+      {/* Left scrolling content: absolute so it stacks behind sticky */}
       <div className="absolute top-0 left-0 w-full lg:w-1/2 pointer-events-none lg:pointer-events-auto">
         {sections.map((section) => (
           <div

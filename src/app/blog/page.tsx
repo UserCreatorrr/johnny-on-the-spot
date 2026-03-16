@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -34,7 +34,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Category filter (visual only — links filtrarían por categoría en una implementación completa) */}
+      {/* Category filter (visual only: links filtrarían por categoría en una implementación completa) */}
       <div className="px-6 lg:px-8 pb-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto pt-6 flex flex-wrap gap-3">
           {categories.map((cat) => (

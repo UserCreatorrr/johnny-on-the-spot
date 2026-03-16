@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
@@ -35,8 +35,8 @@ const solutionDetails: Record<string, {
     h2: "El lanzamiento que tu producto merece",
     paragraphs: [
       "Un lanzamiento de producto es uno de los momentos más críticos en la vida de una marca. Es el punto de partida que define la percepción del mercado, que establece el posicionamiento y que determina si el producto va a tener la tracción que necesita para sobrevivir. Hacerlo bien desde el principio cuesta mucho menos que corregirlo después.",
-      "En Johnny on the Spot, los lanzamientos de producto son proyectos integrales: empezamos por la estrategia de comunicación del lanzamiento, diseñamos el concepto creativo, producimos todos los materiales —gráficos, digitales, audiovisuales, de punto de venta—, organizamos el evento de presentación si lo hay, y coordinamos la comunicación digital que mantiene el momentum post-lanzamiento.",
-      "Hemos lanzado productos en el sector farmacéutico —Alcon Air Optix en ocho mercados europeos, Novartis Certican 360°, Dr. Scholl en el canal farmacias—, en cosmética, en gran consumo y en tecnología. En todos los casos, el lanzamiento era el principio de una relación con el mercado, no un momento aislado.",
+      "En Johnny on the Spot, los lanzamientos de producto son proyectos integrales: empezamos por la estrategia de comunicación del lanzamiento, diseñamos el concepto creativo, producimos todos los materiales gráficos, digitales, audiovisuales, de punto de venta, organizamos el evento de presentación si lo hay, y coordinamos la comunicación digital que mantiene el momentum post-lanzamiento.",
+      "Hemos lanzado productos en el sector farmacéutico Alcon Air Optix en ocho mercados europeos, Novartis Certican 360°, Dr. Scholl en el canal farmacias, en cosmética, en gran consumo y en tecnología. En todos los casos, el lanzamiento era el principio de una relación con el mercado, no un momento aislado.",
     ],
     includes: ["Estrategia de lanzamiento", "Concepto creativo", "Materiales para todos los canales", "Evento de presentación (opcional)", "Kit de prensa y comunicación", "Materiales de sell-in para distribuidores", "Producción digital y social", "Métricas de seguimiento"],
     services: [
@@ -50,7 +50,7 @@ const solutionDetails: Record<string, {
       { question: "¿Cuánto tiempo necesitáis para planificar un lanzamiento?", answer: "Depende de la complejidad. Un lanzamiento nacional con varios canales y evento de presentación necesita al menos 8-12 semanas. Un lanzamiento paneuropeo como el de Alcon Air Optix necesita 4-6 meses. Dicho esto, si el tiempo es corto, nos adaptamos." },
       { question: "¿Podéis gestionar el lanzamiento en varios mercados simultáneamente?", answer: "Sí. Tenemos red de proveedores en Europa y experiencia en coordinación multinacional. El roadshow de Alcon en ocho ciudades europeas es el mejor ejemplo." },
       { question: "¿Qué pasa si el producto tiene restricciones regulatorias?", answer: "Tenemos experiencia en sectores regulados como el farmacéutico. Trabajamos siempre dentro del marco legal aplicable al producto y al mercado." },
-      { question: "¿El lanzamiento incluye la estrategia de medios?", answer: "Puede incluirla. Diseñamos la estrategia de medios —paid media, relaciones con prensa, social— como parte del plan de lanzamiento o la coordinamos con el equipo de medios del cliente si ya tienen uno." },
+      { question: "¿El lanzamiento incluye la estrategia de medios?", answer: "Puede incluirla. Diseñamos la estrategia de medios paid media, relaciones con prensa, social como parte del plan de lanzamiento o la coordinamos con el equipo de medios del cliente si ya tienen uno." },
     ],
   },
   "convenciones-y-eventos": {

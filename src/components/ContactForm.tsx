@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate API call — replace with actual endpoint
+    // Simulate API call: replace with actual endpoint
     await new Promise((resolve) => setTimeout(resolve, 1200));
     setStatus("success");
   };

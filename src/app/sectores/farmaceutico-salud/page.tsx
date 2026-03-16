@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import SectorPageTemplate from "@/components/SectorPageTemplate";
 
 export const metadata: Metadata = {
@@ -16,8 +16,8 @@ export default function FarmaceuticoSaludPage() {
       h2="Cuando el error no es una opción"
       breadcrumbLabel="Farmacéutico y Salud"
       paragraphs={[
-        "El sector farmacéutico es uno de los entornos de comunicación más exigentes que existen. Los mensajes deben cumplir normativas estrictas —AEMPS, EFPIA, distintas regulaciones por mercado—, pero también tienen que funcionar como comunicación: llegar a médicos, pacientes, farmacéuticos o distribuidores con la claridad y el impacto suficientes para provocar acción.",
-        "Hemos trabajado con Alcon en el lanzamiento paneuropeo de Air Optix —roadshow por ocho ciudades con app de realidad aumentada—, con Novartis en la campaña 360° de Certican, con Ipsen Farma en su convención anual en Finlandia, con ISDIN en la rueda de prensa del Trofeu Conde de Godó y con Dr. Scholl en el canal farmacia de España y Portugal.",
+        "El sector farmacéutico es uno de los entornos de comunicación más exigentes que existen. Los mensajes deben cumplir normativas estrictas AEMPS, EFPIA, distintas regulaciones por mercado, pero también tienen que funcionar como comunicación: llegar a médicos, pacientes, farmacéuticos o distribuidores con la claridad y el impacto suficientes para provocar acción.",
+        "Hemos trabajado con Alcon en el lanzamiento paneuropeo de Air Optix roadshow por ocho ciudades con app de realidad aumentada, con Novartis en la campaña 360° de Certican, con Ipsen Farma en su convención anual en Finlandia, con ISDIN en la rueda de prensa del Trofeu Conde de Godó y con Dr. Scholl en el canal farmacia de España y Portugal.",
         "En cada proyecto farma, la estrategia parte del producto y la audiencia clínica o regulatoria. La creatividad trabaja dentro de ese marco, no contra él. El resultado es comunicación que cumple y que convence.",
       ]}
       services={["Estrategia de comunicación regulada", "Campañas de producto multicanal", "Producción de eventos científicos", "Materiales para canal farmacia y HCP", "E-learnings para equipos médicos", "Roadshows y lanzamientos de producto", "Contenido digital adaptado a normativa", "Activación en punto de venta farmacéutico"]}

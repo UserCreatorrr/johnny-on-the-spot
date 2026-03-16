@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -25,7 +25,7 @@ const serviceSchema = {
 const faqs = [
   {
     question: "¿Cuánto tarda un proyecto de identidad corporativa?",
-    answer: "Un proyecto completo —desde el briefing hasta la entrega del manual— suele durar entre 6 y 12 semanas. Depende de la complejidad, el número de revisiones y si incluye naming o no. Lo que no hacemos es precipitar el proceso: una identidad mal construida cuesta mucho más corregirla después.",
+    answer: "Un proyecto completo desde el briefing hasta la entrega del manual suele durar entre 6 y 12 semanas. Depende de la complejidad, el número de revisiones y si incluye naming o no. Lo que no hacemos es precipitar el proceso: una identidad mal construida cuesta mucho más corregirla después.",
   },
   {
     question: "¿Hacéis solo el logo o el sistema completo?",

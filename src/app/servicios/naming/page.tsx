@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -79,7 +79,7 @@ export default function NamingPage() {
               </h2>
               <div className="space-y-5 text-white/45 text-lg leading-relaxed">
                 <p>El naming no es una lluvia de ideas. Es un proceso estructurado que parte de la estrategia de marca, analiza el mercado y la competencia, define el posicionamiento lingüístico y genera candidatos que cumplen criterios objetivos: memorabilidad, pronunciabilidad, disponibilidad legal y adaptabilidad internacional.</p>
-                <p>Trabajamos con un proceso en cuatro fases: briefing estratégico, generación de candidatos, filtrado y validación —legal, registral, dominio—, y presentación razonada. El cliente no recibe una lista de cincuenta nombres aleatorios. Recibe entre cinco y diez candidatos finalistas, cada uno con su argumento estratégico.</p>
+                <p>Trabajamos con un proceso en cuatro fases: briefing estratégico, generación de candidatos, filtrado y validación legal, registral, dominio, y presentación razonada. El cliente no recibe una lista de cincuenta nombres aleatorios. Recibe entre cinco y diez candidatos finalistas, cada uno con su argumento estratégico.</p>
                 <p>Hemos desarrollado nombres para empresas industriales, startups tecnológicas, líneas de producto farmacéutico y marcas de consumo en múltiples mercados. En todos los casos, el nombre resultante ha superado el escrutinio jurídico y ha funcionado comercialmente.</p>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { SERVICES, SECTORS, CASES, SOLUTIONS, BLOG_POSTS } from "@/lib/data";
 
 const baseUrl = "https://www.johnnyonthespot.es";

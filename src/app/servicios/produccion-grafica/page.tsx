@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Producción Gráfica Premium | Johnny on the Spot — Barcelona",
+  title: "Producción Gráfica Premium | Johnny on the Spot: Barcelona",
   description:
     "Producción gráfica para grandes marcas. POS, packaging, materiales de campaña, editorial. Orbit, Novartis, STINGbye, Go Green. Estándares internacionales.",
   alternates: { canonical: "https://www.johnnyonthespot.es/servicios/produccion-grafica" },

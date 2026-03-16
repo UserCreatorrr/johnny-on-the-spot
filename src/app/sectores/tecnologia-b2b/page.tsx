@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import SectorPageTemplate from "@/components/SectorPageTemplate";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function TecnologiaBBPage() {
       faqs={[
         { question: "¿Cómo simplificáis mensajes técnicos complejos?", answer: "Trabajamos con el equipo de producto o técnico del cliente para entender en profundidad lo que hace la solución. Luego lo traducimos a un lenguaje que el decisor no técnico entienda y que el técnico no considere una simplificación burda. Es un equilibrio que requiere experiencia en el sector." },
         { question: "¿Podéis gestionar la presencia en ferias internacionales de tecnología?", answer: "Sí. Hemos gestionado stands en el Mobile World Congress y el 4YFN para Applus y GFT. Desde el diseño hasta la producción, el montaje, el desmontaje y la logística del material." },
-        { question: "¿Hacéis comunicación interna para empresas tecnológicas?", answer: "Sí. Plataformas de comunicación interna, newsletters corporativas, onboarding, cultura de empresa. Los retos de comunicación interna en empresas tech —equipos distribuidos, culturas diversas, crecimiento rápido— son particulares y los conocemos." },
+        { question: "¿Hacéis comunicación interna para empresas tecnológicas?", answer: "Sí. Plataformas de comunicación interna, newsletters corporativas, onboarding, cultura de empresa. Los retos de comunicación interna en empresas tech equipos distribuidos, culturas diversas, crecimiento rápido son particulares y los conocemos." },
         { question: "¿Podéis producir materiales de ventas B2B?", answer: "Sí. Decks de ventas, one-pagers, casos de éxito, materiales de sell-in: todo el armamento de ventas que el equipo comercial necesita para convertir en ciclos B2B largos." },
       ]}
       ctaTitle="¿Tu empresa tecnológica merece mejor comunicación?"

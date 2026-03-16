@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -81,7 +81,7 @@ export default function Navigation() {
         <Link
           href="/"
           className="flex items-center group"
-          aria-label="Johnny on the Spot — Inicio"
+          aria-label="Johnny on the Spot: Inicio"
         >
           <Image
             src="/logo-white.png"

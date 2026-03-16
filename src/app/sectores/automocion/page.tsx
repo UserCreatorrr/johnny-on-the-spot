@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import SectorPageTemplate from "@/components/SectorPageTemplate";
 
 export const metadata: Metadata = {

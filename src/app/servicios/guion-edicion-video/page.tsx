@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -25,7 +25,7 @@ const serviceSchema = {
 const faqs = [
   {
     question: "¿Cuánto tarda producir un vídeo corporativo?",
-    answer: "Depende de la complejidad. Un vídeo corporativo estándar —guión, rodaje de un día, postproducción— puede estar listo en 3-4 semanas. Una miniserie de marca o una campaña audiovisual con múltiples piezas puede llevar 2-3 meses. Establecemos el calendario en el briefing inicial.",
+    answer: "Depende de la complejidad. Un vídeo corporativo estándar guión, rodaje de un día, postproducción puede estar listo en 3-4 semanas. Una miniserie de marca o una campaña audiovisual con múltiples piezas puede llevar 2-3 meses. Establecemos el calendario en el briefing inicial.",
   },
   {
     question: "¿Qué incluye un paquete de producción de vídeo?",

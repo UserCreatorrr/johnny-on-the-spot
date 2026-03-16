@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Marketing Digital Integral | Johnny on the Spot — Barcelona",
+  title: "Marketing Digital Integral | Johnny on the Spot: Barcelona",
   description:
     "Marketing digital integrado en la estrategia de comunicación. SEO, paid media, redes sociales y automatizaciones para marcas B2B y B2C que quieren resultados.",
   alternates: { canonical: "https://www.johnnyonthespot.es/servicios/marketing-digital" },

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -49,7 +49,7 @@ export default function AvisoLegalPage() {
             <div>
               <h2 className="text-white font-bold text-xl mb-4">3. Propiedad intelectual e industrial</h2>
               <p>
-                Todos los contenidos del Sitio —textos, imágenes, logotipos, diseño gráfico y código fuente— son titularidad de Johnny on the Spot o de terceros que han autorizado su uso. Queda prohibida su reproducción, distribución, transformación o comunicación pública sin autorización expresa por escrito.
+                Todos los contenidos del Sitio textos, imágenes, logotipos, diseño gráfico y código fuente son titularidad de Johnny on the Spot o de terceros que han autorizado su uso. Queda prohibida su reproducción, distribución, transformación o comunicación pública sin autorización expresa por escrito.
               </p>
             </div>
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: "¿Cómo se integra la IA con los sistemas ya existentes?",
-    answer: "Evaluamos los sistemas actuales —CRM, ERP, herramientas de marketing, bases de datos— y diseñamos una arquitectura de integración que los conecte sin requerir migraciones costosas. La integración progresiva es siempre preferible a una sustitución completa.",
+    answer: "Evaluamos los sistemas actuales CRM, ERP, herramientas de marketing, bases de datos y diseñamos una arquitectura de integración que los conecte sin requerir migraciones costosas. La integración progresiva es siempre preferible a una sustitución completa.",
   },
   {
     question: "¿Qué no delegar nunca a una IA?",

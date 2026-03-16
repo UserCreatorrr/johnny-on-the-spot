@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
@@ -79,7 +79,7 @@ export default function EstrategiaPage() {
               </h2>
               <div className="space-y-5 text-white/45 text-lg leading-relaxed">
                 <p>La mayoría de las empresas comunican de forma reactiva: cuando tienen algo que decir, lo dicen; cuando necesitan vender, hacen publicidad. La comunicación estratégica es otra cosa: define qué quiere ser percibida la empresa, cómo llega a esa percepción y qué acciones concretas la construyen en el tiempo.</p>
-                <p>Nuestro proceso parte del diagnóstico —¿dónde está la marca ahora?— y construye hasta el plan de acción —¿qué hace en los próximos 12 meses y por qué?—. Incluye análisis de competencia, definición de audiencias, arquitectura de mensajes y sistema de medición para saber si funciona.</p>
+                <p>Nuestro proceso parte del diagnóstico ¿dónde está la marca ahora? y construye hasta el plan de acción ¿qué hace en los próximos 12 meses y por qué?. Incluye análisis de competencia, definición de audiencias, arquitectura de mensajes y sistema de medición para saber si funciona.</p>
                 <p>La estrategia que entregamos es operativa, no teórica. Viene con un plan de acción con prioridades, responsables y presupuesto estimado. No es un informe de ochenta páginas que se archiva. Es una hoja de ruta que el equipo puede ejecutar desde el día siguiente a la presentación.</p>
               </div>
             </div>

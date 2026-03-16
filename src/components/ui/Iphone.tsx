@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react"
+﻿import type { HTMLAttributes, ReactNode } from "react"
 
 const PHONE_WIDTH = 433
 const PHONE_HEIGHT = 882

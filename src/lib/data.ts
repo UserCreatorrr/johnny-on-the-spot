@@ -1,4 +1,4 @@
-export const SERVICES = [
+﻿export const SERVICES = [
   {
     slug: "direccion-produccion-creativa",
     title: "Dirección y Producción Creativa",
@@ -161,7 +161,7 @@ export const CASES = [
   {
     slug: "puig-brand-ambassadors",
     client: "Puig",
-    title: "Convención de 208 Brand Ambassadors — Puig",
+    title: "Convención de 208 Brand Ambassadors: Puig",
     description: "Convención para embajadores de marca de las fragancias Puig en Barcelona.",
     services: ["Eventos", "Producción", "Formación"],
     sector: "Lujo",
@@ -170,7 +170,7 @@ export const CASES = [
   {
     slug: "novartis-certican-360",
     client: "Novartis",
-    title: "Campaña 360° Certican — Novartis",
+    title: "Campaña 360° Certican: Novartis",
     description: "Campaña integral de producto farmacéutico con materiales para todos los canales.",
     services: ["Estrategia", "Creatividad", "Producción Gráfica"],
     sector: "Farmacéutico",
@@ -215,7 +215,7 @@ export const CASES = [
   {
     slug: "metaembalatges-branding",
     client: "Metaembalatges",
-    title: "Branding integral — Metaembalatges",
+    title: "Branding integral: Metaembalatges",
     description: "Identidad corporativa, web, fotografía y vídeo para empresa industrial de packaging.",
     services: ["Identidad", "Web", "Fotografía", "Vídeo"],
     sector: "Industrial",
@@ -224,7 +224,7 @@ export const CASES = [
   {
     slug: "alcon-astigmatismo-campana",
     client: "Alcon",
-    title: "Campaña de divulgación — Astigmatismo Alcon",
+    title: "Campaña de divulgación: Astigmatismo Alcon",
     description: "Dirección creativa integral para la campaña de divulgación sobre astigmatismo de Alcon.",
     services: ["Dirección Creativa", "Campaña Gráfica", "Producción Visual"],
     sector: "Farmacéutico",
@@ -233,7 +233,7 @@ export const CASES = [
   {
     slug: "novartis-transplant-tomorrow",
     client: "Novartis",
-    title: "Transplant Tomorrow — Mañana Empieza Hoy",
+    title: "Transplant Tomorrow: Mañana Empieza Hoy",
     description: "Concepto creativo, campaña gráfica, eventos y vídeo para el programa Transplant Tomorrow de Novartis.",
     services: ["Concepto Creativo", "Campaña Gráfica", "Eventos", "Vídeo"],
     sector: "Farmacéutico",
@@ -242,7 +242,7 @@ export const CASES = [
   {
     slug: "ergobaby-orbit-packaging",
     client: "Ergobaby",
-    title: "Packaging y material POS — Ergobaby Orbit",
+    title: "Packaging y material POS: Ergobaby Orbit",
     description: "Diseño gráfico de packaging y material en punto de venta para la línea Orbit de Ergobaby.",
     services: ["Diseño Gráfico", "Packaging", "Material POS"],
     sector: "Gran Consumo",
@@ -251,7 +251,7 @@ export const CASES = [
   {
     slug: "gft-mwc-4yfn",
     client: "GFT",
-    title: "Stand MWC y 4YFN — GFT",
+    title: "Stand MWC y 4YFN: GFT",
     description: "Diseño y producción del stand de GFT en el Mobile World Congress y el 4 Years From Now de Barcelona.",
     services: ["Diseño de Stand", "Producción", "Eventos"],
     sector: "Tecnología",
@@ -260,7 +260,7 @@ export const CASES = [
   {
     slug: "porsche-interclassics-brussels",
     client: "Porsche",
-    title: "Stand InterClassics Brussels — Porsche",
+    title: "Stand InterClassics Brussels: Porsche",
     description: "Diseño y producción del stand de Porsche en la feria InterClassics de Bruselas.",
     services: ["Diseño de Stand", "Producción", "Eventos"],
     sector: "Automoción",
@@ -278,7 +278,7 @@ export const CASES = [
   {
     slug: "gogreen-expositor-pos",
     client: "GoGreen",
-    title: "Expositor POS — GoGreen",
+    title: "Expositor POS: GoGreen",
     description: "Diseño gráfico y producción de expositor en punto de venta para GoGreen.",
     services: ["Diseño Gráfico", "Material POS", "Producción Gráfica"],
     sector: "Gran Consumo",
@@ -287,7 +287,7 @@ export const CASES = [
   {
     slug: "stingbye-packaging",
     client: "StingBye",
-    title: "Diseño de packaging — StingBye",
+    title: "Diseño de packaging: StingBye",
     description: "Dirección de arte y diseño gráfico del packaging para la marca StingBye.",
     services: ["Dirección de Arte", "Diseño Gráfico", "Packaging"],
     sector: "Gran Consumo",

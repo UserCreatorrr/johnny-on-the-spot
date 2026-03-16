@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 
 const services = [
@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex mb-6 group" aria-label="Johnny on the Spot — Inicio">
+            <Link href="/" className="inline-flex mb-6 group" aria-label="Johnny on the Spot: Inicio">
               <Image
                 src="/logo-white.png"
                 alt="Johnny on the Spot"

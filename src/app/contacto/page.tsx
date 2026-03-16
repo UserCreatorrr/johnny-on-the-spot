@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -6,7 +6,7 @@ import { Iphone } from "@/components/ui/Iphone";
 import { TypingAnimation } from "@/components/ui/TypingAnimation";
 
 export const metadata: Metadata = {
-  title: "Contacto — Call Johnny | Johnny on the Spot",
+  title: "Contacto: Call Johnny | Johnny on the Spot",
   description:
     "¿Tienes un proyecto? Cuéntanoslo. Un equipo sénior leerá tu mensaje hoy. Sin formularios innecesarios, sin esperas.",
   alternates: { canonical: "https://www.johnnyonthespot.es/contacto" },
@@ -159,7 +159,7 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            {/* Right — iPhone */}
+            {/* Right: iPhone */}
             <div className="flex justify-center lg:justify-end">
               <div className="w-full max-w-[300px] lg:max-w-[340px]">
                 <Iphone>

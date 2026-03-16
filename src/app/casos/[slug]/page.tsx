@@ -27,6 +27,9 @@ export async function generateMetadata({
 const caseVideos: Record<string, string> = {
   "carolina-herrera-desfile-ss2026": "https://drive.google.com/file/d/16_kiluQsVsfJupUn0KHdPMHP6XA-NoeE/preview",
   "novartis-transplant-tomorrow": "https://drive.google.com/file/d/1TDyZV9g-BhORBsuQR5FQ1RsPdX2mfFgT/preview",
+  "alcon-air-optix-paneuropeo": "https://drive.google.com/file/d/16WfAhvfWKPY-EipNl0AiGtQ9DcVsAQB8/preview",
+  "alcon-astigmatismo-campana": "https://drive.google.com/file/d/1jPJGtUKA_e6ip73I18eON0yR5OXWwq1H/preview",
+  "meliá-60-aniversario": "https://drive.google.com/file/d/1BupzBaXM-kSdNd6eHKzfMZo32glcom3E/preview",
 };
 
 const caseDetails: Record<string, {

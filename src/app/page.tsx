@@ -1,12 +1,11 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
-import { TypingAnimation } from "@/components/ui/TypingAnimation";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { SERVICES, CASES, BLOG_POSTS } from "@/lib/data";
 
@@ -56,64 +55,7 @@ export default function HomePage() {
     <>
       <Navigation />
       <main id="main-content" className="bg-black">
-        {/* HERO */}
-        <section
-          className="relative min-h-screen flex flex-col justify-center px-6 lg:px-8 pt-20 pb-32"
-          aria-labelledby="hero-heading"
-        >
-          <div className="max-w-7xl mx-auto w-full">
-            {/* Large logo */}
-            <div className="mb-16 lg:mb-20">
-              <Image
-                src="/logo-white.png"
-                alt="Johnny on the Spot"
-                width={600}
-                height={180}
-                className="w-auto h-16 lg:h-28 xl:h-36 object-contain"
-                priority
-              />
-            </div>
-
-            <div className="max-w-5xl">
-              <TypingAnimation
-                as="h1"
-                id="hero-heading"
-                className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tighter leading-none text-white mb-8 block"
-                startOnView={false}
-                duration={60}
-                showCursor={true}
-              >
-                A mano cuando se necesita.
-              </TypingAnimation>
-              <p className="text-white/50 text-lg lg:text-2xl max-w-2xl leading-relaxed mb-12">
-                Estrategia, creatividad y producción bajo un mismo techo. Para empresas que no pueden esperar ni permitirse errores.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <Link
-                  href="/contacto"
-                  className="bg-white text-black px-8 py-4 text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
-                >
-                  Cuéntanos el proyecto
-                </Link>
-                <Link
-                  href="/casos-de-exito"
-                  className="text-white/60 px-8 py-4 text-sm font-medium tracking-wide border border-white/20 hover:border-white/60 hover:text-white transition-colors"
-                >
-                  Ver casos de éxito
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Credential strip */}
-          <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 py-4 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-              <p className="text-white/15 text-xs tracking-widest uppercase">
-                Alcon · Novartis · Coca-Cola · SAP · Porsche · Meliá · Puig · Chopard · Carolina Herrera · Haribo · Glenfiddich · IKEA · Perrier · ISDIN
-              </p>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* INTRO */}
         <section className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">

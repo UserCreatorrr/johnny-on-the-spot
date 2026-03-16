@@ -193,49 +193,61 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
       {/* Media box */}
       <div className="px-6 lg:px-8 pb-12">
         <div className="max-w-7xl mx-auto">
-          <div
-            className="relative w-full bg-white/[0.03] border border-white/[0.08] overflow-hidden"
-            style={{ aspectRatio: "16/7" }}
-            aria-label={`Contenido visual del proyecto: ${caso.title}`}
-          >
-            {/* Grid decoration */}
-            <div className="absolute inset-0 pointer-events-none" style={{
-              backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
-              backgroundSize: "25% 33.33%"
-            }} />
-
-            {/* Corner slug */}
-            <div className="absolute top-5 left-6 text-white/[0.12] text-xs font-mono tracking-widest uppercase">
-              {caso.client}
+          {caso.slug === "carolina-herrera-desfile-ss2026" ? (
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
+              <iframe
+                src="https://drive.google.com/file/d/16_kiluQsVsfJupUn0KHdPMHP6XA-NoeE/preview"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="autoplay"
+                allowFullScreen
+                title={`Vídeo: ${caso.title}`}
+              />
             </div>
-            <div className="absolute top-5 right-6 text-white/[0.12] text-xs font-mono">
-              {caso.sector}
-            </div>
+          ) : (
+            <div
+              className="relative w-full bg-white/[0.03] border border-white/[0.08] overflow-hidden"
+              style={{ aspectRatio: "16/7" }}
+              aria-label={`Contenido visual del proyecto: ${caso.title}`}
+            >
+              {/* Grid decoration */}
+              <div className="absolute inset-0 pointer-events-none" style={{
+                backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
+                backgroundSize: "25% 33.33%"
+              }} />
 
-            {/* Center */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-8">
-              <p className="text-white/[0.05] font-black text-5xl lg:text-8xl tracking-tighter text-center leading-none max-w-3xl">
-                {caso.title}
-              </p>
-              {caso.results && (
-                <p className="text-white/[0.18] text-xs text-center tracking-wide max-w-md leading-relaxed">
-                  {caso.results}
-                </p>
-              )}
-            </div>
-
-            {/* Bottom meta */}
-            <div className="absolute bottom-5 left-6 right-6 flex justify-between items-end">
-              <div className="flex gap-2 flex-wrap">
-                {caso.services.slice(0, 3).map((s) => (
-                  <span key={s} className="text-white/[0.15] text-xs border border-white/[0.08] px-2 py-1">{s}</span>
-                ))}
+              {/* Corner slug */}
+              <div className="absolute top-5 left-6 text-white/[0.12] text-xs font-mono tracking-widest uppercase">
+                {caso.client}
               </div>
-              <span className="text-white/[0.12] text-xs font-mono">
-                {caso.services.length} servicios
-              </span>
+              <div className="absolute top-5 right-6 text-white/[0.12] text-xs font-mono">
+                {caso.sector}
+              </div>
+
+              {/* Center */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-8">
+                <p className="text-white/[0.05] font-black text-5xl lg:text-8xl tracking-tighter text-center leading-none max-w-3xl">
+                  {caso.title}
+                </p>
+                {caso.results && (
+                  <p className="text-white/[0.18] text-xs text-center tracking-wide max-w-md leading-relaxed">
+                    {caso.results}
+                  </p>
+                )}
+              </div>
+
+              {/* Bottom meta */}
+              <div className="absolute bottom-5 left-6 right-6 flex justify-between items-end">
+                <div className="flex gap-2 flex-wrap">
+                  {caso.services.slice(0, 3).map((s) => (
+                    <span key={s} className="text-white/[0.15] text-xs border border-white/[0.08] px-2 py-1">{s}</span>
+                  ))}
+                </div>
+                <span className="text-white/[0.12] text-xs font-mono">
+                  {caso.services.length} servicios
+                </span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 

@@ -1,225 +1,114 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  {
-    label: "Servicios",
-    href: "/servicios",
-    children: [
-      { label: "Dirección Creativa", href: "/servicios/direccion-produccion-creativa" },
-      { label: "Dirección de Arte", href: "/servicios/direccion-de-arte" },
-      { label: "Producción Gráfica", href: "/servicios/produccion-grafica" },
-      { label: "Guión y Vídeo", href: "/servicios/guion-edicion-video" },
-      { label: "Creación de Contenido", href: "/servicios/creacion-de-contenido" },
-      { label: "Diseño de Identidad", href: "/servicios/diseno-de-identidad" },
-      { label: "Naming", href: "/servicios/naming" },
-      { label: "Copywriting", href: "/servicios/copywriting" },
-      { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
-      { label: "Estrategia de Comunicación", href: "/servicios/estrategia-de-comunicacion" },
-      { label: "Activación de Marca", href: "/servicios/activacion-de-marca" },
-      { label: "Marketing Digital", href: "/servicios/marketing-digital" },
-      { label: "IA y Automatizaciones", href: "/servicios/ia-y-automatizaciones" },
-    ],
-  },
-  {
-    label: "Sectores",
-    href: "/sectores",
-    children: [
-      { label: "Farmacéutico y Salud", href: "/sectores/farmaceutico-salud" },
-      { label: "Gran Consumo y Retail", href: "/sectores/gran-consumo-retail" },
-      { label: "Lujo y Premium", href: "/sectores/lujo-premium" },
-      { label: "Tecnología y B2B", href: "/sectores/tecnologia-b2b" },
-      { label: "Automoción", href: "/sectores/automocion" },
-      { label: "Hostelería y Turismo", href: "/sectores/hosteleria-turismo" },
-      { label: "Alimentación y Bebidas", href: "/sectores/alimentacion-bebidas" },
-    ],
-  },
-  {
-    label: "Casos",
-    href: "/casos-de-exito",
-  },
-  {
-    label: "Soluciones",
-    href: "/soluciones",
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
-  {
-    label: "Nosotros",
-    href: "/nosotros",
-  },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Sectores", href: "/sectores" },
+  { label: "Casos", href: "/casos-de-exito" },
+  { label: "Soluciones", href: "/soluciones" },
+  { label: "Blog", href: "/blog" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black border-b border-white/10" : "bg-transparent"
-      }`}
-      role="banner"
-    >
-      <nav
-        className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20"
-        aria-label="Navegación principal"
-      >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center group"
-          aria-label="Johnny on the Spot: Inicio"
-        >
-          <Image
-            src="/logo-white.png"
-            alt="Johnny on the Spot"
-            width={160}
-            height={48}
-            className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity"
-            priority
-          />
-        </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8" role="banner">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="relative z-[60]"
+            aria-label="Johnny on the Spot: Inicio"
+          >
+            <Image
+              src="/logo-white.png"
+              alt="Johnny on the Spot"
+              width={160}
+              height={48}
+              className="h-9 w-auto object-contain"
+              priority
+            />
+          </Link>
 
-        {/* Desktop Nav */}
-        <ul className="hidden lg:flex items-center gap-8" role="list">
-          {navItems.map((item) => (
-            <li
-              key={item.href}
-              className="relative"
-              onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+          {/* Hamburger — always visible */}
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            className="relative z-[60] w-10 h-10 flex flex-col justify-center items-center gap-[7px]"
+          >
+            <span
+              className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${
+                open ? "rotate-45 translate-y-[3.5px]" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-px bg-white transition-all duration-300 origin-center ${
+                open ? "-rotate-45 -translate-y-[3.5px]" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </header>
+
+      {/* Fullscreen overlay */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-black flex flex-col px-6 lg:px-8 pt-20"
+            role="dialog"
+            aria-label="Menú principal"
+          >
+            <nav className="flex-1 flex flex-col justify-center">
+              <ul className="space-y-0" role="list">
+                {navItems.map((item, i) => (
+                  <motion.li
+                    key={item.href}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.045 + 0.05, duration: 0.3 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="block text-5xl lg:text-7xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-tight py-1.5"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+              className="text-white/20 text-xs tracking-widest uppercase pb-8"
             >
-              <Link
-                href={item.href}
-                className="text-white/70 hover:text-white text-sm font-light tracking-wide transition-colors py-2 flex items-center gap-1"
-              >
-                {item.label}
-                {item.children && (
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    className={`transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
-                    aria-hidden="true"
-                  >
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                )}
-              </Link>
-
-              {/* Dropdown */}
-              {item.children && openDropdown === item.label && (
-                <div className="absolute top-full left-0 pt-2 min-w-[220px]">
-                  <ul
-                    className="bg-black border border-white/10 py-2"
-                    role="list"
-                  >
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link
-            href="/contacto"
-            className="text-sm bg-white text-black px-5 py-2.5 font-medium hover:bg-white/90 transition-colors"
-          >
-            Hablemos
-          </Link>
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-white p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-        >
-          {mobileOpen ? (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden bg-black border-t border-white/10 px-6 py-6"
-          role="dialog"
-          aria-label="Menú móvil"
-        >
-          <ul className="space-y-1" role="list">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block py-3 text-white/70 hover:text-white text-base border-b border-white/5 transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <ul className="pl-4 mt-1 mb-2 space-y-1" role="list">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block py-2 text-sm text-white/40 hover:text-white/80 transition-colors"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/contacto"
-            className="mt-6 block text-center text-sm bg-white text-black px-5 py-3 font-medium"
-            onClick={() => setMobileOpen(false)}
-          >
-            Hablemos
-          </Link>
-        </div>
-      )}
-    </header>
+              Agencia de comunicación integral · Barcelona
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

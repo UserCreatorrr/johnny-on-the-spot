@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
@@ -57,14 +58,23 @@ export default function HomePage() {
       <main id="main-content" className="bg-black">
         {/* HERO */}
         <section
-          className="relative min-h-screen flex flex-col justify-end pb-16 lg:pb-24 px-6 lg:px-8 pt-32"
+          className="relative min-h-screen flex flex-col justify-center px-6 lg:px-8 pt-20 pb-32"
           aria-labelledby="hero-heading"
         >
           <div className="max-w-7xl mx-auto w-full">
+            {/* Large logo */}
+            <div className="mb-16 lg:mb-20">
+              <Image
+                src="/logo-white.png"
+                alt="Johnny on the Spot"
+                width={600}
+                height={180}
+                className="w-auto h-16 lg:h-28 xl:h-36 object-contain"
+                priority
+              />
+            </div>
+
             <div className="max-w-5xl">
-              <p className="text-white/30 text-xs tracking-widest uppercase font-medium mb-8">
-                Agencia de comunicación integral: Barcelona
-              </p>
               <TypingAnimation
                 as="h1"
                 id="hero-heading"
@@ -92,12 +102,6 @@ export default function HomePage() {
                   Ver casos de éxito
                 </Link>
               </div>
-            </div>
-
-            {/* Scroll indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" aria-hidden="true">
-              <span className="text-white/20 text-xs tracking-widest uppercase">Scroll</span>
-              <div className="w-px h-12 bg-gradient-to-b from-white/20 to-transparent" />
             </div>
           </div>
 

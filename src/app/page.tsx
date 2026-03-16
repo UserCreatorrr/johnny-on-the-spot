@@ -4,10 +4,11 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
+import ServicesScrollSection from "@/components/ServicesScrollSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
-import { SERVICES, CASES, BLOG_POSTS } from "@/lib/data";
+import { CASES, BLOG_POSTS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
@@ -48,7 +49,6 @@ const homeFaqs = [
 
 export default function HomePage() {
   const featuredCases = CASES.slice(0, 4);
-  const featuredServices = SERVICES.slice(0, 8);
   const featuredPosts = BLOG_POSTS.slice(0, 3);
 
   return (
@@ -91,59 +91,8 @@ export default function HomePage() {
         {/* SCROLLYTELLING: SERVICIOS */}
         <div data-nav-theme="dark"><HomeScrollytelling /></div>
 
-        {/* SERVICIOS GRID */}
-        <section data-nav-theme="dark" className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="services-heading">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="text-white/30 text-xs tracking-widest uppercase mb-3">Servicios</p>
-                <h2
-                  id="services-heading"
-                  className="text-4xl lg:text-5xl font-black tracking-tighter text-white"
-                >
-                  Todo lo que necesitas,
-                  <br />
-                  sin depender de nadie más.
-                </h2>
-              </div>
-              <Link
-                href="/servicios"
-                className="hidden lg:block text-sm text-white/40 hover:text-white border-b border-white/10 hover:border-white/40 transition-colors pb-0.5"
-              >
-                Ver todos →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
-              {featuredServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/servicios/${service.slug}`}
-                  className="bg-black p-8 group hover:bg-white/3 transition-colors"
-                >
-                  <span className="text-white/20 text-2xl mb-6 block font-mono" aria-hidden="true">
-                    {service.icon}
-                  </span>
-                  <h3 className="text-white font-bold text-lg leading-tight mb-3 group-hover:text-white transition-colors">
-                    {service.shortTitle}
-                  </h3>
-                  <p className="text-white/40 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center lg:hidden">
-              <Link
-                href="/servicios"
-                className="text-sm text-white/50 hover:text-white border border-white/20 px-6 py-3 inline-block transition-colors"
-              >
-                Ver todos los servicios
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* SERVICIOS — horizontal scroll driven by vertical scroll */}
+        <ServicesScrollSection />
 
         {/* CIFRAS */}
         <section data-nav-theme="light" className="py-20 lg:py-28 bg-white" aria-label="Cifras clave">

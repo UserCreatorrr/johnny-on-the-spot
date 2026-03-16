@@ -149,34 +149,34 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 border border-white/5">
               {featuredCases.map((c) => (
                 <Link
                   key={c.slug}
                   href={`/casos/${c.slug}`}
-                  className="bg-black p-10 group hover:bg-white/3 transition-colors flex flex-col justify-between"
-                  style={{ minHeight: "320px" }}
+                  className="bg-black p-10 group hover:bg-white/[0.03] transition-colors flex flex-col justify-between border-b border-r border-white/5"
+                  style={{ minHeight: "360px" }}
                 >
                   <div>
-                    <p className="text-white/25 text-xs tracking-widest uppercase mb-4">
+                    <p className="text-white/25 text-xs tracking-widest uppercase mb-6">
                       {c.client}
                     </p>
-                    <h3 className="text-white font-black text-xl lg:text-2xl tracking-tight leading-snug mb-3 group-hover:text-white/90 transition-colors">
+                    <h3 className="text-white font-black text-xl lg:text-2xl tracking-tight leading-snug mb-4 group-hover:text-white/90 transition-colors">
                       {c.title}
                     </h3>
                     <p className="text-white/40 text-sm leading-relaxed mb-6">
                       {c.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {c.services.map((s) => (
-                        <span
-                          key={s}
-                          className="text-white/25 text-xs border border-white/10 px-3 py-1"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {c.services.map((s) => (
+                      <span
+                        key={s}
+                        className="text-white/25 text-xs border border-white/10 px-3 py-1"
+                      >
+                        {s}
+                      </span>
+                    ))}
                   </div>
                 </Link>
               ))}

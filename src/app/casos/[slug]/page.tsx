@@ -24,6 +24,11 @@ export async function generateMetadata({
   };
 }
 
+const caseVideos: Record<string, string> = {
+  "carolina-herrera-desfile-ss2026": "https://drive.google.com/file/d/16_kiluQsVsfJupUn0KHdPMHP6XA-NoeE/preview",
+  "novartis-transplant-tomorrow": "https://drive.google.com/file/d/1TDyZV9g-BhORBsuQR5FQ1RsPdX2mfFgT/preview",
+};
+
 const caseDetails: Record<string, {
   intro: string;
   challenge: string;
@@ -193,10 +198,10 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
       {/* Media box */}
       <div className="px-6 lg:px-8 pb-12">
         <div className="max-w-7xl mx-auto">
-          {caso.slug === "carolina-herrera-desfile-ss2026" ? (
+          {caseVideos[caso.slug] ? (
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <iframe
-                src="https://drive.google.com/file/d/16_kiluQsVsfJupUn0KHdPMHP6XA-NoeE/preview"
+                src={caseVideos[caso.slug]}
                 className="absolute inset-0 w-full h-full border-0"
                 allow="autoplay"
                 allowFullScreen

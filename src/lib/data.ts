@@ -269,7 +269,7 @@ export const CASES = [
   {
     slug: "carolina-herrera-desfile-ss2026",
     client: "Carolina Herrera",
-    title: "Desfilé Carolina Herrera SS2026",
+    title: "Desfile Carolina Herrera",
     description: "Producción ejecutiva del desfile de Carolina Herrera para la colección primavera-verano 2026.",
     services: ["Producción Ejecutiva", "Eventos", "Logística"],
     sector: "Lujo",

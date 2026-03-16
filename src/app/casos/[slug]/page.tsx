@@ -125,7 +125,7 @@ const caseDetails: Record<string, {
     intro: "Carolina Herrera confió a Johnny on the Spot la producción ejecutiva de su desfile Spring-Summer 2026, celebrado en la Plaza Mayor de Madrid.",
     challenge: "Gestionar la producción ejecutiva de un desfile de alta moda en un espacio emblemático —la Plaza Mayor de Madrid— coordinando todos los elementos productivos con los estándares de excelencia de la casa.",
     solution: "Producción ejecutiva integral: gestión de proveedores, logística y producción técnica, pasarela, montaje y coordinación de backstage, producción y coordinación de fittings, coordinación de catering, localización y logística y traslados.",
-    result: "Desfile Carolina Herrera SS2026 producido en la Plaza Mayor de Madrid. Producción ejecutiva integral sin incidencias. Cobertura de prensa internacional de moda.",
+    result: "Desfile Carolina Herrera producido en la Plaza Mayor de Madrid. Producción ejecutiva integral sin incidencias. Cobertura de prensa internacional de moda.",
   },
   "gogreen-expositor-pos": {
     intro: "Go Green necesitaba expositores para punto de venta que comunicaran su propuesta de bolsas sostenibles en el retail.",

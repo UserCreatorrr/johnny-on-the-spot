@@ -72,7 +72,7 @@ export default function Navigation() {
               alt="Johnny on the Spot"
               width={160}
               height={48}
-              className={`h-9 w-auto object-contain absolute top-0 left-0 transition-opacity duration-300 ${
+              className={`h-12 w-auto object-contain absolute top-0 left-0 transition-opacity duration-300 ${
                 isDark ? "opacity-100" : "opacity-0"
               }`}
               priority
@@ -83,7 +83,7 @@ export default function Navigation() {
               alt="Johnny on the Spot"
               width={160}
               height={48}
-              className={`h-9 w-auto object-contain transition-opacity duration-300 ${
+              className={`h-12 w-auto object-contain transition-opacity duration-300 ${
                 isDark ? "opacity-0" : "opacity-100"
               }`}
               priority
@@ -119,7 +119,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-black flex flex-col px-6 lg:px-8 pt-20"
+            className="fixed inset-0 z-40 bg-black flex flex-col px-6 lg:px-8 pt-20 overflow-y-auto"
             role="dialog"
             aria-label="Menú principal"
           >
@@ -135,7 +135,7 @@ export default function Navigation() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block text-5xl lg:text-7xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-tight py-1.5"
+                      className="block text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-snug py-1"
                     >
                       {item.label}
                     </Link>

@@ -210,6 +210,8 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
                 allowFullScreen
                 title={`Vídeo: ${caso.title}`}
               />
+              {/* Block the "Watch on YouTube" redirect button (top-right corner) */}
+              <div className="absolute top-0 right-0 w-24 h-14 z-10" />
             </div>
           ) : (
             <div

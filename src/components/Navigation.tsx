@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Servicios", href: "/servicios" },
@@ -18,8 +19,11 @@ const navItems = [
 const NAV_H = 80;
 
 export default function Navigation() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [open, setOpen] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(!isHome);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
@@ -27,8 +31,8 @@ export default function Navigation() {
       const scrollY = window.scrollY;
       const vh = window.innerHeight;
 
-      // Show logo only after hero has faded (~35% of viewport scrolled)
-      setLogoVisible(scrollY > vh * 0.3);
+      // On home: logo hidden until hero animation completes; elsewhere: always visible
+      setLogoVisible(!isHome || scrollY > vh * 0.3);
 
       // Detect which section sits behind the nav bar
       const sections = document.querySelectorAll("[data-nav-theme]");

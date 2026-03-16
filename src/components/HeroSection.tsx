@@ -1,32 +1,57 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TypingAnimation } from "@/components/ui/TypingAnimation";
 
 export default function HeroSection() {
+  const [scrollPct, setScrollPct] = useState(0);
   const [opacity, setOpacity] = useState(1);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const vh = window.innerHeight;
-      // Fade out completely over the first 35% of a viewport scroll
-      setOpacity(Math.max(0, 1 - scrollY / (vh * 0.35)));
+
+      // White panel slides in over the first 45% of a viewport height
+      const pct = Math.min(1, scrollY / (vh * 0.45));
+      setScrollPct(pct);
+
+      // Fade content out after panel is fully in
+      setOpacity(Math.max(0, 1 - (scrollY - vh * 0.45) / (vh * 0.2)));
+
+      // Switch nav logo color when >50% of panel is visible
+      if (sectionRef.current) {
+        sectionRef.current.setAttribute("data-nav-theme", pct > 0.5 ? "light" : "dark");
+      }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // translateX: 100% (off-screen right) → 0% (full coverage)
+  const panelX = (1 - scrollPct) * 100;
+
   return (
     <section
+      ref={sectionRef}
       data-nav-theme="dark"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-black"
       aria-labelledby="hero-heading"
     >
+      {/* White panel that slides in from right */}
       <div
-        className="flex flex-col items-center text-center"
-        style={{ opacity }}
+        className="absolute inset-0 bg-white will-change-transform"
+        style={{ transform: `translateX(${panelX}%)` }}
+        aria-hidden="true"
+      />
+
+      {/* Content: mix-blend-mode:difference auto-inverts logo+text on white panel */}
+      <div
+        className="relative z-10 flex flex-col items-center text-center"
+        style={{ opacity, mixBlendMode: "difference" }}
       >
         <Image
           src="/logo-hero.png"
@@ -48,14 +73,14 @@ export default function HeroSection() {
         </TypingAnimation>
       </div>
 
-      {/* Scroll hint */}
+      {/* Scroll hint — fades quickly */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
-        style={{ opacity: opacity * 0.35 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+        style={{ opacity: Math.max(0, 1 - scrollPct * 4) * 0.35 }}
         aria-hidden="true"
       >
-        <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent mt-1" />
+        <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
       </div>
 
       {/* Credential strip */}

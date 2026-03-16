@@ -116,21 +116,20 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
               <div>
+                <p className="text-black/30 text-xs tracking-widest uppercase mb-6">On the Spot</p>
                 <h2
                   id="intro-heading"
                   className="text-4xl lg:text-5xl font-black tracking-tighter text-black leading-tight"
                 >
-                  No somos la agencia más grande.
-                  <br />
-                  Somos la más resolutiva.
+                  Somos una agencia de comunicación integral que combina estrategia y creatividad.
                 </h2>
               </div>
               <div>
                 <p className="text-black/50 text-lg leading-relaxed">
-                  Johnny on the Spot nace de una convicción: las mejores ideas salen de equipos pequeños, ágiles y con criterio senior. No de estructuras rígidas con juniors ejecutando recetas.
+                  Para que tu marca esté siempre en el lugar y el momento exactos. Desde eventos impactantes hasta campañas de publicidad, marketing y relaciones públicas, desarrollamos conceptos y diseñamos experiencias que conectan y dejan huella.
                 </p>
                 <p className="text-black/50 text-lg leading-relaxed mt-4">
-                  Cada proyecto se forma con los perfiles exactos que necesita. Siempre con un partner sénior al mando. Siempre con la velocidad que el mercado exige.
+                  El éxito de un mensaje no depende solo de lo que dices, sino de cuándo, dónde y cómo lo comunicas.
                 </p>
                 <Link
                   href="/nosotros"

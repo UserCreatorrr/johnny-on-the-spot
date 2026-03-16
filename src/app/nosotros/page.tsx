@@ -29,7 +29,7 @@ export default function NosotrosPage() {
             <span className="text-white/30">Desde el principio.</span>
           </h1>
           <p className="text-white/45 text-xl lg:text-2xl max-w-2xl leading-relaxed">
-            Johnny on the Spot es una agencia de comunicación integral que combina estrategia, creatividad y producción bajo un mismo equipo sénior en Barcelona.
+            Somos una agencia de comunicación integral que combina estrategia y creatividad para que tu marca esté siempre en el lugar y el momento exactos.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function NosotrosPage() {
             </div>
             <div>
               <p className="text-black/50 text-lg leading-relaxed mb-6">
-                Elegimos ese nombre porque describe exactamente lo que somos. No somos la agencia que necesita tres semanas para darte una propuesta. No somos la que desaparece cuando el proyecto se complica.
+                Elegimos ese nombre porque describe exactamente lo que somos: alguien que está convenientemente en el lugar correcto en el momento oportuno. Con una Idea, una Estrategia, una Acción.
               </p>
               <p className="text-black/50 text-lg leading-relaxed">
                 Estar siempre disponibles no es un método de trabajo. Es nuestra forma de ser. El cliente que nos llama con un problema real sabe que tendrá respuesta ese mismo día y solución en el menor tiempo posible.
@@ -72,13 +72,13 @@ export default function NosotrosPage() {
               </h2>
               <div className="space-y-5 text-white/45 text-lg leading-relaxed">
                 <p>
-                  En Johnny on the Spot no creemos en las estructuras rígidas de agencia. Creemos en los equipos que se forman en función de lo que cada proyecto necesita: los mejores perfiles para esa combinación específica de cliente, sector y objetivo.
+                  Somos un equipo multidisciplinar y versátil con amplia experiencia en el gran universo de la Comunicación y los Eventos. Cada proyecto implica la creación de un equipo ad hoc, formado por las personas que mejor se ajustan al perfil de cada cliente.
                 </p>
                 <p>
-                  Cada proyecto tiene un partner sénior responsable de principio a fin. No un gestor de cuentas que coordina un equipo de juniors. Un profesional con criterio propio y experiencia acumulada que toma decisiones, propone con convicción y responde cuando algo no va bien.
+                  Planificamos con precisión, pero también sabemos adaptarnos y reaccionar en tiempo real, porque en comunicación, la improvisación es parte de la estrategia.
                 </p>
                 <p>
-                  Eso, junto con una red internacional activa de colaboradores especializados, nos permite dar un nivel de servicio que muchas agencias más grandes no consiguen: respuesta rápida, criterio sénior y flexibilidad real.
+                  Multiplicamos nuestras capacidades a través de aliados de nuestra red internacional, con presencia activa en Europa, América y Oriente Medio.
                 </p>
               </div>
             </div>

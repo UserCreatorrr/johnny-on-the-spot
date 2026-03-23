@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { TypingAnimation } from "@/components/ui/TypingAnimation";
 
 export default function HeroSection() {
   const [panelX, setPanelX] = useState(100);

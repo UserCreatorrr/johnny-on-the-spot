@@ -242,6 +242,7 @@ export const CASES = [
     services: ["Concepto Creativo", "Campaña Gráfica", "Eventos", "Vídeo"],
     sector: "Farmacéutico",
     results: "Concepto integral, campaña gráfica, producción de eventos y vídeo corporativo",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/novartis.mp4",
   },
   {
     slug: "ergobaby-orbit-packaging",

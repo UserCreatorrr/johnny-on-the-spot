@@ -48,7 +48,7 @@ const homeFaqs = [
 ];
 
 export default function HomePage() {
-  const featuredCases = CASES.slice(0, 4);
+  const featuredCases = CASES.filter((c) => (c as typeof c & { videoUrl?: string }).videoUrl);
   const featuredPosts = BLOG_POSTS.slice(0, 3);
 
   return (
@@ -107,16 +107,15 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Video cards grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Fullscreen video cards — stacked, one per viewport */}
+          <div>
             {featuredCases.map((c) => {
               const videoUrl = (c as typeof c & { videoUrl?: string }).videoUrl;
               return (
                 <Link
                   key={c.slug}
                   href={`/casos/${c.slug}`}
-                  className="relative overflow-hidden group block"
-                  style={{ minHeight: "60vh" }}
+                  className="relative overflow-hidden group block h-screen"
                   aria-label={`${c.client}: ${c.title}`}
                 >
                   {/* Video background */}
@@ -133,14 +132,14 @@ export default function HomePage() {
                   )}
 
                   {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors duration-500" />
 
-                  {/* Text */}
-                  <div className="relative z-10 flex flex-col justify-end p-8 lg:p-12" style={{ minHeight: "60vh" }}>
-                    <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
+                  {/* Text — bottom left */}
+                  <div className="absolute inset-0 z-10 flex flex-col justify-end p-10 lg:p-16">
+                    <p className="text-white/60 text-xs tracking-widest uppercase mb-4">
                       {c.client}
                     </p>
-                    <h3 className="text-white font-black text-2xl lg:text-3xl tracking-tight leading-snug">
+                    <h3 className="text-white font-black text-4xl lg:text-6xl tracking-tighter leading-none max-w-3xl">
                       {c.title}
                     </h3>
                   </div>

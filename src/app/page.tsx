@@ -57,32 +57,28 @@ export default function HomePage() {
       <main id="main-content" className="bg-black">
         <HeroSection />
 
-        {/* INTRO */}
+        {/* EL NOMBRE */}
         <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <p className="text-black/30 text-xs tracking-widest uppercase mb-6">On the Spot</p>
+                <p className="text-black/30 text-xs tracking-widest uppercase mb-6">El nombre</p>
                 <h2
                   id="intro-heading"
                   className="text-4xl lg:text-5xl font-black tracking-tighter text-black leading-tight"
                 >
-                  Somos una agencia de comunicación integral que combina estrategia y creatividad.
+                  &ldquo;Johnny on the Spot&rdquo;
                 </h2>
+                <p className="text-black/40 text-sm italic mt-3">/noun/ DATED: INFORMAL</p>
+                <p className="text-black/60 text-lg mt-2">A person who is at hand whenever needed.</p>
               </div>
               <div>
-                <p className="text-black/50 text-lg leading-relaxed">
-                  Para que tu marca esté siempre en el lugar y el momento exactos. Desde eventos impactantes hasta campañas de publicidad, marketing y relaciones públicas, desarrollamos conceptos y diseñamos experiencias que conectan y dejan huella.
+                <p className="text-black/60 text-lg leading-relaxed">
+                  Elegimos ese nombre porque describe exactamente lo que somos: alguien que está convenientemente en el lugar correcto en el momento oportuno. Con una Idea, una Estrategia, una Acción.
                 </p>
-                <p className="text-black/50 text-lg leading-relaxed mt-4">
-                  El éxito de un mensaje no depende solo de lo que dices, sino de cuándo, dónde y cómo lo comunicas.
+                <p className="text-black/60 text-lg leading-relaxed mt-4">
+                  Estar siempre disponibles no es un método de trabajo. Es nuestra forma de ser. El cliente que nos llama con un problema real sabe que tendrá respuesta ese mismo día y solución en el menor tiempo posible.
                 </p>
-                <Link
-                  href="/nosotros"
-                  className="mt-8 inline-block text-sm text-black/50 hover:text-black border-b border-black/20 hover:border-black transition-colors pb-0.5"
-                >
-                  Conoce el equipo →
-                </Link>
               </div>
             </div>
           </div>

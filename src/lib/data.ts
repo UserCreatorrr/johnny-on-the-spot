@@ -139,6 +139,7 @@ export const CASES = [
     services: ["Eventos", "Activación", "Tecnología"],
     sector: "Farmacéutico",
     results: "8 ciudades, 1 app de realidad aumentada, +2.000 profesionales impactados",
+    videoUrl: "/videos/alcon-air-optix.mp4",
   },
   {
     slug: "sap-partner-summit",
@@ -148,6 +149,7 @@ export const CASES = [
     services: ["Eventos", "Producción", "Contenido"],
     sector: "Tecnología",
     results: "250 participantes internacionales, producción AV integral, 98% satisfacción",
+    videoUrl: "/videos/sap-partner-summit.mp4",
   },
   {
     slug: "coca-cola-grandvalira",
@@ -157,6 +159,7 @@ export const CASES = [
     services: ["Street Marketing", "Activación", "Logística"],
     sector: "Gran Consumo",
     results: "Andorra + Madrid + Medellín, 3 mercados simultáneos",
+    videoUrl: "/videos/coca-cola-grandvalira.mp4",
   },
   {
     slug: "puig-brand-ambassadors",
@@ -166,6 +169,7 @@ export const CASES = [
     services: ["Eventos", "Producción", "Formación"],
     sector: "Lujo",
     results: "208 asistentes, producción integral, activación de fragancias en directo",
+    videoUrl: "/videos/puig-brand-ambassadors.mp4",
   },
   {
     slug: "novartis-certican-360",

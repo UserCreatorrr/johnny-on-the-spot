@@ -85,60 +85,68 @@ export default function HomePage() {
         </section>
 
         {/* CASOS DE ÉXITO */}
-        <section data-nav-theme="dark" className="py-20 lg:py-28 px-6 lg:px-8 border-t border-white/5" aria-labelledby="cases-heading">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="text-white/30 text-xs tracking-widest uppercase mb-3">Casos de éxito</p>
-                <h2
-                  id="cases-heading"
-                  className="text-4xl lg:text-5xl font-black tracking-tighter text-white"
-                >
-                  Proyectos reales.
-                  <br />
-                  Resultados reales.
-                </h2>
-              </div>
-              <Link
-                href="/casos-de-exito"
-                className="hidden lg:block text-sm text-white/40 hover:text-white border-b border-white/10 hover:border-white/40 transition-colors pb-0.5"
+        <section data-nav-theme="dark" className="border-t border-white/5" aria-labelledby="cases-heading">
+          {/* Header */}
+          <div className="px-6 lg:px-8 pt-20 lg:pt-28 pb-10 max-w-7xl mx-auto flex items-end justify-between">
+            <div>
+              <p className="text-white/30 text-xs tracking-widest uppercase mb-3">Casos de éxito</p>
+              <h2
+                id="cases-heading"
+                className="text-4xl lg:text-5xl font-black tracking-tighter text-white"
               >
-                Ver todos →
-              </Link>
+                Proyectos reales.
+                <br />
+                Resultados reales.
+              </h2>
             </div>
+            <Link
+              href="/casos-de-exito"
+              className="hidden lg:block text-sm text-white/40 hover:text-white border-b border-white/10 hover:border-white/40 transition-colors pb-0.5"
+            >
+              Ver todos →
+            </Link>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 border border-white/5">
-              {featuredCases.map((c) => (
+          {/* Video cards grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            {featuredCases.map((c) => {
+              const videoUrl = (c as typeof c & { videoUrl?: string }).videoUrl;
+              return (
                 <Link
                   key={c.slug}
                   href={`/casos/${c.slug}`}
-                  className="bg-black p-10 group hover:bg-white/[0.03] transition-colors flex flex-col justify-between border-b border-r border-white/5"
-                  style={{ minHeight: "360px" }}
+                  className="relative overflow-hidden group block"
+                  style={{ minHeight: "60vh" }}
+                  aria-label={`${c.client}: ${c.title}`}
                 >
-                  <div>
-                    <p className="text-white/25 text-xs tracking-widest uppercase mb-6">
+                  {/* Video background */}
+                  {videoUrl && (
+                    <video
+                      src={videoUrl}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                      aria-hidden="true"
+                    />
+                  )}
+
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-colors duration-500" />
+
+                  {/* Text */}
+                  <div className="relative z-10 flex flex-col justify-end p-8 lg:p-12" style={{ minHeight: "60vh" }}>
+                    <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
                       {c.client}
                     </p>
-                    <h3 className="text-white font-black text-xl lg:text-2xl tracking-tight leading-snug mb-4 group-hover:text-white/90 transition-colors">
+                    <h3 className="text-white font-black text-2xl lg:text-3xl tracking-tight leading-snug">
                       {c.title}
                     </h3>
-                    <p className="text-white/40 text-sm leading-relaxed mb-6">
-                      {c.description}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {c.services.map((s) => (
-                      <span
-                        key={s}
-                        className="text-white/25 text-xs border border-white/10 px-3 py-1"
-                      >
-                        {s}
-                      </span>
-                    ))}
                   </div>
                 </Link>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </section>
 

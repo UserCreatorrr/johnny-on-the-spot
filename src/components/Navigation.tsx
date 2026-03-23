@@ -28,11 +28,13 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
-
-      // On home: logo hidden until hero animation completes; elsewhere: always visible
-      setLogoVisible(!isHome || scrollY > vh * 0.3);
+      // On home: logo hidden until hero section has scrolled past the nav bar
+      if (isHome) {
+        const hero = document.getElementById("hero-section");
+        setLogoVisible(hero ? hero.getBoundingClientRect().bottom <= NAV_H : true);
+      } else {
+        setLogoVisible(true);
+      }
 
       // Detect which section sits behind the nav bar
       const sections = document.querySelectorAll("[data-nav-theme]");

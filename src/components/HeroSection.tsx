@@ -32,6 +32,7 @@ export default function HeroSection() {
     // The sticky inner container stays pinned until the user has scrolled the full animation
     <section
       ref={sectionRef}
+      id="hero-section"
       data-nav-theme="dark"
       className="relative"
       style={{ height: "200vh" }}

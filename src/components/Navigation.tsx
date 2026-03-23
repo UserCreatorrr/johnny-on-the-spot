@@ -60,41 +60,7 @@ export default function Navigation() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8" role="banner">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo — hidden until hero is gone */}
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            className={`relative z-[60] transition-opacity duration-500 ${
-              logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-            aria-label="Johnny on the Spot: Inicio"
-            tabIndex={logoVisible ? 0 : -1}
-          >
-            {/* White logo for dark sections */}
-            <Image
-              src="/logo-hero.png"
-              alt="Johnny on the Spot"
-              width={160}
-              height={48}
-              className={`h-12 w-auto object-contain absolute top-0 left-0 transition-opacity duration-300 ${
-                isDark ? "opacity-100" : "opacity-0"
-              }`}
-              priority
-            />
-            {/* Black logo for light sections */}
-            <Image
-              src="/logo-hero-negro.png"
-              alt="Johnny on the Spot"
-              width={160}
-              height={48}
-              className={`h-12 w-auto object-contain transition-opacity duration-300 ${
-                isDark ? "opacity-0" : "opacity-100"
-              }`}
-              priority
-            />
-          </Link>
-
-          {/* Hamburger — always visible, color adapts */}
+          {/* Hamburger — left, always visible, color adapts */}
           <button
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -112,6 +78,40 @@ export default function Navigation() {
               }`}
             />
           </button>
+
+          {/* Logo — right, hidden on home until hero animation completes */}
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className={`relative z-[60] transition-opacity duration-500 ${
+              logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+            aria-label="Johnny on the Spot: Inicio"
+            tabIndex={logoVisible ? 0 : -1}
+          >
+            {/* White logo for dark sections */}
+            <Image
+              src="/nav-logo-white.png"
+              alt="Johnny on the Spot"
+              width={160}
+              height={48}
+              className={`h-12 w-auto object-contain absolute top-0 right-0 transition-opacity duration-300 ${
+                isDark ? "opacity-100" : "opacity-0"
+              }`}
+              priority
+            />
+            {/* Black logo for light sections */}
+            <Image
+              src="/nav-logo-black.png"
+              alt="Johnny on the Spot"
+              width={160}
+              height={48}
+              className={`h-12 w-auto object-contain transition-opacity duration-300 ${
+                isDark ? "opacity-0" : "opacity-100"
+              }`}
+              priority
+            />
+          </Link>
         </div>
       </header>
 

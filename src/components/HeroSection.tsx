@@ -60,16 +60,6 @@ export default function HeroSection() {
               className="w-auto max-w-xs sm:max-w-md lg:max-w-2xl xl:max-w-3xl object-contain mb-10 lg:mb-14"
               priority
             />
-            <TypingAnimation
-              as="h1"
-              id="hero-heading"
-              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black tracking-tighter leading-none text-white"
-              startOnView={false}
-              duration={60}
-              showCursor={true}
-            >
-              A mano cuando se necesita.
-            </TypingAnimation>
           </div>
 
           {/* Credential strip — inside blend div so it also inverts */}

@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
 import ServicesScrollSection from "@/components/ServicesScrollSection";
+import CasesVideoSection from "@/components/CasesVideoSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
@@ -107,46 +108,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Fullscreen video cards — stacked, one per viewport */}
-          <div>
-            {featuredCases.map((c) => {
-              const videoUrl = (c as typeof c & { videoUrl?: string }).videoUrl;
-              return (
-                <Link
-                  key={c.slug}
-                  href={`/casos/${c.slug}`}
-                  className="relative overflow-hidden group block h-screen"
-                  aria-label={`${c.client}: ${c.title}`}
-                >
-                  {/* Video background */}
-                  {videoUrl && (
-                    <video
-                      src={videoUrl}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                      aria-hidden="true"
-                    />
-                  )}
-
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition-colors duration-500" />
-
-                  {/* Text — bottom left */}
-                  <div className="absolute inset-0 z-10 flex flex-col justify-end p-10 lg:p-16">
-                    <p className="text-white/60 text-xs tracking-widest uppercase mb-4">
-                      {c.client}
-                    </p>
-                    <h3 className="text-white font-black text-4xl lg:text-6xl tracking-tighter leading-none max-w-3xl">
-                      {c.title}
-                    </h3>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <CasesVideoSection cases={featuredCases} />
         </section>
 
         {/* SCROLLYTELLING: SERVICIOS */}

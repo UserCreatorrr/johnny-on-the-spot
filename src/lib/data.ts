@@ -132,6 +132,16 @@ export const SECTORS = [
 
 export const CASES = [
   {
+    slug: "novartis-transplant-tomorrow",
+    client: "Novartis",
+    title: "Transplant Tomorrow: Mañana Empieza Hoy",
+    description: "Concepto creativo, campaña gráfica, eventos y vídeo para el programa Transplant Tomorrow de Novartis.",
+    services: ["Concepto Creativo", "Campaña Gráfica", "Eventos", "Vídeo"],
+    sector: "Farmacéutico",
+    results: "Concepto integral, campaña gráfica, producción de eventos y vídeo corporativo",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/novartis.mp4",
+  },
+  {
     slug: "alcon-air-optix-paneuropeo",
     client: "Alcon",
     title: "Roadshow paneuropeo Air Optix en 8 países",
@@ -233,16 +243,6 @@ export const CASES = [
     services: ["Dirección Creativa", "Campaña Gráfica", "Producción Visual"],
     sector: "Farmacéutico",
     results: "Campaña de divulgación, dirección creativa integral, materiales visuales y foto",
-  },
-  {
-    slug: "novartis-transplant-tomorrow",
-    client: "Novartis",
-    title: "Transplant Tomorrow: Mañana Empieza Hoy",
-    description: "Concepto creativo, campaña gráfica, eventos y vídeo para el programa Transplant Tomorrow de Novartis.",
-    services: ["Concepto Creativo", "Campaña Gráfica", "Eventos", "Vídeo"],
-    sector: "Farmacéutico",
-    results: "Concepto integral, campaña gráfica, producción de eventos y vídeo corporativo",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/novartis.mp4",
   },
   {
     slug: "ergobaby-orbit-packaging",

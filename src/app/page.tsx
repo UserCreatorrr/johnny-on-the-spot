@@ -70,8 +70,12 @@ export default function HomePage() {
                 >
                   &ldquo;Johnny on the Spot&rdquo;
                 </h2>
-                <p className="text-black/40 text-sm italic mt-3">/noun/ DATED: INFORMAL</p>
-                <p className="text-black/60 text-lg mt-2">A person who is at hand whenever needed.</p>
+                <p className="text-black/50 text-base leading-relaxed mt-4">
+                  término coloquial que se refiere a alguien que está convenientemente en el lugar correcto en el momento oportuno.
+                </p>
+                <p className="text-black font-bold text-lg mt-6 tracking-tight">
+                  Con una Idea, una Estrategia, una Acción.
+                </p>
               </div>
               <div>
                 <p className="text-black/60 text-lg leading-relaxed">

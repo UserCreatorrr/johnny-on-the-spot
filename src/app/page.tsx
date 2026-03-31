@@ -61,8 +61,7 @@ export default function HomePage() {
         {/* EL NOMBRE */}
         <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
+            <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                 <p className="text-black/30 text-xs tracking-widest uppercase mb-6">El nombre</p>
                 <h2
                   id="intro-heading"
@@ -76,15 +75,6 @@ export default function HomePage() {
                 <p className="text-black font-bold text-lg mt-6 tracking-tight">
                   Con una Idea, una Estrategia, una Acción.
                 </p>
-              </div>
-              <div>
-                <p className="text-black/60 text-lg leading-relaxed">
-                  Elegimos ese nombre porque describe exactamente lo que somos: alguien que está convenientemente en el lugar correcto en el momento oportuno. Con una Idea, una Estrategia, una Acción.
-                </p>
-                <p className="text-black/60 text-lg leading-relaxed mt-4">
-                  Estar siempre disponibles no es un método de trabajo. Es nuestra forma de ser. El cliente que nos llama con un problema real sabe que tendrá respuesta ese mismo día y solución en el menor tiempo posible.
-                </p>
-              </div>
             </div>
           </div>
         </section>

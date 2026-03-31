@@ -1,4 +1,4 @@
-﻿export const SERVICES = [
+export const SERVICES = [
   {
     slug: "direccion-produccion-creativa",
     title: "Dirección y Producción Creativa",
@@ -132,6 +132,36 @@ export const SECTORS = [
 
 export const CASES = [
   {
+    slug: "sd-distribuciones-sand-games",
+    client: "SD Distribuciones",
+    title: "The Sand Games",
+    description: "Conceptualización y producción de la convención de clientes en Marruecos para SD Distribuciones.",
+    services: ["Concepto Creativo", "Desarrollo Gráfico", "Eventos", "Logística", "Site Dedicado"],
+    sector: "Gran Consumo",
+    results: "Concepto creativo y desarrollo gráfico, site dedicado, staff, localizaciones y logística de viajes",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/sandgames.mp4",
+  },
+  {
+    slug: "alcon-hydra-glide",
+    client: "Alcon",
+    title: "Evento Hydra Glide: Alcon",
+    description: "Conceptualización y producción del evento de lanzamiento Hydra Glide de Alcon.",
+    services: ["Eventos", "Producción Creativa", "Contenido"],
+    sector: "Farmacéutico",
+    results: "Producción integral del evento de lanzamiento Hydra Glide",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/airoptix.mp4",
+  },
+  {
+    slug: "cocacola-kfc-together",
+    client: "Coca-Cola x KFC",
+    title: "Together: Coca-Cola x KFC",
+    description: "Campaña conjunta de activación de marca entre Coca-Cola y KFC.",
+    services: ["Concepto Creativo", "Activación", "Producción"],
+    sector: "Gran Consumo",
+    results: "Campaña de activación conjunta Coca-Cola x KFC",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/cocacola.mp4",
+  },
+  {
     slug: "novartis-transplant-tomorrow",
     client: "Novartis",
     title: "Transplant Tomorrow: Mañana Empieza Hoy",
@@ -142,16 +172,6 @@ export const CASES = [
     videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/novartis.mp4",
   },
   {
-    slug: "alcon-air-optix-paneuropeo",
-    client: "Alcon",
-    title: "Roadshow paneuropeo Air Optix en 8 países",
-    description: "Lanzamiento paneuropeo con app de realidad aumentada y gira por 8 ciudades.",
-    services: ["Eventos", "Activación", "Tecnología"],
-    sector: "Farmacéutico",
-    results: "8 ciudades, 1 app de realidad aumentada, +2.000 profesionales impactados",
-    videoUrl: "/videos/alcon-air-optix.mp4",
-  },
-  {
     slug: "sap-partner-summit",
     client: "SAP",
     title: "SAP Partner Summit para 250 participantes",
@@ -159,7 +179,15 @@ export const CASES = [
     services: ["Eventos", "Producción", "Contenido"],
     sector: "Tecnología",
     results: "250 participantes internacionales, producción AV integral, 98% satisfacción",
-    videoUrl: "/videos/sap-partner-summit.mp4",
+  },
+  {
+    slug: "alcon-air-optix-paneuropeo",
+    client: "Alcon",
+    title: "Roadshow paneuropeo Air Optix en 8 países",
+    description: "Lanzamiento paneuropeo con app de realidad aumentada y gira por 8 ciudades.",
+    services: ["Eventos", "Activación", "Tecnología"],
+    sector: "Farmacéutico",
+    results: "8 ciudades, 1 app de realidad aumentada, +2.000 profesionales impactados",
   },
   {
     slug: "coca-cola-grandvalira",
@@ -169,7 +197,6 @@ export const CASES = [
     services: ["Street Marketing", "Activación", "Logística"],
     sector: "Gran Consumo",
     results: "Andorra + Madrid + Medellín, 3 mercados simultáneos",
-    videoUrl: "/videos/coca-cola-grandvalira.mp4",
   },
   {
     slug: "puig-brand-ambassadors",
@@ -179,7 +206,6 @@ export const CASES = [
     services: ["Eventos", "Producción", "Formación"],
     sector: "Lujo",
     results: "208 asistentes, producción integral, activación de fragancias en directo",
-    videoUrl: "/videos/puig-brand-ambassadors.mp4",
   },
   {
     slug: "novartis-certican-360",

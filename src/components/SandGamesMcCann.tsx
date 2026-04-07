@@ -1,79 +1,75 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function SandGamesMcCann() {
-  const modalRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
+  const sectionRef   = useRef<HTMLDivElement>(null);
+  const videoRef     = useRef<HTMLVideoElement>(null);
+  const overlayRef   = useRef<HTMLDivElement>(null);
+  const hintRef      = useRef<HTMLDivElement>(null);
+  const contentRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const modal = modalRef.current;
-    const video = videoRef.current;
-    const overlay = overlayRef.current;
-    if (!modal || !video || !overlay) return;
+    const section  = sectionRef.current;
+    const video    = videoRef.current;
+    const overlay  = overlayRef.current;
+    const hint     = hintRef.current;
+    const content  = contentRef.current;
+    if (!section || !video || !overlay || !hint || !content) return;
 
-    const handleScroll = () => {
-      const scrollY = modal.scrollTop;
-      const maxScroll = 500;
-      const progress = Math.min(scrollY / maxScroll, 1);
+    const onScroll = () => {
+      const top      = section.getBoundingClientRect().top + window.scrollY;
+      const scrolled = Math.max(0, window.scrollY - top);
+      const p        = Math.min(scrolled / 520, 1); // progress 0 → 1
 
-      // Blur: 0px → 22px
-      const blur = progress * 22;
-      // Scale: 1 → 1.08 (leve zoom al blurear)
-      const scale = 1 + progress * 0.08;
-      // Overlay oscurece progresivamente
-      const darkness = 0.35 + progress * 0.45;
+      // Video: scale from contained (0.80) to fullscreen (1.0) + blur
+      video.style.transform = `scale(${0.80 + p * 0.20})`;
+      video.style.filter    = `blur(${p * 18}px)`;
 
-      video.style.filter = `blur(${blur}px)`;
-      video.style.transform = `scale(${scale})`;
-      overlay.style.backgroundColor = `rgba(0,0,0,${darkness})`;
+      // Overlay darkens behind the text
+      overlay.style.backgroundColor = `rgba(0,0,0,${0.15 + p * 0.60})`;
+
+      // "SCROLL TO EXPLORE" fades out
+      hint.style.opacity = String(Math.max(0, 1 - p * 4));
+
+      // Content fades + slides in (starts at 30% progress)
+      const cp = Math.max(0, (p - 0.30) / 0.70);
+      content.style.opacity   = String(cp);
+      content.style.transform = `translateY(${(1 - cp) * 28}px)`;
     };
 
-    modal.addEventListener('scroll', handleScroll, { passive: true });
-    return () => modal.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <div
-      ref={modalRef}
-      className="sand-games-mccann"
-      style={{
-        position: 'relative',
-        width: '100%',
-        overflowY: 'auto',
-        overflowX: 'hidden',
+    /* Outer section — gives the page enough height for the scroll animation */
+    <div ref={sectionRef} style={{ position: 'relative', height: '210vh', background: '#000' }}>
+
+      {/* ── Sticky frame: stays at top while you scroll through the outer section ── */}
+      <div style={{
+        position: 'sticky',
+        top: 0,
+        height: '100vh',
+        overflow: 'hidden',
         background: '#000',
-      }}
-    >
-      {/* ─── VIDEO STICKY (se queda fijo mientras scrolleas) ─── */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          width: '100%',
-          height: '100vh',
-          overflow: 'hidden',
-          zIndex: 1,
-        }}
-      >
+      }}>
+
+        {/* ── VIDEO: starts at 80% scale (black bars visible), grows to 100% ── */}
         <video
           ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
+          autoPlay muted loop playsInline
           style={{
             position: 'absolute',
             inset: 0,
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center',
-            willChange: 'filter, transform',
-            transition: 'filter 0.05s linear, transform 0.05s linear',
+            transform: 'scale(0.80)',
             transformOrigin: 'center center',
+            willChange: 'transform, filter',
           }}
         >
           <source
@@ -82,168 +78,129 @@ export default function SandGamesMcCann() {
           />
         </video>
 
-        {/* Overlay de oscuridad */}
+        {/* ── Overlay (darkens on scroll) ── */}
         <div
           ref={overlayRef}
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundColor: 'rgba(0,0,0,0.35)',
-            transition: 'background-color 0.05s linear',
+            backgroundColor: 'rgba(0,0,0,0.15)',
             zIndex: 2,
+            pointerEvents: 'none',
           }}
         />
 
-        {/* Label inicial sobre el vídeo */}
+        {/* ── BACK — top center ── */}
+        <div style={{
+          position: 'absolute',
+          top: 0, left: 0, right: 0,
+          zIndex: 20,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '72px',
+        }}>
+          <Link
+            href="/casos-de-exito"
+            style={{
+              color: '#fff',
+              fontWeight: 900,
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+            }}
+          >
+            ← Volver
+          </Link>
+        </div>
+
+        {/* ── SCROLL TO EXPLORE — bottom center ── */}
         <div
+          ref={hintRef}
           style={{
             position: 'absolute',
-            bottom: '2.5rem',
-            left: '2.5rem',
-            zIndex: 3,
+            bottom: 0, left: 0, right: 0,
+            zIndex: 20,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '72px',
+          }}
+        >
+          <p style={{
+            color: '#fff',
+            fontWeight: 900,
+            fontSize: '0.72rem',
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            margin: 0,
+          }}>
+            Scroll to Explore
+          </p>
+        </div>
+
+        {/* ── CONTENT OVERLAY (fades in on scroll) ── */}
+        <div
+          ref={contentRef}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            padding: '5rem 3.5rem 5rem',
+            opacity: 0,
+            transform: 'translateY(28px)',
             pointerEvents: 'none',
           }}
         >
-          <p
-            style={{
-              color: 'rgba(255,255,255,0.5)',
-              fontSize: '0.7rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              marginBottom: '0.5rem',
-              fontWeight: 700,
-            }}
-          >
+          {/* Client label */}
+          <p style={{
+            color: 'rgba(255,255,255,0.55)',
+            fontSize: '0.68rem',
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            marginBottom: '0.6rem',
+            margin: '0 0 0.6rem',
+          }}>
             SD Distribuciones
           </p>
-          <p
-            style={{
-              color: 'rgba(255,255,255,0.85)',
-              fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
-              fontWeight: 900,
-              letterSpacing: '-0.03em',
-              lineHeight: 0.9,
-              textTransform: 'uppercase',
-            }}
-          >
-            The Sand
-            <br />
-            Games
-          </p>
-        </div>
 
-        {/* Hint de scroll */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '2.5rem',
-            right: '2.5rem',
-            zIndex: 3,
-            pointerEvents: 'none',
-          }}
-        >
-          <p
-            style={{
-              color: 'rgba(255,255,255,0.35)',
-              fontSize: '0.65rem',
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
-              fontWeight: 600,
-              writingMode: 'vertical-rl',
-            }}
-          >
-            Scroll para explorar
-          </p>
-        </div>
-      </div>
+          {/* Big title */}
+          <h2 style={{
+            color: '#fff',
+            fontSize: 'clamp(2.8rem, 7vw, 6.5rem)',
+            fontWeight: 900,
+            letterSpacing: '-0.03em',
+            lineHeight: 0.88,
+            textTransform: 'uppercase',
+            margin: '0 0 2.5rem',
+          }}>
+            The Sand<br />Games
+          </h2>
 
-      {/* ─── CONTENIDO QUE SE REVELA AL HACER SCROLL ─── */}
-      {/*
-        El margin-top negativo hace que este bloque empiece DETRÁS del vídeo sticky.
-        Al scrollear, el contenido sube y se superpone, mientras el vídeo se desenfoca.
-      */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 10,
-          marginTop: '-100vh',
-          paddingTop: '110vh',         /* espacio vacío inicial (el vídeo ocupa esto) */
-          paddingBottom: '5rem',
-          background: 'transparent',
-        }}
-      >
-        {/* Panel de contenido */}
-        <div
-          style={{
-            background: 'rgba(0,0,0,0.88)',
-            backdropFilter: 'blur(2px)',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            padding: '4rem 2.5rem 5rem',
-            maxWidth: '100%',
-          }}
-        >
-          {/* Encabezado */}
-          <div style={{ marginBottom: '3.5rem' }}>
-            <p
-              style={{
+          {/* Two-column services grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '2.5rem',
+            borderTop: '1px solid rgba(255,255,255,0.12)',
+            paddingTop: '1.8rem',
+          }}>
+
+            {/* Column 1 */}
+            <div>
+              <p style={{
                 color: 'rgba(255,255,255,0.3)',
-                fontSize: '0.65rem',
-                letterSpacing: '0.25em',
+                fontSize: '0.58rem',
+                letterSpacing: '0.22em',
                 textTransform: 'uppercase',
                 fontWeight: 700,
-                marginBottom: '1rem',
-              }}
-            >
-              SD Distribuciones — Marruecos · 200 personas
-            </p>
-            <h2
-              style={{
-                color: '#fff',
-                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.03em',
-                lineHeight: 0.95,
-                textTransform: 'uppercase',
-                marginBottom: '1.5rem',
-              }}
-            >
-              The Sand Games
-            </h2>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.45)',
-                fontSize: '1rem',
-                lineHeight: 1.7,
-                maxWidth: '560px',
-              }}
-            >
-              Convención de clientes en Marruecos para 200 asistentes.
-              Producción integral desde el concepto hasta la logística de viaje.
-            </p>
-          </div>
-
-          {/* Grid de dos columnas ─ Servicios */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '3rem',
-              borderTop: '1px solid rgba(255,255,255,0.07)',
-              paddingTop: '3rem',
-            }}
-          >
-            {/* COLUMNA 1: Qué hicimos */}
-            <div>
-              <p
-                style={{
-                  color: 'rgba(255,255,255,0.25)',
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.25em',
-                  textTransform: 'uppercase',
-                  fontWeight: 700,
-                  marginBottom: '1.5rem',
-                }}
-              >
+                margin: '0 0 0.9rem',
+              }}>
                 Producción integral
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -260,50 +217,30 @@ export default function SandGamesMcCann() {
                   'Staff & F&B',
                   'Logística & Viajes',
                 ].map((item) => (
-                  <li
-                    key={item}
-                    style={{
-                      color: 'rgba(255,255,255,0.6)',
-                      fontSize: '0.9rem',
-                      lineHeight: 1,
-                      paddingTop: '0.75rem',
-                      paddingBottom: '0.75rem',
-                      borderBottom: '1px solid rgba(255,255,255,0.05)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '50%',
-                        background: 'rgba(255,255,255,0.3)',
-                        flexShrink: 0,
-                      }}
-                    />
+                  <li key={item} style={{
+                    color: 'rgba(255,255,255,0.72)',
+                    fontSize: '0.8rem',
+                    lineHeight: '1.7',
+                  }}>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* COLUMNA 2: Comunicación y servicios */}
+            {/* Column 2 */}
             <div>
-              <p
-                style={{
-                  color: 'rgba(255,255,255,0.25)',
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.25em',
-                  textTransform: 'uppercase',
-                  fontWeight: 700,
-                  marginBottom: '1.5rem',
-                }}
-              >
+              <p style={{
+                color: 'rgba(255,255,255,0.3)',
+                fontSize: '0.58rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                fontWeight: 700,
+                margin: '0 0 0.9rem',
+              }}>
                 Comunicación
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.8rem' }}>
                 {[
                   'Dirección Creativa',
                   'Eventos',
@@ -311,101 +248,43 @@ export default function SandGamesMcCann() {
                   'Marketing Digital',
                   'Foto & Video',
                 ].map((item) => (
-                  <li
-                    key={item}
-                    style={{
-                      color: 'rgba(255,255,255,0.6)',
-                      fontSize: '0.9rem',
-                      lineHeight: 1,
-                      paddingTop: '0.75rem',
-                      paddingBottom: '0.75rem',
-                      borderBottom: '1px solid rgba(255,255,255,0.05)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '50%',
-                        background: 'rgba(255,255,255,0.3)',
-                        flexShrink: 0,
-                      }}
-                    />
+                  <li key={item} style={{
+                    color: 'rgba(255,255,255,0.72)',
+                    fontSize: '0.8rem',
+                    lineHeight: '1.7',
+                  }}>
                     {item}
                   </li>
                 ))}
               </ul>
 
-              {/* Material */}
-              <div style={{ marginTop: '2.5rem' }}>
-                <p
-                  style={{
-                    color: 'rgba(255,255,255,0.25)',
-                    fontSize: '0.6rem',
-                    letterSpacing: '0.25em',
+              <p style={{
+                color: 'rgba(255,255,255,0.3)',
+                fontSize: '0.58rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                fontWeight: 700,
+                margin: '0 0 0.7rem',
+              }}>
+                Material
+              </p>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {['Gráfica', 'Fotos', 'Video'].map((tag) => (
+                  <span key={tag} style={{
+                    border: '1px solid rgba(255,255,255,0.22)',
+                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: '0.64rem',
+                    letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    fontWeight: 700,
-                    marginBottom: '1rem',
-                  }}
-                >
-                  Material
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem',
-                  }}
-                >
-                  {['Gráfica', 'Fotos', 'Video'].map((tag) => (
-                    <span
-                      key={tag}
-                      style={{
-                        border: '1px solid rgba(255,255,255,0.15)',
-                        color: 'rgba(255,255,255,0.45)',
-                        fontSize: '0.7rem',
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        padding: '0.4rem 0.85rem',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                    padding: '0.3rem 0.75rem',
+                    fontWeight: 600,
+                  }}>
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
 
-          {/* CTA */}
-          <div
-            style={{
-              marginTop: '3.5rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(255,255,255,0.07)',
-            }}
-          >
-            <Link
-              href="/contacto"
-              style={{
-                display: 'inline-block',
-                background: '#fff',
-                color: '#000',
-                fontWeight: 700,
-                fontSize: '0.8rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                padding: '1rem 2rem',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-            >
-              Hablemos de tu proyecto
-            </Link>
           </div>
         </div>
       </div>

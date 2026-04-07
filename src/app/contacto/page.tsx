@@ -116,9 +116,15 @@ export default function ContactoPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
             {/* Left — foto de fondo + texto encima, edge-to-edge */}
-            <div className="relative min-h-[600px] overflow-hidden">
-              <Image src="/phone.png" alt="Call Johnny" fill className="object-cover object-center" priority />
-              <div className="relative z-10 p-10 pt-12">
+            <div
+              style={{
+                backgroundImage: "url(/phone.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "top center",
+                minHeight: "100vh",
+              }}
+            >
+              <div className="pt-20 px-10 max-w-lg">
                 <p className="text-black/50 text-xs tracking-widest uppercase mb-6">Contacto</p>
                 <TypingAnimation
                   as="h1"
@@ -130,7 +136,7 @@ export default function ContactoPage() {
                 >
                   Call Johnny.
                 </TypingAnimation>
-                <p className="text-black/70 text-lg leading-relaxed max-w-sm">
+                <p className="text-black/70 text-lg leading-relaxed">
                   Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
                 </p>
               </div>

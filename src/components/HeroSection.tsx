@@ -33,8 +33,7 @@ export default function HeroSection() {
       style={{ height: "200vh" }}
       aria-labelledby="hero-heading"
     >
-      {/* Sticky container — leaves 72px at bottom so video peeks through */}
-      <div className="sticky top-0 overflow-hidden bg-black" style={{ height: "calc(100vh - 72px)" }}>
+      <div className="sticky top-0 h-screen overflow-hidden bg-black">
         {/* White panel slides in from right */}
         <div
           className="absolute inset-0 bg-white will-change-transform"

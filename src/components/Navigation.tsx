@@ -23,6 +23,33 @@ export default function Navigation() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
+    const detectTheme = (): "dark" | "light" => {
+      // 1. Explicit data-nav-theme attributes take priority (used on home page)
+      const sections = document.querySelectorAll("[data-nav-theme]");
+      for (const el of Array.from(sections)) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= NAV_H && rect.bottom > NAV_H) {
+          return (el.getAttribute("data-nav-theme") as "dark" | "light") ?? "dark";
+        }
+      }
+      // 2. Fallback: auto-detect background color of element under nav bar
+      const el = document.elementFromPoint(window.innerWidth / 2, NAV_H + 10);
+      let current: Element | null = el;
+      while (current) {
+        const bg = window.getComputedStyle(current).backgroundColor;
+        if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+          const match = bg.match(/\d+/g);
+          if (match) {
+            const [r, g, b] = match.map(Number);
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            return luminance > 0.5 ? "light" : "dark";
+          }
+        }
+        current = current.parentElement;
+      }
+      return "dark";
+    };
+
     const handleScroll = () => {
       // On home: logo hidden until hero section has scrolled past the nav bar
       if (isHome) {
@@ -32,16 +59,7 @@ export default function Navigation() {
         setLogoVisible(true);
       }
 
-      // Detect which section sits behind the nav bar
-      const sections = document.querySelectorAll("[data-nav-theme]");
-      let detected: "dark" | "light" = "dark";
-      sections.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= NAV_H && rect.bottom > NAV_H) {
-          detected = (el.getAttribute("data-nav-theme") as "dark" | "light") ?? "dark";
-        }
-      });
-      setTheme(detected);
+      setTheme(detectTheme());
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });

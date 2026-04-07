@@ -21,14 +21,21 @@ export default function CasosDeExitoPage() {
         </div>
       </div>
       <section className="pt-8 pb-16 lg:pb-24 px-6 lg:px-8" aria-labelledby="casos-heading">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Casos de éxito</p>
-          <h1 id="casos-heading" className="text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-8 max-w-4xl">
-            Proyectos reales.<br />Resultados reales.
+        <div className="max-w-4xl mx-auto">
+          <h1 id="casos-heading" className="text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-12">
+            On the Spot
           </h1>
-          <p className="text-white/40 text-lg lg:text-xl max-w-2xl leading-relaxed">
-            No mostramos mockups ni proyectos ficticios. Todo lo que ves aquí ha pasado por producción y ha llegado al mercado.
-          </p>
+          <div className="space-y-6 text-white/55 text-xl lg:text-2xl leading-relaxed">
+            <p>
+              Somos una agencia de comunicación integral que combina estrategia y creatividad para que tu marca esté siempre en el lugar y el momento exactos.
+            </p>
+            <p>
+              Desde eventos impactantes hasta campañas de publicidad, marketing y relaciones públicas, desarrollamos conceptos y diseñamos experiencias que conectan y dejan huella.
+            </p>
+            <p>
+              En Johnny on the Spot, sabemos que el éxito de un mensaje no depende solo de lo que dices, sino de cuándo, dónde y cómo lo comunicas.
+            </p>
+          </div>
         </div>
       </section>
       <section className="px-6 lg:px-8 pb-20">

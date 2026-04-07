@@ -7,13 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Servicios", href: "/servicios" },
-  { label: "Sectores", href: "/sectores" },
-  { label: "Casos", href: "/casos-de-exito" },
-  { label: "Soluciones", href: "/soluciones" },
-  { label: "Blog", href: "/blog" },
+  { label: "Home", href: "/" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Contacto", href: "/contacto" },
+  { label: "On the Spot", href: "/casos-de-exito" },
 ];
 
 const NAV_H = 80;

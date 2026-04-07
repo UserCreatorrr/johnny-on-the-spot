@@ -1,9 +1,10 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SandGamesMcCann from "@/components/SandGamesMcCann";
 import { CASES } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -165,6 +166,58 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
     publisher: { "@type": "Organization", name: "Johnny on the Spot" },
   };
 
+  // ─── SD Distribuciones: McCann-style fullscreen scroll experience ───
+  if (caso.slug === "sd-distribuciones-sand-games") {
+    return (
+      <PageLayout>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+
+        {/* Breadcrumbs compactos */}
+        <div className="pt-28 pb-0 px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs
+              items={[
+                { label: "Casos de Éxito", href: "/casos-de-exito" },
+                { label: caso.client },
+              ]}
+            />
+          </div>
+        </div>
+
+        {/* ─── McCann Hero ─── */}
+        <SandGamesMcCann />
+
+        {/* Más casos de éxito */}
+        <section className="py-16 lg:py-24 px-6 lg:px-8 border-t border-white/5">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-black tracking-tighter text-white mb-10">Más casos de éxito</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/5">
+              {relatedCases.map((c) => (
+                <Link key={c.slug} href={`/casos/${c.slug}`} className="bg-black p-8 group hover:bg-white/3 transition-colors">
+                  <p className="text-white/25 text-xs tracking-widest uppercase mb-3">{c.client}</p>
+                  <h3 className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-white/90">{c.title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed">{c.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <CTASection
+          title="¿Quieres resultados como estos?"
+          subtitle="Cuéntanos el proyecto. Trabajamos para que el resultado merezca estar aquí."
+          primaryCTA="Hablemos"
+          secondaryCTA="Ver todos los casos"
+          secondaryHref="/casos-de-exito"
+        />
+      </PageLayout>
+    );
+  }
+
+  // ─── Resto de casos: template estándar ───
   return (
     <PageLayout>
       <script

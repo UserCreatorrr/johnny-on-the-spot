@@ -31,9 +31,10 @@ export default function HeroSection() {
       style={{ height: "200vh" }}
       aria-labelledby="hero-heading"
     >
+      {/* 1. Sticky logo — ocupa casi todo el viewport */}
       <div
         className="sticky top-0 overflow-hidden bg-black"
-        style={{ height: "calc(100vh - 80px)" }}
+        style={{ height: "calc(100vh - 80px)", zIndex: 10 }}
       >
         <div
           className="absolute inset-0 bg-white will-change-transform"
@@ -62,6 +63,33 @@ export default function HeroSection() {
           <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
+      </div>
+
+      {/* 2. Sticky video preview — se ancla en los 80px inferiores */}
+      <div
+        style={{
+          position: "sticky",
+          top: "calc(100vh - 80px)",
+          height: "80px",
+          overflow: "hidden",
+          zIndex: 5,
+          marginTop: "-80px",
+        }}
+        aria-hidden="true"
+      >
+        <video
+          src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            width: "100%",
+            height: "100vh",
+            objectFit: "cover",
+            transform: "translateY(calc(-100vh + 80px))",
+          }}
+        />
       </div>
     </section>
   );

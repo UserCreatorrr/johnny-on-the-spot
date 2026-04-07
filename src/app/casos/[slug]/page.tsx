@@ -175,19 +175,7 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
 
-        {/* Breadcrumbs compactos */}
-        <div className="pt-28 pb-0 px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <Breadcrumbs
-              items={[
-                { label: "Casos de Éxito", href: "/casos-de-exito" },
-                { label: caso.client },
-              ]}
-            />
-          </div>
-        </div>
-
-        {/* ─── McCann Hero ─── */}
+        {/* ─── McCann Hero: starts directly, no breadcrumbs ─── */}
         <SandGamesMcCann />
 
         {/* Más casos de éxito */}

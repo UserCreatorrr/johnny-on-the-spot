@@ -27,29 +27,6 @@ export default function NosotrosPage() {
         <div className="absolute inset-0 bg-black/40" />
       </section>
 
-      {/* ON THE SPOT — texto principal */}
-      <section className="py-24 lg:py-36 px-6 lg:px-8 bg-black" aria-labelledby="onthespot-heading">
-        <div className="max-w-4xl mx-auto">
-          <h1
-            id="onthespot-heading"
-            className="text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-12"
-          >
-            On the Spot
-          </h1>
-          <div className="space-y-6 text-white/55 text-xl lg:text-2xl leading-relaxed">
-            <p>
-              Somos una agencia de comunicación integral que combina estrategia y creatividad para que tu marca esté siempre en el lugar y el momento exactos.
-            </p>
-            <p>
-              Desde eventos impactantes hasta campañas de publicidad, marketing y relaciones públicas, desarrollamos conceptos y diseñamos experiencias que conectan y dejan huella.
-            </p>
-            <p>
-              En Johnny on the Spot, sabemos que el éxito de un mensaje no depende solo de lo que dices, sino de cuándo, dónde y cómo lo comunicas.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* SOMOS — rotating text */}
       <section className="py-24 lg:py-36 px-6 lg:px-8 bg-white" aria-label="Quiénes somos">
         <div className="max-w-4xl mx-auto">

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
@@ -62,24 +63,15 @@ export default function HomePage() {
 
 
         {/* EL NOMBRE */}
-        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-                <p className="text-black/30 text-xs tracking-widest uppercase mb-6">El nombre</p>
-                <h2
-                  id="intro-heading"
-                  className="text-6xl lg:text-8xl font-black tracking-tighter text-black leading-tight"
-                >
-                  &ldquo;Johnny on the Spot&rdquo;
-                </h2>
-                <p className="text-black/50 text-base leading-relaxed mt-4">
-                  término coloquial que se refiere a alguien que está convenientemente en el lugar correcto en el momento oportuno.
-                </p>
-                <p className="text-black font-bold text-lg mt-6 tracking-tight">
-                  Con una Idea, una Estrategia, una Acción.
-                </p>
-            </div>
-          </div>
+        <section data-nav-theme="light" className="relative w-full bg-white" aria-labelledby="intro-heading" style={{ height: "100vh" }}>
+          <Image
+            id="intro-heading"
+            src="/otp.png"
+            alt="Johnny on the Spot — término coloquial"
+            fill
+            className="object-contain"
+            priority
+          />
         </section>
 
         {/* CASOS DE ÉXITO */}

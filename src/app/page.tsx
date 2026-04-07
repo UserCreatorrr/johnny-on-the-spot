@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
 import ServicesScrollSection from "@/components/ServicesScrollSection";
 import CasesVideoSection from "@/components/CasesVideoSection";
-import VideoReelSection from "@/components/VideoReelSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
@@ -59,7 +58,6 @@ export default function HomePage() {
       <main id="main-content" className="bg-black">
         <HeroSection />
 
-        <VideoReelSection />
 
         {/* EL NOMBRE */}
         <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="intro-heading">

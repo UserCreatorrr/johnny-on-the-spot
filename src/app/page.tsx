@@ -58,6 +58,7 @@ export default function HomePage() {
       <Navigation />
       <main id="main-content" className="bg-black">
         <HeroSection />
+        <VideoReelSection />
 
 
         {/* EL NOMBRE */}

@@ -101,7 +101,7 @@ export default function SandGamesMcCann() {
           height: '72px',
         }}>
           <Link
-            href="/casos-de-exito"
+            href="/"
             style={{
               color: '#fff',
               fontWeight: 900,

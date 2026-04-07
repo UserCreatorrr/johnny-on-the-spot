@@ -115,10 +115,10 @@ export default function ContactoPage() {
       <section className="bg-white pt-8 pb-20 lg:pb-28 border-t border-black/5" aria-labelledby="contacto-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+
             {/* Left — foto de fondo + texto encima */}
             <div className="relative min-h-[600px] overflow-hidden">
               <Image src="/phone.png" alt="Call Johnny" fill className="object-cover object-center" priority />
-              {/* texto sobre la zona clara superior */}
               <div className="relative z-10 p-10 pt-12">
                 <p className="text-black/50 text-xs tracking-widest uppercase mb-6">Contacto</p>
                 <TypingAnimation
@@ -137,41 +137,15 @@ export default function ContactoPage() {
               </div>
             </div>
 
-              <div className="space-y-0 divide-y divide-black/8">
-                {[
-                  { label: "Teléfono", value: "+34 610 000 000", href: "tel:+34610000000" },
-                  { label: "Email", value: "hola@johnnyonthespot.es", href: "mailto:hola@johnnyonthespot.es" },
-                  { label: "Dirección", value: "Carrer de Provença 385, Barcelona" },
-                  { label: "LinkedIn", value: "linkedin.com/company/johnnyonthespot", href: "https://www.linkedin.com/company/johnnyonthespot" },
-                  { label: "Instagram", value: "@johnnyonthespot", href: "https://www.instagram.com/johnnyonthespot" },
-                ].map((item) => (
-                  <div key={item.label} className="py-5 flex items-baseline justify-between gap-8">
-                    <span className="text-black/30 text-xs tracking-widest uppercase flex-shrink-0">{item.label}</span>
-                    {"href" in item && item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-black text-sm hover:text-black/60 transition-colors text-right"
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel="noopener noreferrer"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span className="text-black text-sm text-right">{item.value}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: iPhone */}
-            <div className="flex justify-center lg:justify-end">
+            {/* Right — iPhone */}
+            <div className="flex justify-center lg:justify-end items-center">
               <div className="w-full max-w-[300px] lg:max-w-[340px]">
                 <Iphone>
                   <PhoneScreen />
                 </Iphone>
               </div>
             </div>
+
           </div>
         </div>
       </section>

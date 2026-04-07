@@ -112,30 +112,30 @@ export default function ContactoPage() {
         </div>
       </div>
 
-      <section className="relative min-h-screen" aria-labelledby="contacto-heading">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image src="/phone.png" alt="Call Johnny" fill className="object-cover object-center" priority />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-20 lg:pb-28 min-h-screen flex items-start">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start w-full">
-            {/* Left — text on the light upper area */}
-            <div className="pt-8">
-              <p className="text-black/50 text-xs tracking-widest uppercase mb-6">Contacto</p>
-              <TypingAnimation
-                as="h1"
-                id="contacto-heading"
-                className="text-6xl lg:text-8xl font-black tracking-tighter leading-none text-black mb-8 block"
-                startOnView={false}
-                duration={80}
-                showCursor={true}
-              >
-                Call Johnny.
-              </TypingAnimation>
-              <p className="text-black/60 text-xl lg:text-2xl leading-relaxed mb-12 max-w-md">
-                Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
-              </p>
+      <section className="bg-white pt-8 pb-20 lg:pb-28 border-t border-black/5" aria-labelledby="contacto-heading">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+            {/* Left — foto de fondo + texto encima */}
+            <div className="relative min-h-[600px] overflow-hidden">
+              <Image src="/phone.png" alt="Call Johnny" fill className="object-cover object-center" priority />
+              {/* texto sobre la zona clara superior */}
+              <div className="relative z-10 p-10 pt-12">
+                <p className="text-black/50 text-xs tracking-widest uppercase mb-6">Contacto</p>
+                <TypingAnimation
+                  as="h1"
+                  id="contacto-heading"
+                  className="text-6xl lg:text-7xl font-black tracking-tighter leading-none text-black mb-8 block"
+                  startOnView={false}
+                  duration={80}
+                  showCursor={true}
+                >
+                  Call Johnny.
+                </TypingAnimation>
+                <p className="text-black/70 text-lg leading-relaxed max-w-sm">
+                  Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
+                </p>
+              </div>
+            </div>
 
               <div className="space-y-0 divide-y divide-black/8">
                 {[

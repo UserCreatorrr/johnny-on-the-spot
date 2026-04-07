@@ -113,33 +113,24 @@ export default function ContactoPage() {
       </div>
 
       <section className="bg-white pt-8 pb-20 lg:pb-28 border-t border-black/5" aria-labelledby="contacto-heading">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left — foto de fondo + texto encima, edge-to-edge */}
-            <div
-              style={{
-                backgroundImage: "url(/phone.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "top center",
-                minHeight: "100vh",
-              }}
-            >
-              <div className="pt-20 px-10 max-w-lg">
-                <p className="text-black/50 text-xs tracking-widest uppercase mb-6">Contacto</p>
-                <TypingAnimation
-                  as="h1"
-                  id="contacto-heading"
-                  className="text-6xl lg:text-7xl font-black tracking-tighter leading-none text-black mb-8 block"
-                  startOnView={false}
-                  duration={80}
-                  showCursor={true}
-                >
-                  Call Johnny.
-                </TypingAnimation>
-                <p className="text-black/70 text-lg leading-relaxed">
-                  Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
-                </p>
-              </div>
+            {/* Left — texto */}
+            <div className="flex flex-col justify-center px-6 lg:px-16 py-16">
+              <p className="text-black/30 text-xs tracking-widest uppercase mb-6">Contacto</p>
+              <TypingAnimation
+                as="h1"
+                id="contacto-heading"
+                className="text-6xl lg:text-8xl font-black tracking-tighter leading-none text-black mb-8 block"
+                startOnView={false}
+                duration={80}
+                showCursor={true}
+              >
+                Call Johnny.
+              </TypingAnimation>
+              <p className="text-black/50 text-xl lg:text-2xl leading-relaxed max-w-md">
+                Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
+              </p>
             </div>
 
             {/* Right — iPhone */}
@@ -151,6 +142,7 @@ export default function ContactoPage() {
               </div>
             </div>
 
+          </div>
         </div>
       </section>
     </PageLayout>

@@ -113,10 +113,9 @@ export default function ContactoPage() {
       </div>
 
       <section className="bg-white pt-8 pb-20 lg:pb-28 border-t border-black/5" aria-labelledby="contacto-heading">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
-            {/* Left — foto de fondo + texto encima */}
+            {/* Left — foto de fondo + texto encima, edge-to-edge */}
             <div className="relative min-h-[600px] overflow-hidden">
               <Image src="/phone.png" alt="Call Johnny" fill className="object-cover object-center" priority />
               <div className="relative z-10 p-10 pt-12">
@@ -138,7 +137,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Right — iPhone */}
-            <div className="flex justify-center lg:justify-end items-center">
+            <div className="flex justify-center lg:justify-end items-center px-6 lg:px-16">
               <div className="w-full max-w-[300px] lg:max-w-[340px]">
                 <Iphone>
                   <PhoneScreen />
@@ -146,7 +145,6 @@ export default function ContactoPage() {
               </div>
             </div>
 
-          </div>
         </div>
       </section>
     </PageLayout>

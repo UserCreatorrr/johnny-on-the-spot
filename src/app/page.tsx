@@ -65,7 +65,7 @@ export default function HomePage() {
                 <p className="text-black/30 text-xs tracking-widest uppercase mb-6">El nombre</p>
                 <h2
                   id="intro-heading"
-                  className="text-4xl lg:text-5xl font-black tracking-tighter text-black leading-tight"
+                  className="text-6xl lg:text-8xl font-black tracking-tighter text-black leading-tight"
                 >
                   &ldquo;Johnny on the Spot&rdquo;
                 </h2>

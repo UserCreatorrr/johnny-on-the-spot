@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
 import ServicesScrollSection from "@/components/ServicesScrollSection";
 import CasesVideoSection from "@/components/CasesVideoSection";
-import VideoReelSection from "@/components/VideoReelSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
@@ -58,7 +57,6 @@ export default function HomePage() {
       <Navigation />
       <main id="main-content" className="bg-black">
         <HeroSection />
-        <VideoReelSection />
 
 
         {/* EL NOMBRE */}

@@ -2,6 +2,7 @@
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import RotatingText from "@/components/RotatingText";
+import VideoHeroNosotros from "@/components/VideoHeroNosotros";
 
 export const metadata: Metadata = {
   title: "Nosotros: Agencia de Comunicación Integral | Johnny on the Spot",
@@ -15,17 +16,7 @@ export default function NosotrosPage() {
     <PageLayout>
 
       {/* VIDEO HERO — full screen */}
-      <section className="relative w-full h-screen overflow-hidden" aria-label="Agencia Johnny on the Spot">
-        <video
-          src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-      </section>
+      <VideoHeroNosotros />
 
       {/* SOMOS — rotating text */}
       <section className="py-24 lg:py-36 px-6 lg:px-8 bg-white" aria-label="Quiénes somos">

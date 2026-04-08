@@ -1,17 +1,12 @@
-﻿import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Iphone } from "@/components/ui/Iphone";
 import { TypingAnimation } from "@/components/ui/TypingAnimation";
-
-export const metadata: Metadata = {
-  title: "Contacto: Call Johnny | Johnny on the Spot",
-  description:
-    "¿Tienes un proyecto? Cuéntanoslo. Un equipo sénior leerá tu mensaje hoy. Sin formularios innecesarios, sin esperas.",
-  alternates: { canonical: "https://www.johnnyonthespot.es/contacto" },
-  robots: { index: true, follow: true },
-};
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 function PhoneScreen() {
   return (
@@ -39,12 +34,10 @@ function PhoneScreen() {
           </div>
         </div>
       </div>
-
       {/* Back nav */}
       <div className="px-5 pt-1 pb-2 flex-shrink-0">
         <span className="text-[13px] text-[#007AFF]">‹ Contactos</span>
       </div>
-
       {/* Avatar */}
       <div className="flex flex-col items-center pb-4 flex-shrink-0">
         <div className="w-20 h-20 rounded-full bg-black flex items-center justify-center mb-3 overflow-hidden">
@@ -53,7 +46,6 @@ function PhoneScreen() {
         <h2 className="text-[19px] font-bold text-black leading-tight tracking-tight">Johnny on the Spot</h2>
         <p className="text-[12px] text-black/40 mt-0.5">Agencia de comunicación</p>
       </div>
-
       {/* Action buttons */}
       <div className="grid grid-cols-4 gap-2 px-5 mb-4 flex-shrink-0">
         {[
@@ -70,7 +62,6 @@ function PhoneScreen() {
           </div>
         ))}
       </div>
-
       {/* Info list */}
       <div className="flex-1 px-4 overflow-hidden">
         <div className="bg-[#F2F2F7] rounded-xl overflow-hidden">
@@ -92,13 +83,67 @@ function PhoneScreen() {
             </div>
           ))}
         </div>
-
         <div className="mt-2.5 bg-[#F2F2F7] rounded-xl px-4 py-2.5">
           <p className="text-[10px] text-black/40 leading-relaxed">
             Respuesta garantizada en menos de 24h. Primer análisis sin coste ni compromiso.
           </p>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ContactSection() {
+  const ref      = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        x: [0, -10, 10, -10, 10, -6, 6, 0, "30vw"],
+        transition: {
+          times: [0, 0.08, 0.18, 0.28, 0.38, 0.48, 0.58, 0.68, 1],
+          duration: 1.3,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [isInView, controls]);
+
+  return (
+    <div
+      ref={ref}
+      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-white"
+    >
+      {/* Text — slides in from left after iPhone starts moving */}
+      <motion.div
+        className="absolute left-10 lg:left-24 max-w-md z-10"
+        initial={{ opacity: 0, x: -40 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+        transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
+      >
+        <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
+        <h2 className="text-5xl lg:text-7xl font-black text-black tracking-tighter leading-none mb-6">
+          Call<br />Johnny.
+        </h2>
+        <p className="text-black/50 text-lg leading-relaxed max-w-sm">
+          Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
+        </p>
+      </motion.div>
+
+      {/* iPhone — starts centered, shakes, slides right */}
+      <motion.div
+        animate={controls}
+        initial={{ x: 0 }}
+        className="relative z-20"
+      >
+        <div className="w-[280px] lg:w-[320px]">
+          <Iphone>
+            <PhoneScreen />
+          </Iphone>
+        </div>
+      </motion.div>
     </div>
   );
 }
@@ -111,40 +156,7 @@ export default function ContactoPage() {
           <Breadcrumbs items={[{ label: "Contacto" }]} />
         </div>
       </div>
-
-      <section className="bg-white pt-8 pb-20 lg:pb-28 border-t border-black/5" aria-labelledby="contacto-heading">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {/* Left — texto */}
-            <div className="flex flex-col justify-center px-6 lg:px-16 py-16">
-              <p className="text-black/30 text-xs tracking-widest uppercase mb-6">Contacto</p>
-              <TypingAnimation
-                as="h1"
-                id="contacto-heading"
-                className="text-6xl lg:text-8xl font-black tracking-tighter leading-none text-black mb-8 block"
-                startOnView={false}
-                duration={80}
-                showCursor={true}
-              >
-                Call Johnny.
-              </TypingAnimation>
-              <p className="text-black/50 text-xl lg:text-2xl leading-relaxed max-w-md">
-                Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
-              </p>
-            </div>
-
-            {/* Right — iPhone */}
-            <div className="flex justify-center lg:justify-end items-center px-6 lg:px-16">
-              <div className="w-full max-w-[300px] lg:max-w-[340px]">
-                <Iphone>
-                  <PhoneScreen />
-                </Iphone>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </PageLayout>
   );
 }

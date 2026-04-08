@@ -12,7 +12,6 @@ import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { CASES, BLOG_POSTS } from "@/lib/data";
 import FullPageSection from "@/components/FullPageSection";
-import BackgroundVideo from "@/components/BackgroundVideo";
 
 export const metadata: Metadata = {
   title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
@@ -57,9 +56,8 @@ export default function HomePage() {
 
   return (
     <>
-      <BackgroundVideo />
       <Navigation />
-      <main id="main-content" className="relative" style={{ zIndex: 2 }}>
+      <main id="main-content" className="bg-black">
         <HeroSection />
 
 
@@ -78,7 +76,7 @@ export default function HomePage() {
         </FullPageSection>
 
         {/* CASOS DE ÉXITO */}
-        <section data-nav-theme="dark" className="bg-black border-t border-white/5" aria-labelledby="cases-heading">
+        <section data-nav-theme="dark" className="border-t border-white/5" aria-labelledby="cases-heading">
           {/* Header */}
           <div className="px-6 lg:px-8 pt-20 lg:pt-28 pb-10 max-w-7xl mx-auto flex items-end justify-between">
             <div>
@@ -104,10 +102,10 @@ export default function HomePage() {
         </section>
 
         {/* SCROLLYTELLING: SERVICIOS */}
-        <div data-nav-theme="dark" className="bg-black"><HomeScrollytelling /></div>
+        <div data-nav-theme="dark"><HomeScrollytelling /></div>
 
         {/* SERVICIOS — horizontal scroll driven by vertical scroll */}
-        <div className="bg-black"><ServicesScrollSection /></div>
+        <ServicesScrollSection />
 
         {/* CIFRAS */}
         <FullPageSection scrollHeight={210} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
@@ -232,10 +230,10 @@ export default function HomePage() {
         </section>
 
         {/* FAQs */}
-        <div data-nav-theme="dark" className="bg-black"><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
+        <div data-nav-theme="dark"><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
 
         {/* CTA Final */}
-        <div data-nav-theme="dark" className="bg-black"><CTASection
+        <div data-nav-theme="dark"><CTASection
           title="¿Tienes un proyecto urgente?"
           subtitle="Perfecto. Somos Johnny on the Spot. Cuéntanoslo hoy y trabajamos mañana."
           primaryCTA="Hablemos ahora"

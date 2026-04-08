@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
   const [panelX,    setPanelX]    = useState(100);
-  const [videoRise, setVideoRise] = useState(0);
+  const [videoRise, setVideoRise] = useState(0.06);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -18,10 +18,11 @@ export default function HeroSection() {
       setPanelX((1 - p1) * 100);
 
       // Phase 2 (vh/2 → vh): video rises from the bottom to cover logo
+      // Starts at 6% visible (peek), rises to 100%
       const p2 = Math.min(1, Math.max(0, (scrollY - vh * 0.5) / (vh * 0.5)));
-      setVideoRise(p2);
+      setVideoRise(0.06 + p2 * 0.94);
 
-      // Nav theme: dark while logo visible, light during white panel, dark when video covers
+      // Nav theme
       if (sectionRef.current) {
         const isDark = p1 < 0.5 || p2 > 0.3;
         sectionRef.current.setAttribute("data-nav-theme", isDark ? "dark" : "light");
@@ -72,14 +73,14 @@ export default function HeroSection() {
         {/* Scroll hint */}
         <div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-none"
-          style={{ opacity: Math.max(0, (panelX / 100) * 0.5 - videoRise * 0.5) }}
+          style={{ opacity: Math.max(0, (panelX / 100) * 0.5 - (videoRise - 0.06) * 5) }}
           aria-hidden="true"
         >
           <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* VIDEO — rises from the bottom, covering the logo */}
+        {/* VIDEO — always shows a 6% peek at the bottom, rises to full on scroll */}
         <div
           style={{
             position: "absolute",

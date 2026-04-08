@@ -90,34 +90,29 @@ export default function SandGamesMcCann() {
           }}
         />
 
-        {/* ── BACK — fixed, above everything ── */}
-        <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0,
-          zIndex: 9999,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '72px',
-          pointerEvents: 'none',
-        }}>
-          <Link
-            href="/"
-            style={{
-              color: '#fff',
-              fontWeight: 900,
-              fontSize: '0.72rem',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              pointerEvents: 'auto',
-              cursor: 'pointer',
-              padding: '12px 24px',
-            }}
-          >
-            ← Volver
-          </Link>
-        </div>
+        {/* ── BACK — fixed top-left, same position as hamburger ── */}
+        <Link
+          href="/"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            height: '80px',
+            padding: '0 32px',
+            color: '#fff',
+            fontWeight: 900,
+            fontSize: '0.72rem',
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          ← Volver
+        </Link>
 
         {/* ── SCROLL TO EXPLORE — bottom center ── */}
         <div

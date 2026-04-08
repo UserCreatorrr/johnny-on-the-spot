@@ -7,9 +7,12 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
   const scrollRef  = useRef<HTMLDivElement>(null);
   const videoRef   = useRef<HTMLVideoElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const blurRef    = useRef<HTMLDivElement>(null);
   const hintRef    = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [zoomed, setZoomed] = useState(false);
+
+  const FONT = '"Helvetica Neue", Helvetica, Arial, sans-serif';
 
   // Entry animation: zoom out the video on mount
   useEffect(() => {
@@ -22,22 +25,27 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
   useEffect(() => {
     const scroller = scrollRef.current;
     const overlay  = overlayRef.current;
+    const blur     = blurRef.current;
     const hint     = hintRef.current;
     const content  = contentRef.current;
-    if (!scroller || !overlay || !hint || !content) return;
+    if (!scroller || !overlay || !blur || !hint || !content) return;
 
     const onScroll = () => {
       const scrolled = scroller.scrollTop;
       const p = Math.min(scrolled / 520, 1);
 
       // Overlay darkens as content appears
-      overlay.style.backgroundColor = `rgba(0,0,0,${0.15 + p * 0.60})`;
+      overlay.style.backgroundColor = `rgba(0,0,0,${0.15 + p * 0.45})`;
+
+      // Blur layer fades in (starts at 30% progress)
+      const cp = Math.max(0, (p - 0.30) / 0.70);
+      blur.style.backdropFilter = `blur(${cp * 10}px)`;
+      blur.style.webkitBackdropFilter = `blur(${cp * 10}px)`;
 
       // SCROLL TO EXPLORE fades out quickly
       hint.style.opacity = String(Math.max(0, 1 - p * 4));
 
       // Content fades + slides in (starts at 30% progress)
-      const cp = Math.max(0, (p - 0.30) / 0.70);
       content.style.opacity   = String(cp);
       content.style.transform = `translateY(${(1 - cp) * 28}px)`;
     };
@@ -55,6 +63,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
         inset: 0,
         overflowY: "scroll",
         overflowX: "hidden",
+        fontFamily: FONT,
       }}
     >
       {/* Tall inner div provides scroll space */}
@@ -95,6 +104,14 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
             zIndex: 2, pointerEvents: "none",
           }} />
 
+          {/* Blur layer -- covers full area, blurs video behind text */}
+          <div ref={blurRef} style={{
+            position: "absolute", inset: 0,
+            backdropFilter: "blur(0px)",
+            WebkitBackdropFilter: "blur(0px)",
+            zIndex: 3, pointerEvents: "none",
+          }} />
+
           {/* BACK button */}
           {onBack ? (
             <button onClick={onBack} style={{
@@ -104,6 +121,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
               color: "#fff", fontWeight: 900, fontSize: "0.72rem",
               letterSpacing: "0.22em", textTransform: "uppercase",
               background: "none", border: "none", cursor: "pointer",
+              fontFamily: FONT,
             }}>
               ← Back
             </button>
@@ -115,6 +133,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
               color: "#fff", fontWeight: 900, fontSize: "0.72rem",
               letterSpacing: "0.22em", textTransform: "uppercase",
               textDecoration: "none", cursor: "pointer",
+              fontFamily: FONT,
             }}>
               ← Back
             </Link>
@@ -129,6 +148,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
             <p style={{
               color: "#fff", fontWeight: 900, fontSize: "0.72rem",
               letterSpacing: "0.22em", textTransform: "uppercase", margin: 0,
+              fontFamily: FONT,
             }}>
               Scroll to Explore
             </p>
@@ -140,6 +160,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
             display: "flex", flexDirection: "column", justifyContent: "flex-end",
             padding: "5rem 3.5rem",
             opacity: 0, transform: "translateY(28px)", pointerEvents: "none",
+            fontFamily: FONT,
           }}>
             <p style={{
               color: "rgba(255,255,255,0.55)", fontSize: "0.68rem",

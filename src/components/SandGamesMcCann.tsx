@@ -90,15 +90,16 @@ export default function SandGamesMcCann() {
           }}
         />
 
-        {/* ── BACK — top center ── */}
+        {/* ── BACK — fixed, above everything ── */}
         <div style={{
-          position: 'absolute',
+          position: 'fixed',
           top: 0, left: 0, right: 0,
-          zIndex: 20,
+          zIndex: 9999,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           height: '72px',
+          pointerEvents: 'none',
         }}>
           <Link
             href="/"
@@ -109,6 +110,9 @@ export default function SandGamesMcCann() {
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
               textDecoration: 'none',
+              pointerEvents: 'auto',
+              cursor: 'pointer',
+              padding: '12px 24px',
             }}
           >
             ← Volver

@@ -17,11 +17,13 @@ export default function HeroSection() {
       const p1 = Math.min(1, Math.max(0, scrollY / (vh * 0.5)));
       setPanelX((1 - p1) * 100);
 
-      // Phase 2 (vh/2 → vh): video rises from 6% to 100%
+      // Phase 2 (vh/2 → vh): video rises from 6% peek to fullscreen
       const p2 = Math.min(1, Math.max(0, (scrollY - vh * 0.5) / (vh * 0.5)));
       setVideoRise(0.06 + p2 * 0.94);
 
-      // Nav theme
+      // Phase 3 (vh → 2*vh): video stays fullscreen, nothing changes visually
+      // Sticky holds the view while scroll continues, sections below start loading
+
       if (sectionRef.current) {
         const isDark = p1 < 0.5 || p2 > 0.3;
         sectionRef.current.setAttribute("data-nav-theme", isDark ? "dark" : "light");
@@ -38,22 +40,22 @@ export default function HeroSection() {
       id="hero-section"
       data-nav-theme="dark"
       className="relative"
-      style={{ height: "200vh" }}
+      style={{ height: "300vh" }}
       aria-labelledby="hero-heading"
     >
       <div className="sticky top-0 overflow-hidden" style={{ height: "100vh" }}>
 
-        {/* 1. Black background base */}
+        {/* Black background base */}
         <div className="absolute inset-0 bg-black" />
 
-        {/* 2. White panel slides in from right */}
+        {/* White panel slides in from right */}
         <div
           className="absolute inset-0 bg-white will-change-transform"
           style={{ transform: `translateX(${panelX}%)` }}
           aria-hidden="true"
         />
 
-        {/* 3. Logo — mix-blend-mode difference: white-on-black → black-on-white */}
+        {/* Logo — mix-blend-mode difference: white-on-black → black-on-white */}
         <div
           className="absolute inset-0 z-10 flex items-center justify-center px-6"
           style={{ mixBlendMode: "difference" }}
@@ -69,7 +71,7 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Scroll hint */}
+        {/* Scroll hint — fades out as video rises */}
         <div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-none"
           style={{ opacity: Math.max(0, (panelX / 100) - (videoRise - 0.06) * 5) }}
@@ -79,7 +81,7 @@ export default function HeroSection() {
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* 4. Video rises from 6% peek at bottom to fullscreen */}
+        {/* Video — 6% peek at bottom, rises to fullscreen on scroll */}
         <div
           style={{
             position: "absolute",

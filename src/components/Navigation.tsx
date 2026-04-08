@@ -74,14 +74,14 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8" role="banner">
+      <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 pointer-events-none" role="banner">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Hamburger — left, always visible, color adapts */}
           <button
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
-            className="relative z-[60] w-10 h-10 flex flex-col justify-center items-center gap-[7px]"
+            className="relative z-[60] w-10 h-10 flex flex-col justify-center items-center gap-[7px] pointer-events-auto"
           >
             <span
               className={`block w-6 h-px transition-all duration-300 origin-center ${lineColor} ${
@@ -99,7 +99,7 @@ export default function Navigation() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className={`relative z-[60] transition-opacity duration-500 ${
+            className={`relative z-[60] transition-opacity duration-500 pointer-events-auto ${
               logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
             aria-label="Johnny on the Spot: Inicio"

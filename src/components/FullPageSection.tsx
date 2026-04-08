@@ -6,21 +6,15 @@ interface Props {
   children: ReactNode;
   className?: string;
   innerStyle?: CSSProperties;
-  /** How many vh units of scroll space (default 200) */
+  wrapperBackground?: string;
   scrollHeight?: number;
 }
 
-/**
- * Wraps any section so it:
- * 1. Sticks to the top of the viewport
- * 2. Fades + slides in as you scroll into it
- * 3. Stays full-screen for a while
- * 4. Fades + slides out as the next section arrives
- */
 export default function FullPageSection({
   children,
   className = "",
   innerStyle = {},
+  wrapperBackground,
   scrollHeight = 200,
 }: Props) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -32,14 +26,12 @@ export default function FullPageSection({
     if (!wrapper || !inner) return;
 
     const update = () => {
-      const rect   = wrapper.getBoundingClientRect();
-      const vh     = window.innerHeight;
-      const total  = Math.max(1, wrapper.offsetHeight - vh);
+      const rect    = wrapper.getBoundingClientRect();
+      const vh      = window.innerHeight;
+      const total   = Math.max(1, wrapper.offsetHeight - vh);
       const scrolled = Math.max(0, -rect.top);
-      const p      = Math.min(1, scrolled / total);
+      const p       = Math.min(1, scrolled / total);
 
-      // p: 0 = section just entered, 1 = section about to leave
-      // fade-in zone: 0 → 0.12,  stay: 0.12 → 0.88,  fade-out: 0.88 → 1
       let opacity: number;
       let ty: number;
 
@@ -65,10 +57,12 @@ export default function FullPageSection({
     return () => window.removeEventListener("scroll", update);
   }, []);
 
+  const bg = wrapperBackground ?? (innerStyle.background as string) ?? undefined;
+
   return (
     <div
       ref={wrapperRef}
-      style={{ height: `${scrollHeight}vh`, position: "relative" }}
+      style={{ height: `${scrollHeight}vh`, position: "relative", background: bg }}
     >
       <div
         ref={innerRef}

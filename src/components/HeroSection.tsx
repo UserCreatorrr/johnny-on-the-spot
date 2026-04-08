@@ -19,18 +19,17 @@ export default function HeroSection() {
       const p1 = Math.min(1, Math.max(0, scrollY / (vh * 0.5)));
       setPanelX((1 - p1) * 100);
 
-      // Phase 2 (vh/2 → vh): video rises 6% → 100%
+      // Phase 2 (vh/2 → vh): video rises from 6% peek to 100%
       const p2 = Math.min(1, Math.max(0, (scrollY - vh * 0.5) / (vh * 0.5)));
       setVideoRise(0.06 + p2 * 0.94);
 
-      // Start video only when fully fullscreen, pause+reset while rising
+      // Video plays as soon as phase 2 begins (p2 > 0)
       const video = videoRef.current;
       if (video) {
-        const isFullscreen = p2 >= 1;
-        if (isFullscreen && !isPlayingRef.current) {
+        if (p2 > 0 && !isPlayingRef.current) {
           video.play().catch(() => {});
           isPlayingRef.current = true;
-        } else if (!isFullscreen && isPlayingRef.current) {
+        } else if (p2 === 0 && isPlayingRef.current) {
           video.pause();
           video.currentTime = 0;
           isPlayingRef.current = false;
@@ -68,7 +67,7 @@ export default function HeroSection() {
           aria-hidden="true"
         />
 
-        {/* Logo — mix-blend-mode: white-on-black → black-on-white */}
+        {/* Logo */}
         <div
           className="absolute inset-0 z-10 flex items-center justify-center px-6"
           style={{ mixBlendMode: "difference" }}
@@ -94,7 +93,7 @@ export default function HeroSection() {
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* Video wrapper — rises from 6% to 100% */}
+        {/* Rising black panel with video at natural size centered */}
         <div
           style={{
             position: "absolute",
@@ -105,21 +104,26 @@ export default function HeroSection() {
             overflow: "hidden",
             zIndex: 15,
             background: "#000",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
             willChange: "height",
           }}
           aria-hidden="true"
         >
+          {/* Video at natural size — max-height so it never exceeds viewport */}
           <video
             ref={videoRef}
             muted
             loop
             playsInline
             style={{
-              position: "absolute",
-              bottom: 0,
-              width: "100%",
-              height: "100vh",
-              objectFit: "contain",
+              display: "block",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
+              maxHeight: "100vh",
+              flexShrink: 0,
             }}
           >
             <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4" type="video/mp4" />

@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import PageLayout from "@/components/PageLayout";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import Footer from "@/components/Footer";
 import { Iphone } from "@/components/ui/Iphone";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
@@ -149,13 +148,11 @@ function ContactSection() {
 
 export default function ContactoPage() {
   return (
-    <PageLayout>
-      <div className="pt-28 pb-0 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <Breadcrumbs items={[{ label: "Contacto" }]} />
-        </div>
-      </div>
-      <ContactSection />
-    </PageLayout>
+    <>
+      <main id="main-content" className="min-h-screen bg-white">
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 }

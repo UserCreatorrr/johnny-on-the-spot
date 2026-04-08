@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
-  const [panelX,    setPanelX]    = useState(100);
-  const [videoRise, setVideoRise] = useState(0.06);
+  const [panelX,       setPanelX]       = useState(100);
+  const [blackCover,   setBlackCover]   = useState(94); // 94% = 6% peek of video at bottom
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -17,10 +17,10 @@ export default function HeroSection() {
       const p1 = Math.min(1, Math.max(0, scrollY / (vh * 0.5)));
       setPanelX((1 - p1) * 100);
 
-      // Phase 2 (vh/2 → vh): video rises from the bottom to cover logo
-      // Starts at 6% visible (peek), rises to 100%
+      // Phase 2 (vh/2 → vh): black cover shrinks from bottom,
+      // revealing the fixed BackgroundVideo through the transparent main
       const p2 = Math.min(1, Math.max(0, (scrollY - vh * 0.5) / (vh * 0.5)));
-      setVideoRise(0.06 + p2 * 0.94);
+      setBlackCover((1 - p2) * 94); // goes from 94% → 0%
 
       // Nav theme
       if (sectionRef.current) {
@@ -43,9 +43,6 @@ export default function HeroSection() {
       aria-labelledby="hero-heading"
     >
       <div className="sticky top-0 overflow-hidden" style={{ height: "100vh" }}>
-
-        {/* Black base */}
-        <div className="absolute inset-0 bg-black" />
 
         {/* White panel slides in from right */}
         <div
@@ -73,42 +70,27 @@ export default function HeroSection() {
         {/* Scroll hint */}
         <div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-none"
-          style={{ opacity: Math.max(0, (panelX / 100) * 0.5 - (videoRise - 0.06) * 5) }}
+          style={{ opacity: Math.max(0, 1 - (100 - blackCover) / 30) * (panelX / 100) }}
           aria-hidden="true"
         >
           <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* VIDEO — always shows a 6% peek at the bottom, rises to full on scroll */}
+        {/* Black cover — shrinks from the bottom, revealing BackgroundVideo beneath */}
         <div
+          aria-hidden="true"
           style={{
             position: "absolute",
-            bottom: 0,
+            top: 0,
             left: 0,
             right: 0,
-            height: `${videoRise * 100}%`,
-            overflow: "hidden",
+            height: `${blackCover}%`,
+            background: "#000",
             zIndex: 15,
             willChange: "height",
           }}
-          aria-hidden="true"
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              position: "absolute",
-              bottom: 0,
-              width: "100%",
-              height: "100vh",
-              objectFit: "cover",
-            }}
-            src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4"
-          />
-        </div>
+        />
 
       </div>
     </section>

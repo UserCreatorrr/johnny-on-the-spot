@@ -55,29 +55,29 @@ function IncomingCallScreen() {
             animate={{ scale: [1, 1.8], opacity: [0.3, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
           />
-          <Image src="/logo-white.png" alt="Johnny on the Spot" width={160} height={60} className="w-36 object-contain z-10" />
+          <Image src="/logo-call.png" alt="Johnny on the Spot" width={200} height={80} className="w-44 object-contain z-10" />
         </div>
       </div>
 
       {/* Accept / Decline buttons */}
-      <div className="flex justify-around items-center px-10 pb-12 flex-shrink-0">
+      <div className="flex justify-between items-center px-16 pb-10 flex-shrink-0">
         {/* Decline */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
               <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
             </svg>
           </div>
-          <span className="text-white/60 text-[11px]">Rechazar</span>
+          <span className="text-white/50 text-[10px]">Rechazar</span>
         </div>
         {/* Accept */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <div className="flex flex-col items-center gap-1.5">
+          <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
               <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
             </svg>
           </div>
-          <span className="text-white/60 text-[11px]">Aceptar</span>
+          <span className="text-white/50 text-[10px]">Aceptar</span>
         </div>
       </div>
     </div>

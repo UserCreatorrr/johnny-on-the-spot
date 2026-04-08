@@ -187,7 +187,7 @@ export default function HomePage() {
         </FullPageSection>
 
         {/* BLOG */}
-        <FullPageSection scrollHeight={240} innerStyle={{ background: "#fff" }}>
+        <FullPageSection scrollHeight={240} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
         <section data-nav-theme="light" className="w-full py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="blog-heading">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
@@ -232,7 +232,7 @@ export default function HomePage() {
         </FullPageSection>
 
         {/* FAQs */}
-        <FullPageSection scrollHeight={260} innerStyle={{ background: "#000" }}>
+        <FullPageSection scrollHeight={260} innerStyle={{ background: "#000", display: "flex", alignItems: "center" }}>
         <div data-nav-theme="dark" style={{ width: "100%", height: "100%" }}><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
         </FullPageSection>
 

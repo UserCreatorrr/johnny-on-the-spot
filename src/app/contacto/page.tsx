@@ -101,16 +101,13 @@ function NewContactScreen() {
       </div>
 
       {/* Nav bar */}
-      <div className="flex-shrink-0 bg-[#F2F2F7] pt-1 pb-3">
-        <div className="flex justify-between items-center px-4 pb-2">
-          <span className="text-[13px] text-[#007AFF]">Cancelar</span>
-          <button onClick={handleSubmit}
-            className="text-[13px] font-semibold"
-            style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
-            OK
-          </button>
-        </div>
-        <p className="text-[15px] font-semibold text-black text-center whitespace-nowrap">Queremos conocerte</p>
+      <div className="flex-shrink-0 bg-[#F2F2F7] pt-3 pb-3 px-4 flex justify-between items-center">
+        <p className="text-[15px] font-semibold text-black flex-1 text-center">Queremos conocerte</p>
+        <button onClick={handleSubmit}
+          className="text-[13px] font-semibold"
+          style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
+          OK
+        </button>
       </div>
 
       {sent ? (
@@ -143,7 +140,7 @@ function NewContactScreen() {
           </div>
           <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
             <div className="px-4 py-2.5">
-              <textarea style={{ ...inputStyle, resize: "none", height: "64px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
+              <textarea style={{ ...inputStyle, resize: "none", height: "90px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
             </div>
           </div>
         </div>

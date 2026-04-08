@@ -32,7 +32,7 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
       if (!section) return;
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight;
-      const scrolled = -rect.top / vh;
+      const scrolled = -rect.top / (vh * 2);
       const index = Math.min(cases.length - 1, Math.max(0, Math.floor(scrolled)));
       setActiveIndex(index);
     };
@@ -75,7 +75,7 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
         </div>
       )}
 
-      <div ref={sectionRef} style={{ height: `${cases.length * 100}vh` }} className="relative">
+      <div ref={sectionRef} style={{ height: `${cases.length * 200}vh` }} className="relative">
         <div className="sticky top-0 h-screen overflow-hidden">
           {cases.map((c, i) => {
             const isOverlay = OVERLAY_SLUGS.includes(c.slug);

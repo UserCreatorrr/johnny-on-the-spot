@@ -117,7 +117,10 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
           <div ref={contentRef} style={{
             position: "absolute", inset: 0, zIndex: 10,
             display: "flex", flexDirection: "column", justifyContent: "flex-end",
-            padding: "clamp(1.2rem, 4vh, 4rem) clamp(1.2rem, 3vw, 3.5rem)",
+            paddingTop: "80px",
+            paddingBottom: "clamp(1.2rem, 4vh, 4rem)",
+            paddingLeft: "clamp(1.2rem, 3vw, 3.5rem)",
+            paddingRight: "clamp(1.2rem, 3vw, 3.5rem)",
             overflow: "hidden",
             opacity: 0, transform: "translateY(28px)", pointerEvents: "none", fontFamily: FONT,
           }}>

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import SandGamesMcCann from "@/components/SandGamesMcCann";
+import AlconHydraglyde from "@/components/AlconHydraglyde";
+import CocaColaKFC from "@/components/CocaColaKFC";
+import NovartisCase from "@/components/NovartisCase";
 
 type Case = {
   slug: string;
@@ -11,7 +14,12 @@ type Case = {
   videoUrl?: string;
 };
 
-const OVERLAY_SLUGS = ["sd-distribuciones-sand-games"];
+const OVERLAY_SLUGS = [
+  "sd-distribuciones-sand-games",
+  "alcon-hydra-glide",
+  "cocacola-kfc-together",
+  "novartis",
+];
 
 export default function CasesVideoSection({ cases }: { cases: Case[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,7 +41,6 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [cases.length]);
 
-  // Lock body scroll when overlay is open
   useEffect(() => {
     if (openSlug) {
       document.body.style.overflow = "hidden";
@@ -43,12 +50,28 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
     return () => { document.body.style.overflow = ""; };
   }, [openSlug]);
 
+  const close = () => setOpenSlug(null);
+
   return (
     <>
-      {/* Fullscreen overlay for cases that open in-page */}
       {openSlug === "sd-distribuciones-sand-games" && (
         <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#000" }}>
-          <SandGamesMcCann onBack={() => setOpenSlug(null)} />
+          <SandGamesMcCann onBack={close} />
+        </div>
+      )}
+      {openSlug === "alcon-hydra-glide" && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#000" }}>
+          <AlconHydraglyde onBack={close} />
+        </div>
+      )}
+      {openSlug === "cocacola-kfc-together" && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#000" }}>
+          <CocaColaKFC onBack={close} />
+        </div>
+      )}
+      {openSlug === "novartis" && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#000" }}>
+          <NovartisCase onBack={close} />
         </div>
       )}
 

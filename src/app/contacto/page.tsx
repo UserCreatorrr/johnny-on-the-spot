@@ -123,6 +123,28 @@ function NewContactScreen() {
         </div>
       ) : (
         <div className="flex-1 overflow-y-auto px-3 py-2">
+          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
+            <div className="px-4 py-2.5 border-b border-black/[0.08]">
+              <input style={inputStyle} placeholder="Nombre" value={form.nombre} onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))} />
+            </div>
+            <div className="px-4 py-2.5 border-b border-black/[0.08]">
+              <input style={inputStyle} placeholder="Apellidos" value={form.apellidos} onChange={e => setForm(f => ({ ...f, apellidos: e.target.value }))} />
+            </div>
+            <div className="px-4 py-2.5">
+              <input style={inputStyle} placeholder="Empresa" value={form.empresa} onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))} />
+            </div>
+          </div>
+          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
+            <div className="px-4 py-2.5">
+              <input style={inputStyle} placeholder="URL de tu empresa" type="url" value={form.url} onChange={e => setForm(f => ({ ...f, url: e.target.value }))} />
+            </div>
+          </div>
+          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
+            <div className="px-4 py-2.5">
+              <textarea style={{ ...inputStyle, resize: "none", height: "64px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

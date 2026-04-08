@@ -9,7 +9,9 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
   const blurRef    = useRef<HTMLDivElement>(null);
   const hintRef    = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const videoRef   = useRef<HTMLVideoElement>(null);
   const [zoomed, setZoomed] = useState(false);
+  const [muted,  setMuted]  = useState(true);
   const FONT = '"Helvetica Neue", Helvetica, Arial, sans-serif';
 
   useEffect(() => {
@@ -24,7 +26,6 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
     const hint     = hintRef.current;
     const content  = contentRef.current;
     if (!scroller || !overlay || !blur || !hint || !content) return;
-
     const onScroll = () => {
       const p = Math.min(scroller.scrollTop / 520, 1);
       overlay.style.backgroundColor = `rgba(0,0,0,${0.15 + p * 0.45})`;
@@ -35,7 +36,6 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
       content.style.opacity   = String(cp);
       content.style.transform = `translateY(${(1 - cp) * 28}px)`;
     };
-
     scroller.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => scroller.removeEventListener("scroll", onScroll);
@@ -46,7 +46,7 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
       <div style={{ height: "310vh", position: "relative" }}>
         <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", background: "#000" }}>
 
-          <video autoPlay muted loop playsInline style={{
+          <video ref={videoRef} autoPlay muted={muted} loop playsInline style={{
             position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover",
             transform: zoomed ? "scale(0.78)" : "scale(1.0)",
             transformOrigin: "center center",
@@ -80,6 +80,33 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
               ← Back
             </Link>
           )}
+
+          {/* Mute button */}
+          <button
+            onClick={() => setMuted(m => { const n = !m; if (videoRef.current) videoRef.current.muted = n; return n; })}
+            aria-label={muted ? "Activar sonido" : "Silenciar"}
+            style={{
+              position: "absolute", bottom: "2rem", right: "2rem", zIndex: 50,
+              display: "flex", alignItems: "center", gap: "0.5rem",
+              background: "rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.2)",
+              color: "#fff", fontSize: "0.65rem", letterSpacing: "0.18em",
+              textTransform: "uppercase", padding: "0.6rem 1rem",
+              cursor: "pointer", backdropFilter: "blur(4px)", fontFamily: FONT,
+            }}
+          >
+            {muted ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+            )}
+            {muted ? "Sonido" : "Silenciar"}
+          </button>
 
           <div ref={hintRef} style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 20, display: "flex", justifyContent: "center", alignItems: "center", height: "72px" }}>
             <p style={{ color: "#fff", fontWeight: 900, fontSize: "0.72rem", letterSpacing: "0.22em", textTransform: "uppercase", margin: 0, fontFamily: FONT }}>
@@ -135,9 +162,7 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
                     <li key="Marketing Digital" style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.8rem", lineHeight: "1.7" }}>Marketing Digital</li>
                     <li key="Foto & Video" style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.8rem", lineHeight: "1.7" }}>Foto & Video</li>
                 </ul>
-                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, margin: "0 0 0.7rem" }}>
-                  Material
-                </p>
+                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, margin: "0 0 0.7rem" }}>Material</p>
                 <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                     <span key="Gráfica" style={{ border: "1px solid rgba(255,255,255,0.22)", color: "rgba(255,255,255,0.55)", fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.3rem 0.75rem", fontWeight: 600 }}>Gráfica</span>
                     <span key="Fotos" style={{ border: "1px solid rgba(255,255,255,0.22)", color: "rgba(255,255,255,0.55)", fontSize: "0.64rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.3rem 0.75rem", fontWeight: 600 }}>Fotos</span>

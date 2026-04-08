@@ -59,55 +59,31 @@ function IncomingCallScreen() {
 }
 
 function NewContactScreen() {
-  const [form, setForm] = useState({ nombre: "", apellidos: "", empresa: "", url: "", ayuda: "" });
   const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ nombre: "", empresa: "", email: "", ayuda: "" });
 
-  const handleSubmit = () => {
-    if (form.nombre || form.empresa) setSent(true);
-  };
-
-  const inputStyle: React.CSSProperties = {
-    background: "transparent",
-    border: "none",
-    outline: "none",
-    width: "100%",
-    fontSize: "14px",
-    color: "#000",
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
-  };
   return (
-    <div className="w-full h-full flex flex-col select-none bg-[#F2F2F7]"
+    <div className="flex flex-col h-full bg-white overflow-hidden"
       style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" }}>
 
       {/* Status bar */}
-      <div className="flex justify-between items-center px-4 pt-3 pb-1 flex-shrink-0 bg-[#F2F2F7]">
-        <span className="text-[10px] font-semibold text-black">9:41</span>
+      <div className="flex justify-between items-center px-5 pt-3 pb-1 flex-shrink-0">
+        <span className="text-[11px] font-semibold text-black">9:41</span>
         <div className="flex items-center gap-1">
-          <svg width="12" height="9" viewBox="0 0 14 10" fill="none">
-            <rect x="0" y="4" width="3" height="6" rx="0.5" fill="black"/>
-            <rect x="4" y="2.5" width="3" height="7.5" rx="0.5" fill="black"/>
-            <rect x="8" y="1" width="3" height="9" rx="0.5" fill="black"/>
-            <rect x="12" y="0" width="2" height="10" rx="0.5" fill="black" opacity="0.3"/>
-          </svg>
-          <svg width="11" height="9" viewBox="0 0 12 10" fill="none">
-            <path d="M6 1.5C8.2 1.5 10.1 2.5 11.3 4.1L12 3.2C10.5 1.2 8.4 0 6 0C3.6 0 1.5 1.2 0 3.2L0.7 4.1C1.9 2.5 3.8 1.5 6 1.5Z" fill="black"/>
-            <path d="M6 4C7.4 4 8.6 4.6 9.5 5.6L10.2 4.7C9 3.4 7.6 2.5 6 2.5C4.4 2.5 3 3.4 1.8 4.7L2.5 5.6C3.4 4.6 4.6 4 6 4Z" fill="black"/>
-            <circle cx="6" cy="8" r="1.5" fill="black"/>
-          </svg>
-          <div className="w-4 h-2 rounded-[2px] border border-black/30 relative">
-            <div className="absolute inset-[1px] bg-black rounded-[1px]"/>
+          <svg width="15" height="11" viewBox="0 0 15 11" fill="black"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2.5" width="3" height="8.5" rx="1"/><rect x="8" y="1" width="3" height="10" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="black"><path d="M8 2.4C10.5 2.4 12.7 3.5 14.2 5.2L15.5 3.8C13.6 1.8 11 0.5 8 0.5C5 0.5 2.4 1.8 0.5 3.8L1.8 5.2C3.3 3.5 5.5 2.4 8 2.4Z"/><path d="M8 5.3C9.8 5.3 11.4 6.1 12.5 7.3L13.8 5.9C12.3 4.4 10.3 3.4 8 3.4C5.7 3.4 3.7 4.4 2.2 5.9L3.5 7.3C4.6 6.1 6.2 5.3 8 5.3Z"/><circle cx="8" cy="10.5" r="1.5"/></svg>
+          <div className="flex items-center gap-0.5">
+            <div className="w-6 h-3 rounded-sm border border-black/40 p-px flex items-center">
+              <div className="w-4 h-full bg-black rounded-sm"/>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Nav bar */}
-      <div className="flex-shrink-0 bg-[#F2F2F7] pt-3 pb-3 px-4 flex justify-between items-center">
-        <p className="text-[15px] font-semibold text-black flex-1 text-center">Queremos conocerte</p>
-        <button onClick={handleSubmit}
-          className="text-[13px] font-semibold"
-          style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
-          OK
-        </button>
+      {/* Header */}
+      <div className="px-5 pt-3 pb-4 flex-shrink-0" style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+        <p className="text-[10px] text-black/35 tracking-widest uppercase mb-0.5">Johnny on the Spot</p>
+        <h3 className="text-[17px] font-bold text-black leading-tight">Queremos conocerte</h3>
       </div>
 
       {sent ? (
@@ -117,33 +93,49 @@ function NewContactScreen() {
               <polyline points="20 6 9 17 4 12"/>
             </svg>
           </div>
-          <p className="text-[15px] font-semibold text-black mb-1">Contacto enviado</p>
+          <p className="text-[15px] font-semibold text-black mb-1">Mensaje enviado</p>
           <p className="text-[12px] text-black/40">Te responderemos en menos de 24h.</p>
         </div>
       ) : (
-        <div className="flex-1 flex flex-col justify-between px-3 py-3">
-          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-            <div className="px-4 py-2.5 border-b border-black/[0.08]">
-              <input style={inputStyle} placeholder="Nombre" value={form.nombre} onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))} />
+        <>
+          {/* Form */}
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3">
+            <div className="border-b border-black/10 pb-3">
+              <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">Nombre</label>
+              <input type="text" placeholder="Tu nombre"
+                className="w-full text-[13px] text-black placeholder:text-black/25 bg-transparent outline-none"
+                value={form.nombre} onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))} />
             </div>
-            <div className="px-4 py-2.5 border-b border-black/[0.08]">
-              <input style={inputStyle} placeholder="Apellidos" value={form.apellidos} onChange={e => setForm(f => ({ ...f, apellidos: e.target.value }))} />
+            <div className="border-b border-black/10 pb-3">
+              <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">Empresa</label>
+              <input type="text" placeholder="Nombre de tu empresa"
+                className="w-full text-[13px] text-black placeholder:text-black/25 bg-transparent outline-none"
+                value={form.empresa} onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))} />
             </div>
-            <div className="px-4 py-2.5">
-              <input style={inputStyle} placeholder="Empresa" value={form.empresa} onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))} />
+            <div className="border-b border-black/10 pb-3">
+              <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">Email</label>
+              <input type="email" placeholder="tu@email.com"
+                className="w-full text-[13px] text-black placeholder:text-black/25 bg-transparent outline-none"
+                value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} />
+            </div>
+            <div className="pb-3">
+              <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">¿En qué te ayudamos?</label>
+              <textarea placeholder="Cuéntanos tu proyecto..." rows={3}
+                className="w-full text-[13px] text-black placeholder:text-black/25 bg-transparent outline-none resize-none"
+                value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
             </div>
           </div>
-          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-            <div className="px-4 py-2.5">
-              <input style={inputStyle} placeholder="URL de tu empresa" type="url" value={form.url} onChange={e => setForm(f => ({ ...f, url: e.target.value }))} />
-            </div>
+
+          {/* CTA */}
+          <div className="px-5 pb-6 pt-3 flex-shrink-0" style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}>
+            <button
+              onClick={() => { if (form.nombre || form.email) setSent(true); }}
+              className="w-full bg-black text-white text-[13px] font-semibold py-3 rounded-xl tracking-wide hover:bg-black/85 transition-colors">
+              Enviar →
+            </button>
+            <p className="text-center text-[10px] text-black/30 mt-2">Respondemos en menos de 24h</p>
           </div>
-          <div className="bg-white rounded-xl overflow-hidden shadow-sm flex-1 flex flex-col">
-            <div className="px-4 py-2.5 flex-1">
-              <textarea style={{ ...inputStyle, resize: "none", height: "100%", minHeight: "80px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
-            </div>
-          </div>
-        </div>
+        </>
       )}
     </div>
   );
@@ -165,9 +157,7 @@ function ContactSection() {
           duration: 1.3,
           ease: "easeOut",
         },
-      }).then(() => {
-        setShowCall(false);
-      });
+      }).then(() => { setShowCall(false); });
     }
   }, [isInView, controls]);
 

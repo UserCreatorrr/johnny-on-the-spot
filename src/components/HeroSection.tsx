@@ -6,7 +6,9 @@ import { useEffect, useRef, useState } from "react";
 export default function HeroSection() {
   const [panelX,    setPanelX]    = useState(100);
   const [videoRise, setVideoRise] = useState(0.06);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef   = useRef<HTMLElement>(null);
+  const videoRef     = useRef<HTMLVideoElement>(null);
+  const isPlayingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,12 +19,23 @@ export default function HeroSection() {
       const p1 = Math.min(1, Math.max(0, scrollY / (vh * 0.5)));
       setPanelX((1 - p1) * 100);
 
-      // Phase 2 (vh/2 → vh): video rises from 6% peek to fullscreen
+      // Phase 2 (vh/2 → vh): video rises 6% → 100%
       const p2 = Math.min(1, Math.max(0, (scrollY - vh * 0.5) / (vh * 0.5)));
       setVideoRise(0.06 + p2 * 0.94);
 
-      // Phase 3 (vh → 2*vh): video stays fullscreen, nothing changes visually
-      // Sticky holds the view while scroll continues, sections below start loading
+      // Start video only when fully fullscreen, pause+reset while rising
+      const video = videoRef.current;
+      if (video) {
+        const isFullscreen = p2 >= 1;
+        if (isFullscreen && !isPlayingRef.current) {
+          video.play().catch(() => {});
+          isPlayingRef.current = true;
+        } else if (!isFullscreen && isPlayingRef.current) {
+          video.pause();
+          video.currentTime = 0;
+          isPlayingRef.current = false;
+        }
+      }
 
       if (sectionRef.current) {
         const isDark = p1 < 0.5 || p2 > 0.3;
@@ -55,7 +68,7 @@ export default function HeroSection() {
           aria-hidden="true"
         />
 
-        {/* Logo — mix-blend-mode difference: white-on-black → black-on-white */}
+        {/* Logo — mix-blend-mode: white-on-black → black-on-white */}
         <div
           className="absolute inset-0 z-10 flex items-center justify-center px-6"
           style={{ mixBlendMode: "difference" }}
@@ -71,7 +84,7 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Scroll hint — fades out as video rises */}
+        {/* Scroll hint */}
         <div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-none"
           style={{ opacity: Math.max(0, (panelX / 100) - (videoRise - 0.06) * 5) }}
@@ -81,7 +94,7 @@ export default function HeroSection() {
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* Video — 6% peek at bottom, rises to fullscreen on scroll */}
+        {/* Video wrapper — rises from 6% to 100% */}
         <div
           style={{
             position: "absolute",
@@ -91,12 +104,13 @@ export default function HeroSection() {
             height: `${videoRise * 100}%`,
             overflow: "hidden",
             zIndex: 15,
+            background: "#000",
             willChange: "height",
           }}
           aria-hidden="true"
         >
           <video
-            autoPlay
+            ref={videoRef}
             muted
             loop
             playsInline
@@ -105,10 +119,11 @@ export default function HeroSection() {
               bottom: 0,
               width: "100%",
               height: "100vh",
-              objectFit: "cover",
+              objectFit: "contain",
             }}
-            src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4"
-          />
+          >
+            <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4" type="video/mp4" />
+          </video>
         </div>
 
       </div>

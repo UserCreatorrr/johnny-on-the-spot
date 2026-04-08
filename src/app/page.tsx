@@ -187,7 +187,8 @@ export default function HomePage() {
         </FullPageSection>
 
         {/* BLOG */}
-        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="blog-heading">
+        <FullPageSection scrollHeight={240} innerStyle={{ background: "#fff", overflowY: "auto" }}>
+        <section data-nav-theme="light" className="w-full py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="blog-heading">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-end justify-between mb-12">
               <div>
@@ -228,9 +229,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        </FullPageSection>
 
         {/* FAQs */}
-        <div data-nav-theme="dark"><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
+        <FullPageSection scrollHeight={260} innerStyle={{ background: "#111", overflowY: "auto" }}>
+        <div data-nav-theme="dark" style={{ width: "100%", height: "100%", overflowY: "auto" }}><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
+        </FullPageSection>
 
         {/* CTA Final */}
         <div data-nav-theme="dark"><CTASection

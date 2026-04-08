@@ -136,7 +136,7 @@ function ContactSection() {
         initial={{ x: 0 }}
         className="relative z-20"
       >
-        <div className="w-[280px] lg:w-[320px]">
+        <div style={{ height: "min(85vh, 640px)", width: "auto", aspectRatio: "320/650" }}>
           <Iphone>
             <PhoneScreen />
           </Iphone>

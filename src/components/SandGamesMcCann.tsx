@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function SandGamesMcCann() {
+export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
   const sectionRef   = useRef<HTMLDivElement>(null);
   const videoRef     = useRef<HTMLVideoElement>(null);
   const overlayRef   = useRef<HTMLDivElement>(null);
@@ -90,29 +90,55 @@ export default function SandGamesMcCann() {
           }}
         />
 
-        {/* ── BACK — fixed top-left, same position as hamburger ── */}
-        <Link
-          href="/"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            height: '80px',
-            padding: '0 32px',
-            color: '#fff',
-            fontWeight: 900,
-            fontSize: '0.72rem',
-            letterSpacing: '0.22em',
-            textTransform: 'uppercase',
-            textDecoration: 'none',
-            cursor: 'pointer',
-          }}
-        >
-          ← Volver
-        </Link>
+        {/* ── BACK — fixed top-left ── */}
+        {onBack ? (
+          <button
+            onClick={onBack}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              height: '80px',
+              padding: '0 32px',
+              color: '#fff',
+              fontWeight: 900,
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            ← Back
+          </button>
+        ) : (
+          <Link
+            href="/"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              height: '80px',
+              padding: '0 32px',
+              color: '#fff',
+              fontWeight: 900,
+              fontSize: '0.72rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            ← Back
+          </Link>
+        )}
 
         {/* ── SCROLL TO EXPLORE — bottom center ── */}
         <div

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
@@ -9,21 +9,26 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const hintRef    = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [zoomed, setZoomed] = useState(false);
+
+  // Entry animation: zoom out the video on mount
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      setZoomed(true);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     const scroller = scrollRef.current;
-    const video    = videoRef.current;
     const overlay  = overlayRef.current;
     const hint     = hintRef.current;
     const content  = contentRef.current;
-    if (!scroller || !video || !overlay || !hint || !content) return;
+    if (!scroller || !overlay || !hint || !content) return;
 
     const onScroll = () => {
       const scrolled = scroller.scrollTop;
       const p = Math.min(scrolled / 520, 1);
-
-      // Video zooms OUT: starts at 1.0 (fullscreen), shrinks to 0.78 (black bars visible)
-      video.style.transform = `scale(${1.0 - p * 0.22})`;
 
       // Overlay darkens as content appears
       overlay.style.backgroundColor = `rgba(0,0,0,${0.15 + p * 0.60})`;
@@ -64,7 +69,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
           background: "#000",
         }}>
 
-          {/* VIDEO — starts fullscreen, zooms out on scroll */}
+          {/* VIDEO -- zooms out on mount via CSS transition */}
           <video
             ref={videoRef}
             autoPlay muted loop playsInline
@@ -74,8 +79,9 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: "scale(1.0)",
+              transform: zoomed ? "scale(0.78)" : "scale(1.0)",
               transformOrigin: "center center",
+              transition: "transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               willChange: "transform",
             }}
           >
@@ -128,7 +134,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
             </p>
           </div>
 
-          {/* CONTENT — fades in on scroll */}
+          {/* CONTENT -- fades in on scroll */}
           <div ref={contentRef} style={{
             position: "absolute", inset: 0, zIndex: 10,
             display: "flex", flexDirection: "column", justifyContent: "flex-end",

@@ -18,7 +18,7 @@ const OVERLAY_SLUGS = [
   "sd-distribuciones-sand-games",
   "alcon-hydra-glide",
   "cocacola-kfc-together",
-  "novartis",
+  "novartis-transplant-tomorrow",
 ];
 
 export default function CasesVideoSection({ cases }: { cases: Case[] }) {
@@ -69,7 +69,7 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
           <CocaColaKFC onBack={close} />
         </div>
       )}
-      {openSlug === "novartis" && (
+      {openSlug === "novartis-transplant-tomorrow" && (
         <div style={{ position: "fixed", inset: 0, zIndex: 9998, background: "#000" }}>
           <NovartisCase onBack={close} />
         </div>

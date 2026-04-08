@@ -121,8 +121,8 @@ function NewContactScreen() {
           <p className="text-[12px] text-black/40">Te responderemos en menos de 24h.</p>
         </div>
       ) : (
-        <div className="flex-1 overflow-y-auto px-3 py-2">
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
+        <div className="flex-1 flex flex-col justify-between px-3 py-3">
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
             <div className="px-4 py-2.5 border-b border-black/[0.08]">
               <input style={inputStyle} placeholder="Nombre" value={form.nombre} onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))} />
             </div>
@@ -133,14 +133,14 @@ function NewContactScreen() {
               <input style={inputStyle} placeholder="Empresa" value={form.empresa} onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))} />
             </div>
           </div>
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
             <div className="px-4 py-2.5">
               <input style={inputStyle} placeholder="URL de tu empresa" type="url" value={form.url} onChange={e => setForm(f => ({ ...f, url: e.target.value }))} />
             </div>
           </div>
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
-            <div className="px-4 py-2.5">
-              <textarea style={{ ...inputStyle, resize: "none", height: "90px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm flex-1 flex flex-col">
+            <div className="px-4 py-2.5 flex-1">
+              <textarea style={{ ...inputStyle, resize: "none", height: "100%", minHeight: "80px", lineHeight: "1.4" }} placeholder="¿En qué te podemos ayudar?" value={form.ayuda} onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))} />
             </div>
           </div>
         </div>

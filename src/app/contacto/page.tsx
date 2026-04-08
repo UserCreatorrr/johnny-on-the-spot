@@ -103,7 +103,7 @@ function NewContactScreen() {
       {/* Nav bar */}
       <div className="flex justify-between items-center px-4 py-2 flex-shrink-0 bg-[#F2F2F7]">
         <span className="text-[13px] text-[#007AFF]">Cancelar</span>
-        <span className="text-[14px] font-semibold text-black">Nuevo contacto</span>
+        <span className="text-[14px] font-semibold text-black">Queremos conocerte</span>
         <button onClick={handleSubmit}
           className="text-[13px] font-semibold"
           style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
@@ -123,72 +123,6 @@ function NewContactScreen() {
         </div>
       ) : (
         <div className="flex-1 overflow-y-auto px-3 py-2">
-
-          {/* Avatar placeholder */}
-          <div className="flex flex-col items-center mb-4">
-            <div className="w-16 h-16 rounded-full bg-[#C7C7CC] flex items-center justify-center mb-2">
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="white">
-                <circle cx="20" cy="14" r="8"/>
-                <path d="M4 36c0-8.8 7.2-16 16-16s16 7.2 16 16" opacity="0.9"/>
-              </svg>
-            </div>
-            <span className="text-[12px] font-medium text-black/60">Añadir foto</span>
-          </div>
-
-          {/* Name fields */}
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
-            <div className="px-4 py-2.5 border-b border-black/[0.08]">
-              <input
-                style={inputStyle}
-                placeholder="Nombre"
-                value={form.nombre}
-                onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))}
-              />
-            </div>
-            <div className="px-4 py-2.5 border-b border-black/[0.08]">
-              <input
-                style={inputStyle}
-                placeholder="Apellidos"
-                value={form.apellidos}
-                onChange={e => setForm(f => ({ ...f, apellidos: e.target.value }))}
-              />
-            </div>
-            <div className="px-4 py-2.5">
-              <input
-                style={inputStyle}
-                placeholder="Empresa"
-                value={form.empresa}
-                onChange={e => setForm(f => ({ ...f, empresa: e.target.value }))}
-              />
-            </div>
-          </div>
-
-          {/* URL */}
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
-            <div className="px-4 py-2.5">
-              <input
-                style={inputStyle}
-                placeholder="URL de tu empresa"
-                type="url"
-                value={form.url}
-                onChange={e => setForm(f => ({ ...f, url: e.target.value }))}
-              />
-            </div>
-          </div>
-
-          {/* Ayuda */}
-          <div className="bg-white rounded-xl overflow-hidden mb-3 shadow-sm">
-            <div className="px-4 py-2.5">
-              <textarea
-                style={{ ...inputStyle, resize: "none", height: "64px", lineHeight: "1.4" }}
-                placeholder="¿En qué te podemos ayudar?"
-                value={form.ayuda}
-                onChange={e => setForm(f => ({ ...f, ayuda: e.target.value }))}
-              />
-            </div>
-          </div>
-
-        </div>
       )}
     </div>
   );

@@ -75,8 +75,6 @@ function NewContactScreen() {
     color: "#000",
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
   };
-  const placeholderColor = "#aaa";
-
   return (
     <div className="w-full h-full flex flex-col select-none bg-[#F2F2F7]"
       style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" }}>

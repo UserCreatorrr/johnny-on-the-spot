@@ -40,7 +40,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
       // Blur layer fades in (starts at 30% progress)
       const cp = Math.max(0, (p - 0.30) / 0.70);
       blur.style.backdropFilter = `blur(${cp * 10}px)`;
-      blur.style.webkitBackdropFilter = `blur(${cp * 10}px)`;
+      (blur.style as unknown as Record<string, string>).webkitBackdropFilter = `blur(${cp * 10}px)`;
 
       // SCROLL TO EXPLORE fades out quickly
       hint.style.opacity = String(Math.max(0, 1 - p * 4));

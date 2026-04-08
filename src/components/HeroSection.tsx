@@ -93,7 +93,7 @@ export default function HeroSection() {
           <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent mt-1" />
         </div>
 
-        {/* Rising black panel with video at natural size centered */}
+        {/* Rising black panel — video spans full height, side margins only */}
         <div
           style={{
             position: "absolute",
@@ -104,26 +104,24 @@ export default function HeroSection() {
             overflow: "hidden",
             zIndex: 15,
             background: "#000",
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
             willChange: "height",
           }}
           aria-hidden="true"
         >
-          {/* Video at natural size — max-height so it never exceeds viewport */}
+          {/* height: 100vh fills top-to-bottom, width: auto leaves side margins */}
           <video
             ref={videoRef}
             muted
             loop
             playsInline
             style={{
-              display: "block",
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              height: "100vh",
               width: "auto",
-              height: "auto",
-              maxWidth: "100%",
-              maxHeight: "100vh",
-              flexShrink: 0,
+              maxWidth: "none",
             }}
           >
             <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4" type="video/mp4" />

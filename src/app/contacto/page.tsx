@@ -42,26 +42,21 @@ function IncomingCallScreen() {
         <p className="text-white/60 text-[13px] mb-6">Llamada entrante</p>
 
         {/* Avatar with pulse rings */}
-        <div className="relative flex items-center justify-center mb-6">
+        <div className="relative flex items-center justify-center mb-10">
           <motion.div
             className="absolute rounded-full border border-white/10"
-            style={{ width: 130, height: 130 }}
+            style={{ width: 200, height: 200 }}
             animate={{ scale: [1, 1.5], opacity: [0.4, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
           />
           <motion.div
             className="absolute rounded-full border border-white/10"
-            style={{ width: 130, height: 130 }}
+            style={{ width: 200, height: 200 }}
             animate={{ scale: [1, 1.8], opacity: [0.3, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
           />
-          <div className="w-24 h-24 rounded-full bg-black border border-white/20 flex items-center justify-center overflow-hidden z-10">
-            <Image src="/logo-white.png" alt="Johnny on the Spot" width={70} height={26} className="w-16 object-contain" />
-          </div>
+          <Image src="/logo-white.png" alt="Johnny on the Spot" width={160} height={60} className="w-36 object-contain z-10" />
         </div>
-
-        <h2 className="text-white text-[22px] font-bold tracking-tight mb-1">Johnny on the Spot</h2>
-        <p className="text-white/50 text-[13px]">Agencia de comunicación</p>
       </div>
 
       {/* Accept / Decline buttons */}

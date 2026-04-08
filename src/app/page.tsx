@@ -11,6 +11,7 @@ import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { CASES, BLOG_POSTS } from "@/lib/data";
+import FullPageSection from "@/components/FullPageSection";
 
 export const metadata: Metadata = {
   title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
@@ -61,16 +62,18 @@ export default function HomePage() {
 
 
         {/* EL NOMBRE */}
-        <section data-nav-theme="light" className="relative w-full bg-white" aria-labelledby="intro-heading" style={{ height: "100vh" }}>
-          <Image
-            id="intro-heading"
-            src="/otp.png"
-            alt="Johnny on the Spot — término coloquial"
-            fill
-            className="object-contain"
-            priority
-          />
-        </section>
+        <FullPageSection scrollHeight={220} innerStyle={{ background: "#fff" }}>
+          <section data-nav-theme="light" className="relative w-full h-full bg-white" aria-labelledby="intro-heading">
+            <Image
+              id="intro-heading"
+              src="/otp.png"
+              alt="Johnny on the Spot — término coloquial"
+              fill
+              className="object-contain"
+              priority
+            />
+          </section>
+        </FullPageSection>
 
         {/* CASOS DE ÉXITO */}
         <section data-nav-theme="dark" className="border-t border-white/5" aria-labelledby="cases-heading">
@@ -105,7 +108,8 @@ export default function HomePage() {
         <ServicesScrollSection />
 
         {/* CIFRAS */}
-        <section data-nav-theme="light" className="py-20 lg:py-28 bg-white" aria-label="Cifras clave">
+        <FullPageSection scrollHeight={210} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
+        <section data-nav-theme="light" className="w-full py-20 lg:py-28 bg-white" aria-label="Cifras clave">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
               <div>
@@ -135,9 +139,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        </FullPageSection>
 
         {/* DIFERENCIAL */}
-        <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="diferencial-heading">
+        <FullPageSection scrollHeight={210} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
+        <section data-nav-theme="light" className="w-full py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="diferencial-heading">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-2xl mb-16">
               <h2
@@ -178,6 +184,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        </FullPageSection>
 
         {/* BLOG */}
         <section data-nav-theme="light" className="py-20 lg:py-28 px-6 lg:px-8 bg-white border-t border-black/5" aria-labelledby="blog-heading">

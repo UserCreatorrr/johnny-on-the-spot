@@ -4,7 +4,6 @@ import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Iphone } from "@/components/ui/Iphone";
-import { TypingAnimation } from "@/components/ui/TypingAnimation";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 

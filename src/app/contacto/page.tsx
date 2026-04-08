@@ -60,7 +60,7 @@ function IncomingCallScreen() {
       </div>
 
       {/* Accept / Decline buttons */}
-      <div className="flex justify-between items-center px-16 pb-10 flex-shrink-0">
+      <div className="flex items-center pb-10 flex-shrink-0" style={{ gap: "5rem", justifyContent: "center" }}>
         {/* Decline */}
         <div className="flex flex-col items-center gap-1.5">
           <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">

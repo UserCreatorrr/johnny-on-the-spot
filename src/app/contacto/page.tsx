@@ -101,14 +101,16 @@ function NewContactScreen() {
       </div>
 
       {/* Nav bar */}
-      <div className="flex justify-between items-center px-4 py-2 flex-shrink-0 bg-[#F2F2F7]">
-        <span className="text-[13px] text-[#007AFF]">Cancelar</span>
-        <span className="text-[14px] font-semibold text-black">Queremos conocerte</span>
-        <button onClick={handleSubmit}
-          className="text-[13px] font-semibold"
-          style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
-          OK
-        </button>
+      <div className="flex-shrink-0 bg-[#F2F2F7] pt-1 pb-3">
+        <div className="flex justify-between items-center px-4 pb-2">
+          <span className="text-[13px] text-[#007AFF]">Cancelar</span>
+          <button onClick={handleSubmit}
+            className="text-[13px] font-semibold"
+            style={{ color: form.nombre || form.empresa ? "#007AFF" : "#aaa" }}>
+            OK
+          </button>
+        </div>
+        <p className="text-[15px] font-semibold text-black text-center whitespace-nowrap">Queremos conocerte</p>
       </div>
 
       {sent ? (

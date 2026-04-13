@@ -162,7 +162,7 @@ function ContactSection() {
   }, [isInView, controls]);
 
   return (
-    <div ref={ref} className="relative flex items-center justify-center min-h-screen overflow-hidden bg-white">
+    <div ref={ref} className="relative flex items-center justify-center h-screen overflow-hidden bg-white">
       <motion.div
         className="absolute left-10 lg:left-24 max-w-md z-10"
         initial={{ opacity: 0, x: -40 }}

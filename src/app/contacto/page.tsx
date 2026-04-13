@@ -216,15 +216,6 @@ function ContactSection() {
           <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all text-sm whitespace-nowrap">LinkedIn</span>
         </a>
 
-        {/* Telefono */}
-        <a href="tel:+34000000000"
-          className="group w-12 hover:w-44 h-12 hover:bg-black relative bg-zinc-800 rounded text-neutral-50 duration-700 before:duration-700 font-bold flex justify-start gap-2 items-center p-2 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6 before:bg-zinc-800 before:hover:bg-black before:rotate-45"
-        >
-          <svg className="w-8 h-8 shrink-0 fill-neutral-50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
-          </svg>
-          <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all text-sm whitespace-nowrap">Teléfono</span>
-        </a>
       </motion.div>
 
       <motion.div animate={controls} initial={{ x: 0 }} className="relative z-20">

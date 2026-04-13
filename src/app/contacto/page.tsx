@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
 import { Iphone } from "@/components/ui/Iphone";
 import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -254,6 +255,7 @@ function ContactSection() {
 export default function ContactoPage() {
   return (
     <>
+      <Navigation />
       <main id="main-content" className="min-h-screen bg-white">
         <ContactSection />
       </main>

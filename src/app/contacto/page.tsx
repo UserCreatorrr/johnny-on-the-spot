@@ -162,9 +162,9 @@ function ContactSection() {
   }, [isInView, controls]);
 
   return (
-    <div ref={ref} className="relative flex items-center justify-center min-h-screen overflow-hidden bg-white">
+    <div ref={ref} className="relative flex items-center justify-center gap-8 lg:gap-12 min-h-screen overflow-hidden bg-white px-10 lg:px-24">
       <motion.div
-        className="absolute left-10 lg:left-24 max-w-md z-10"
+        className="max-w-xs lg:max-w-md z-10 flex-shrink-0"
         initial={{ opacity: 0, x: -40 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
         transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
@@ -179,7 +179,7 @@ function ContactSection() {
       </motion.div>
 
       <motion.div
-        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-3 z-10"
+        className="flex flex-col gap-3 z-10 flex-shrink-0"
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
         transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
@@ -225,7 +225,7 @@ function ContactSection() {
         </a>
       </motion.div>
 
-      <motion.div animate={controls} initial={{ x: 0 }} className="relative z-20">
+      <motion.div animate={controls} initial={{ x: 0 }} className="relative z-20 flex-shrink-0">
         <div style={{ height: "min(85vh, 640px)", width: "auto", aspectRatio: "320/650" }}>
           <Iphone>
             <AnimatePresence mode="wait">

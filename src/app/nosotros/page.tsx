@@ -15,7 +15,7 @@ export default function NosotrosPage() {
     <PageLayout>
 
       {/* SOMOS — rotating text */}
-      <section className="py-24 lg:py-36 px-6 lg:px-8 bg-white" aria-label="Quiénes somos">
+      <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Quiénes somos">
         <div className="max-w-4xl mx-auto">
           <p className="text-black/25 text-xs tracking-widest uppercase mb-8">Somos</p>
           <p className="text-4xl lg:text-6xl font-black tracking-tighter text-black leading-tight min-h-[1.2em]">
@@ -25,8 +25,8 @@ export default function NosotrosPage() {
       </section>
 
       {/* NOSOTROS — descripción del equipo */}
-      <section className="py-24 lg:py-36 px-6 lg:px-8 bg-black border-t border-white/5" aria-labelledby="equipo-heading">
-        <div className="max-w-7xl mx-auto">
+      <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-black overflow-hidden" aria-labelledby="equipo-heading">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="text-white/25 text-xs tracking-widest uppercase mb-6">Nosotros</p>
@@ -56,8 +56,8 @@ export default function NosotrosPage() {
       </section>
 
       {/* Clientes */}
-      <section className="py-16 lg:py-24 px-6 lg:px-8 bg-white" aria-label="Clientes">
-        <div className="max-w-7xl mx-auto">
+      <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Clientes">
+        <div className="max-w-7xl mx-auto w-full">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Han confiado en nosotros</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
             {[

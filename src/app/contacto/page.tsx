@@ -81,7 +81,7 @@ function NewContactScreen() {
       </div>
 
       {/* Header */}
-      <div className="px-5 pt-3 pb-4 flex-shrink-0" style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+      <div className="px-5 pt-8 pb-4 flex-shrink-0" style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
         <p className="text-[10px] text-black/35 tracking-widest uppercase mb-0.5">Johnny on the Spot</p>
         <h3 className="text-[17px] font-bold text-black leading-tight">Queremos conocerte</h3>
       </div>

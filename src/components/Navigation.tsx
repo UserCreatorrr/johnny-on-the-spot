@@ -9,7 +9,9 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Nosotros", href: "/nosotros" },
+  { label: "Servicios", href: "/servicios" },
   { label: "On the Spot", href: "/casos-de-exito" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const NAV_H = 80;

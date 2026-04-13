@@ -141,7 +141,7 @@ export default function ServiciosPage() {
         return (
           <section
             key={servicio.title}
-            className={`min-h-screen flex items-center px-6 lg:px-8 py-24 ${
+            className={`sticky top-0 h-screen flex items-center px-6 lg:px-8 py-24 overflow-hidden ${
               isDark ? "bg-black" : "bg-white"
             }`}
             aria-label={servicio.title}

@@ -81,16 +81,24 @@ export function Iphone({ src, videoSrc, children, className, style, ...props }: 
           mask={hasMedia ? "url(#screenPunch)" : undefined}
         />
 
-        <path d="M154 48.5C154 38.2827 162.283 30 172.5 30H259.5C269.717 30 278 38.2827 278 48.5C278 58.7173 269.717 67 259.5 67H172.5C162.283 67 154 58.7173 154 48.5Z" fill="#000000" />
-        <path d="M249 48.5C249 42.701 253.701 38 259.5 38C265.299 38 270 42.701 270 48.5C270 54.299 265.299 59 259.5 59C253.701 59 249 54.299 249 48.5Z" fill="#000000" />
-        <path d="M254 48.5C254 45.4624 256.462 43 259.5 43C262.538 43 265 45.4624 265 48.5C265 51.5376 262.538 54 259.5 54C256.462 54 254 51.5376 254 48.5Z" fill="#1a1a1a" />
-
         <defs>
           <mask id="screenPunch" maskUnits="userSpaceOnUse">
             <rect x="0" y="0" width={PHONE_WIDTH} height={PHONE_HEIGHT} fill="white" />
             <rect x={SCREEN_X} y={SCREEN_Y} width={SCREEN_WIDTH} height={SCREEN_HEIGHT} rx={SCREEN_RADIUS} ry={SCREEN_RADIUS} fill="black" />
           </mask>
         </defs>
+      </svg>
+
+      {/* Dynamic Island overlay — always on top of screen content */}
+      <svg
+        viewBox={`0 0 ${PHONE_WIDTH} ${PHONE_HEIGHT}`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="absolute inset-0 size-full z-20 pointer-events-none"
+      >
+        <path d="M154 48.5C154 38.2827 162.283 30 172.5 30H259.5C269.717 30 278 38.2827 278 48.5C278 58.7173 269.717 67 259.5 67H172.5C162.283 67 154 58.7173 154 48.5Z" fill="#000000" />
+        <path d="M249 48.5C249 42.701 253.701 38 259.5 38C265.299 38 270 42.701 270 48.5C270 54.299 265.299 59 259.5 59C253.701 59 249 54.299 249 48.5Z" fill="#000000" />
+        <path d="M254 48.5C254 45.4624 256.462 43 259.5 43C262.538 43 265 45.4624 265 48.5C265 51.5376 262.538 54 259.5 54C256.462 54 254 51.5376 254 48.5Z" fill="#1a1a1a" />
       </svg>
     </div>
   )

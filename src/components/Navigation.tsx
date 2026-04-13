@@ -19,8 +19,9 @@ export default function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+  const isContact = pathname === "/contacto";
   const [open, setOpen] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(!isHome);
+  const [logoVisible, setLogoVisible] = useState(!isHome && !isContact);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
@@ -56,6 +57,8 @@ export default function Navigation() {
       if (isHome) {
         const hero = document.getElementById("hero-section");
         setLogoVisible(hero ? hero.getBoundingClientRect().bottom <= NAV_H : true);
+      } else if (isContact) {
+        setLogoVisible(false);
       } else {
         setLogoVisible(true);
       }

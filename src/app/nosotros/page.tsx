@@ -2,7 +2,6 @@
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import RotatingText from "@/components/RotatingText";
-import VideoHeroNosotros from "@/components/VideoHeroNosotros";
 
 export const metadata: Metadata = {
   title: "Nosotros: Agencia de Comunicación Integral | Johnny on the Spot",
@@ -14,9 +13,6 @@ export const metadata: Metadata = {
 export default function NosotrosPage() {
   return (
     <PageLayout>
-
-      {/* VIDEO HERO — full screen */}
-      <VideoHeroNosotros />
 
       {/* SOMOS — rotating text */}
       <section className="py-24 lg:py-36 px-6 lg:px-8 bg-white" aria-label="Quiénes somos">
@@ -79,11 +75,11 @@ export default function NosotrosPage() {
       </section>
 
       <CTASection
-        title="¿Quieres trabajar con nosotros?"
-        subtitle="Cuéntanos el proyecto. Nos ponemos en contacto antes de 24 horas."
-        primaryCTA="Hablemos"
-        secondaryCTA="Ver casos de éxito"
-        secondaryHref="/casos-de-exito"
+        title="¿Tienes un reto de comunicación?"
+        subtitle="Cuéntanos el proyecto. Un equipo sénior lo leerá hoy y te propone una llamada en menos de 24 horas."
+        primaryCTA="Hablemos de tu proyecto"
+        secondaryCTA="Ver servicios"
+        secondaryHref="/servicios"
       />
     </PageLayout>
   );

@@ -18,7 +18,7 @@ export default function NosotrosPage() {
       <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Quiénes somos">
         <div className="max-w-4xl mx-auto">
           <p className="text-black/25 text-xs tracking-widest uppercase mb-8">Somos</p>
-          <p className="text-4xl lg:text-6xl font-black tracking-tighter text-black leading-tight min-h-[1.2em]">
+          <p className="text-2xl sm:text-4xl lg:text-6xl font-black tracking-tighter text-black leading-tight min-h-[1.2em]">
             <RotatingText />
           </p>
         </div>
@@ -32,12 +32,12 @@ export default function NosotrosPage() {
               <p className="text-white/25 text-xs tracking-widest uppercase mb-6">Nosotros</p>
               <h2
                 id="equipo-heading"
-                className="text-4xl lg:text-5xl font-black tracking-tighter text-white leading-tight"
+                className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-white leading-tight"
               >
                 El equipo
               </h2>
             </div>
-            <div className="space-y-6 text-white/55 text-lg leading-relaxed">
+            <div className="space-y-4 text-white/55 text-sm lg:text-lg leading-relaxed">
               <p>
                 Somos un equipo multidisciplinar y versátil con una amplia experiencia en el Universo de la Comunicación y los Eventos.
               </p>

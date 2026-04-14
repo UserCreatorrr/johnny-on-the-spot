@@ -159,7 +159,7 @@ export default function Navigation() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-snug py-1"
+                      className="block text-3xl sm:text-4xl lg:text-6xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-snug py-1"
                     >
                       {item.label}
                     </Link>

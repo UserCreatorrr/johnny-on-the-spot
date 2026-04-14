@@ -52,9 +52,9 @@ const sections = [
 
 function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
   return (
-    <div className="w-full h-full flex flex-col justify-between p-12 xl:p-16">
+    <div className="w-full h-full flex flex-col justify-between p-6 lg:p-12 xl:p-16">
       <div className="flex justify-end">
-        <span className="text-white/[0.04] font-black text-[120px] xl:text-[160px] leading-none font-mono select-none">
+        <span className="text-white/[0.04] font-black text-[60px] lg:text-[120px] xl:text-[160px] leading-none font-mono select-none">
           {visual.accent}
         </span>
       </div>
@@ -64,7 +64,7 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
           {visual.items.map((item, i) => (
             <li key={i} className="flex items-center gap-5">
               <span className="w-px h-8 bg-white/15 flex-shrink-0" aria-hidden="true" />
-              <span className="text-white/70 font-light text-xl xl:text-2xl tracking-tight">{item}</span>
+              <span className="text-white/70 font-light text-sm lg:text-xl xl:text-2xl tracking-tight">{item}</span>
             </li>
           ))}
         </ul>

@@ -39,7 +39,7 @@ export default function FAQSection({
       />
       <section className="min-h-screen flex items-center bg-black border-t border-white/10" aria-labelledby="faq-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
             <div>
               <h2
                 id="faq-heading"

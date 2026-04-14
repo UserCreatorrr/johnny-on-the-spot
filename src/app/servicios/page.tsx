@@ -126,7 +126,7 @@ export default function ServiciosPage() {
           <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Lo que hacemos</p>
           <h1
             id="servicios-heading"
-            className="text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-8 max-w-4xl"
+            className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-8 max-w-4xl"
           >
             Servicios de comunicación que funcionan.
           </h1>
@@ -151,7 +151,7 @@ export default function ServiciosPage() {
                 {String(index + 1).padStart(2, "0")}
               </p>
               <h2
-                className={`text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-16 ${
+                className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-8 lg:mb-16 ${
                   isDark ? "text-white" : "text-black"
                 }`}
               >

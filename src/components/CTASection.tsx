@@ -34,7 +34,7 @@ export default function CTASection({
         <div className="max-w-3xl">
           <h2
             id="cta-heading"
-            className={`text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-6 ${headingColor}`}
+            className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-6 ${headingColor}`}
           >
             {title}
           </h2>

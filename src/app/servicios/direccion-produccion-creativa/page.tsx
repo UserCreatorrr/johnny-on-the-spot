@@ -197,8 +197,6 @@ export default function DireccionCreativaPage() {
         title="¿Necesitas dirección creativa?"
         subtitle="Mándanos el brief. Lo leemos hoy y te proponemos un approach en menos de 48 horas."
         primaryCTA="Enviar el brief"
-        secondaryCTA="Ver casos de creatividad"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

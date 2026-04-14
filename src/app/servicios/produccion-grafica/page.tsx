@@ -177,8 +177,6 @@ export default function ProduccionGraficaPage() {
         title="¿Necesitas producción gráfica con nivel internacional?"
         subtitle="Mándanos el briefing técnico o el proyecto. Analizamos los materiales y proponemos el mejor proceso."
         primaryCTA="Solicitar presupuesto"
-        secondaryCTA="Ver casos de éxito"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

@@ -145,7 +145,6 @@ export default function DisenoIdentidadPage() {
         title="¿Tu identidad ya no te representa?"
         subtitle="Cuéntanos dónde estás y a dónde quieres llegar. El primer análisis es gratis."
         primaryCTA="Solicitar análisis"
-        secondaryCTA="Ver casos de branding"
         secondaryHref="/casos/metaembalatges-branding"
       />
     </PageLayout>

@@ -145,7 +145,6 @@ export default function EventosCorporativosPage() {
         title="¿Tienes un evento en mente?"
         subtitle="Cuéntanoslo con la mayor antelación posible. Cuanto antes empezamos, mejor el resultado."
         primaryCTA="Hablemos del evento"
-        secondaryCTA="Ver casos de eventos"
         secondaryHref="/casos/sap-partner-summit"
       />
     </PageLayout>

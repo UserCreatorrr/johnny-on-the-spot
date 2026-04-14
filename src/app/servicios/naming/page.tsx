@@ -145,8 +145,6 @@ export default function NamingPage() {
         title="¿Buscas nombre para tu marca o producto?"
         subtitle="Empieza por el briefing. Nosotros hacemos el resto."
         primaryCTA="Enviar el brief"
-        secondaryCTA="Ver casos de branding"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

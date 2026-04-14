@@ -177,8 +177,6 @@ export default function DireccionDeArtePage() {
         title="¿Necesitas dirección de arte?"
         subtitle="Cuéntanos el proyecto y la visión que tienes en mente. Lo analizamos y te proponemos el enfoque más adecuado."
         primaryCTA="Hablemos"
-        secondaryCTA="Ver casos de éxito"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

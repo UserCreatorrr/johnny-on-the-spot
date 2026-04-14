@@ -241,9 +241,7 @@ export default function HomePage() {
           title="¿Tienes un proyecto urgente?"
           subtitle="Perfecto. Somos Johnny on the Spot. Cuéntanoslo hoy y trabajamos mañana."
           primaryCTA="Hablemos ahora"
-          secondaryCTA="Ver casos de éxito"
           primaryHref="/contacto"
-          secondaryHref="/casos-de-exito"
         /></div>
       </main>
       <Footer />

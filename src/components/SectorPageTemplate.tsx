@@ -127,7 +127,6 @@ export default function SectorPageTemplate({
 
       <FAQSection faqs={faqs} title={`Preguntas sobre comunicación en ${breadcrumbLabel.toLowerCase()}`} />
 
-      <CTASection title={ctaTitle} subtitle={ctaSubtitle} primaryCTA="Hablemos" secondaryCTA="Ver casos de éxito" secondaryHref="/casos-de-exito" />
     </PageLayout>
   );
 }

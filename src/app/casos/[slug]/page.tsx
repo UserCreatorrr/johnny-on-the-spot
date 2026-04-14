@@ -198,8 +198,6 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
           title="¿Quieres resultados como estos?"
           subtitle="Cuéntanos el proyecto. Trabajamos para que el resultado merezca estar aquí."
           primaryCTA="Hablemos"
-          secondaryCTA="Ver todos los casos"
-          secondaryHref="/casos-de-exito"
         />
       </PageLayout>
     );
@@ -369,8 +367,6 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
         title="¿Quieres resultados como estos?"
         subtitle="Cuéntanos el proyecto. Trabajamos para que el resultado merezca estar aquí."
         primaryCTA="Hablemos"
-        secondaryCTA="Ver todos los casos"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

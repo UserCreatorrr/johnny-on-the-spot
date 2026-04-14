@@ -180,7 +180,6 @@ export default function ServiciosPage() {
         title="¿Necesitas más de un servicio?"
         subtitle="La mayoría de nuestros clientes trabajan con nosotros en varios frentes a la vez. Cuéntanos el alcance y diseñamos la solución más eficiente."
         primaryCTA="Hablemos"
-        secondaryCTA="Ver casos de éxito"
       />
     </PageLayout>
   );

@@ -145,8 +145,6 @@ export default function EstrategiaPage() {
         title="¿Tu comunicación tiene estrategia o tiene prisa?"
         subtitle="Una sesión de diagnóstico de 90 minutos puede cambiar el foco de todo lo que viene después."
         primaryCTA="Solicitar diagnóstico"
-        secondaryCTA="Ver casos de éxito"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

@@ -54,7 +54,6 @@ export default function SectoresPage() {
         title="¿Tu sector no está en la lista?"
         subtitle="Lo más probable es que hayamos trabajado en él. Cuéntanoslo y veremos si podemos ayudarte."
         primaryCTA="Hablemos"
-        secondaryCTA="Ver casos de éxito"
       />
     </PageLayout>
   );

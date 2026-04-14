@@ -145,7 +145,6 @@ export default function ActivacionMarcaPage() {
         title="¿Quieres activar tu marca donde está tu consumidor?"
         subtitle="Cuéntanos el producto, el target y el contexto. Diseñamos la mecánica."
         primaryCTA="Hablemos"
-        secondaryCTA="Ver casos de activación"
         secondaryHref="/casos/coca-cola-grandvalira"
       />
     </PageLayout>

@@ -1,67 +1,61 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 interface CTASectionProps {
   title?: string;
   subtitle?: string;
   primaryCTA?: string;
-  secondaryCTA?: string;
   primaryHref?: string;
+  secondaryCTA?: string;
   secondaryHref?: string;
   dark?: boolean;
 }
 
 export default function CTASection({
   title = "¿Tienes un proyecto en mente?",
-  subtitle = "Cuéntanoslo. Sin formularios innecesarios, sin esperas. Un equipo senior leerá tu brief hoy.",
+  subtitle = "Cuéntanoslo. Un equipo sénior leerá tu brief hoy y te proponemos una llamada en menos de 24 horas.",
   primaryCTA = "Hablemos",
-  secondaryCTA = "Ver casos de éxito",
   primaryHref = "/contacto",
-  secondaryHref = "/casos-de-exito",
+  secondaryCTA,
+  secondaryHref,
   dark = true,
 }: CTASectionProps) {
+  const bg = dark ? "bg-black" : "bg-white";
+  const headingColor = dark ? "text-white" : "text-black";
+  const subColor = dark ? "text-white/40" : "text-black/50";
+  const btnBg = dark ? "bg-white text-black hover:bg-white/90" : "bg-black text-white hover:bg-black/80";
+  const secondaryColor = dark ? "text-white/40 hover:text-white" : "text-black/40 hover:text-black";
+
   return (
     <section
-      className={`py-20 lg:py-32 ${dark ? "bg-white" : "bg-black"}`}
+      className={`min-h-[70vh] flex items-center ${bg} border-t ${dark ? "border-white/10" : "border-black/10"}`}
       aria-labelledby="cta-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">
         <div className="max-w-3xl">
           <h2
             id="cta-heading"
-            className={`text-4xl lg:text-5xl font-black tracking-tighter leading-none mb-6 ${
-              dark ? "text-black" : "text-white"
-            }`}
+            className={`text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-6 ${headingColor}`}
           >
             {title}
           </h2>
-          <p
-            className={`text-lg lg:text-xl leading-relaxed mb-10 ${
-              dark ? "text-black/60" : "text-white/50"
-            }`}
-          >
+          <p className={`text-lg leading-relaxed mb-12 max-w-xl ${subColor}`}>
             {subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
             <Link
               href={primaryHref}
-              className={`inline-block px-8 py-4 text-sm font-medium tracking-wide transition-colors ${
-                dark
-                  ? "bg-black text-white hover:bg-black/80"
-                  : "bg-white text-black hover:bg-white/90"
-              }`}
+              className={`inline-block px-8 py-4 text-sm font-semibold tracking-wide transition-colors ${btnBg}`}
             >
-              {primaryCTA}
+              {primaryCTA} →
             </Link>
-            <Link
-              href={secondaryHref}
-              className={`inline-block px-8 py-4 text-sm font-medium tracking-wide border transition-colors ${
-                dark
-                  ? "border-black/20 text-black/70 hover:border-black hover:text-black"
-                  : "border-white/20 text-white/60 hover:border-white hover:text-white"
-              }`}
-            >
-              {secondaryCTA}
-            </Link>
+            {secondaryCTA && secondaryHref && (
+              <Link
+                href={secondaryHref}
+                className={`inline-block px-2 py-4 text-sm transition-colors underline underline-offset-4 ${secondaryColor}`}
+              >
+                {secondaryCTA}
+              </Link>
+            )}
           </div>
         </div>
       </div>

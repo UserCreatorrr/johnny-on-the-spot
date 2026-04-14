@@ -177,8 +177,6 @@ export default function GuionVideoPage() {
         title="¿Tienes un proyecto audiovisual?"
         subtitle="Cuéntanos qué necesitas comunicar, a quién y en qué canal. Diseñamos el formato y el proceso más eficiente."
         primaryCTA="Enviar el brief"
-        secondaryCTA="Ver casos audiovisuales"
-        secondaryHref="/casos-de-exito"
       />
     </PageLayout>
   );

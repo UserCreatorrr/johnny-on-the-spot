@@ -52,7 +52,7 @@ export default function AlconHydraglyde({ onBack }: { onBack?: () => void }) {
             transformOrigin: "center center",
             transition: "transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           }}>
-            <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/airoptix.mp4" type="video/mp4" />
+            <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom_alcon.mp4" type="video/mp4" />
           </video>
 
           <div ref={overlayRef} style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.15)", zIndex: 2, pointerEvents: "none" }} />

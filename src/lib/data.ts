@@ -149,7 +149,7 @@ export const CASES = [
     services: ["Eventos", "Producción Creativa", "Contenido"],
     sector: "Farmacéutico",
     results: "Producción integral del evento de lanzamiento Hydra Glide",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/airoptix.mp4",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom_alcon.mp4",
   },
   {
     slug: "cocacola-kfc-together",

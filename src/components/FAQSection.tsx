@@ -37,8 +37,8 @@ export default function FAQSection({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="py-20 lg:py-28 bg-black border-t border-white/10" aria-labelledby="faq-heading">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="min-h-screen flex items-center bg-black border-t border-white/10" aria-labelledby="faq-heading">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div>
               <h2

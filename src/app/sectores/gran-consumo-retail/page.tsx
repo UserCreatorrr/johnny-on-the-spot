@@ -32,8 +32,6 @@ export default function GranConsumoRetailPage() {
         { question: "¿Podéis producir materiales POS para varios mercados?", answer: "Sí. Lo hemos hecho para Orbit en USA y Europa. Adaptamos los materiales a las normativas locales de cada mercado, los idiomas necesarios y los estándares de impresión de cada país." },
         { question: "¿Trabajáis con distribuidores de gran consumo?", answer: "Sí. Tenemos experiencia en comunicación dirigida a la red de distribución: presentaciones de producto, catálogos, materiales de sell-in y eventos de distribuidores." },
       ]}
-      ctaTitle="¿Necesitas llegar al consumidor donde está?"
-      ctaSubtitle="Diseñamos la activación, producimos los materiales y lo coordinamos todo."
       relatedLinks={[
         { label: "Activación de Marca", href: "/servicios/activacion-de-marca" },
         { label: "Producción Gráfica", href: "/servicios/produccion-grafica" },

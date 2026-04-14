@@ -32,8 +32,6 @@ export default function TecnologiaBBPage() {
         { question: "¿Hacéis comunicación interna para empresas tecnológicas?", answer: "Sí. Plataformas de comunicación interna, newsletters corporativas, onboarding, cultura de empresa. Los retos de comunicación interna en empresas tech equipos distribuidos, culturas diversas, crecimiento rápido son particulares y los conocemos." },
         { question: "¿Podéis producir materiales de ventas B2B?", answer: "Sí. Decks de ventas, one-pagers, casos de éxito, materiales de sell-in: todo el armamento de ventas que el equipo comercial necesita para convertir en ciclos B2B largos." },
       ]}
-      ctaTitle="¿Tu empresa tecnológica merece mejor comunicación?"
-      ctaSubtitle="Cuéntanos el proyecto. Sabemos cómo hacer que lo técnico convenza."
       relatedLinks={[
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
         { label: "Marketing Digital", href: "/servicios/marketing-digital" },

@@ -69,7 +69,7 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // run once on mount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHome]);
+  }, [isHome, isContact]);
 
   // When overlay is open always use dark (white) colors
   const effectiveTheme = open ? "dark" : theme;

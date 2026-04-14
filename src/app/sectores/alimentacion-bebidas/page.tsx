@@ -31,8 +31,6 @@ export default function AlimentacionBebidasPage() {
         { question: "¿Podéis hacer fotografía de producto para catálogos y redes?", answer: "Sí. Fotografía de alimentos y bebidas con dirección de arte específica para la categoría. Tanto en estudio como en localizaciones reales." },
         { question: "¿Tenéis experiencia con spirits y bebidas alcohólicas premium?", answer: "Sí. Glenfiddich y Perrier son buenos ejemplos. Las marcas de spirits premium tienen reglas específicas en comunicación regulación publicitaria del alcohol que conocemos y respetamos." },
       ]}
-      ctaTitle="¿Tienes un proyecto en food & beverage?"
-      ctaSubtitle="Cuéntanoslo. Sabemos hacer que los productos de alimentación y bebida sean irresistibles en comunicación."
       relatedLinks={[
         { label: "Diseño de Identidad", href: "/servicios/diseno-de-identidad" },
         { label: "Producción Gráfica", href: "/servicios/produccion-grafica" },

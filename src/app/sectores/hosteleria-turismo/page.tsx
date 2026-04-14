@@ -31,8 +31,6 @@ export default function HosteleriaTurismoPage() {
         { question: "¿Podéis diseñar la comunicación corporativa de una cadena hotelera?", answer: "Sí. Desde la identidad corporativa hasta los materiales internos, la comunicación con partners y la presencia digital. Una cadena hotelera tiene múltiples audiencias huéspedes, inversores, equipos, franchisados y cada una necesita su propio lenguaje." },
         { question: "¿Tenéis experiencia con grandes eventos de sector como FITUR?", answer: "Sí. Tenemos experiencia en producción de stands y presencia en ferias de turismo y hostelería a nivel nacional e internacional." },
       ]}
-      ctaTitle="¿Tu hotel o marca turística necesita comunicación de nivel?"
-      ctaSubtitle="Cuéntanos el proyecto. Sabemos cómo el sector funciona y qué necesita."
       relatedLinks={[
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
         { label: "Dirección Creativa", href: "/servicios/direccion-produccion-creativa" },

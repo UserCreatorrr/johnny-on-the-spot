@@ -32,8 +32,6 @@ export default function LujoPremiumPage() {
         { question: "¿Trabajáis con marcas de lujo que operan globalmente?", answer: "Sí. Chopard, Philipp Plein y Puig son marcas con operativa global. Nos adaptamos a sus estándares internacionales y coordinamos con sus equipos en varios países." },
         { question: "¿Podéis producir materiales de formación para equipos de ventas de lujo?", answer: "Sí. El e-learning de Chopard y el de Philipp Plein son buenos ejemplos. La formación de un embajador de marca de lujo tiene estándares propios: tono, profundidad de producto, sofisticación visual." },
       ]}
-      ctaTitle="¿Tu marca merece una comunicación a su altura?"
-      ctaSubtitle="Cuéntanos el proyecto. Sin compromisos en el estándar."
       relatedLinks={[
         { label: "Dirección de Arte", href: "/servicios/direccion-de-arte" },
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },

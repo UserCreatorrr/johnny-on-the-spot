@@ -31,8 +31,6 @@ export default function AutomocionPage() {
         { question: "¿Hacéis producción audiovisual de vehículos?", answer: "Sí. Vídeos de producto, experiencias de conducción filmadas y contenido editorial sobre vehículos. Con el equipo técnico y la dirección de arte adecuados para hacer justicia a los coches." },
         { question: "¿Podéis gestionar eventos en varios países europeos?", answer: "Sí. Tenemos red de proveedores en los principales países europeos y experiencia en coordinación logística cross-border." },
       ]}
-      ctaTitle="¿Tienes un proyecto en automoción?"
-      ctaSubtitle="Los estándares de tu marca son los nuestros también. Cuéntanoslo."
       relatedLinks={[
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
         { label: "Dirección de Arte", href: "/servicios/direccion-de-arte" },

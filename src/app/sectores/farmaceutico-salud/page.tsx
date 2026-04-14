@@ -32,8 +32,6 @@ export default function FarmaceuticoSaludPage() {
         { question: "¿Trabajáis en lanzamientos internacionales en farma?", answer: "Sí. El roadshow de Alcon Air Optix es un buen ejemplo: ocho ciudades en Europa, materiales adaptados por país, app de realidad aumentada y coordinación logística completa." },
         { question: "¿Podéis producir e-learnings para equipos de ventas farmacéuticos?", answer: "Sí. Producimos plataformas de formación interactiva para equipos comerciales y médicos de farmacéuticas. Desde el guión hasta la plataforma, adaptado a los estándares de compliance del sector." },
       ]}
-      ctaTitle="¿Tienes un proyecto en el sector farmacéutico?"
-      ctaSubtitle="Cuéntanoslo. Conocemos el sector, las normativas y cómo hacer que la comunicación funcione dentro de ellas."
       relatedLinks={[
         { label: "Estrategia de Comunicación", href: "/servicios/estrategia-de-comunicacion" },
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },

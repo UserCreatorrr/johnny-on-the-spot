@@ -1,6 +1,5 @@
 ﻿import Link from "next/link";
 import PageLayout from "./PageLayout";
-import CTASection from "./CTASection";
 import FAQSection, { type FAQ } from "./FAQSection";
 import Breadcrumbs from "./Breadcrumbs";
 
@@ -18,8 +17,6 @@ interface SectorPageProps {
   clients: string;
   cases: { title: string; href: string; client: string; desc: string }[];
   faqs: FAQ[];
-  ctaTitle: string;
-  ctaSubtitle: string;
   relatedLinks: RelatedLink[];
   breadcrumbLabel: string;
 }
@@ -33,8 +30,6 @@ export default function SectorPageTemplate({
   clients,
   cases,
   faqs,
-  ctaTitle,
-  ctaSubtitle,
   relatedLinks,
   breadcrumbLabel,
 }: SectorPageProps) {

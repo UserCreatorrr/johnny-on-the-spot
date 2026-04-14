@@ -19,15 +19,15 @@ export default function CTASection({
   secondaryHref,
   dark = true,
 }: CTASectionProps) {
-  const bg = dark ? "bg-black" : "bg-white";
-  const headingColor = dark ? "text-white" : "text-black";
-  const subColor = dark ? "text-white/40" : "text-black/50";
-  const btnBg = dark ? "bg-white text-black hover:bg-white/90" : "bg-black text-white hover:bg-black/80";
-  const secondaryColor = dark ? "text-white/40 hover:text-white" : "text-black/40 hover:text-black";
+  const bg = dark ? "bg-white" : "bg-black";
+  const headingColor = dark ? "text-black" : "text-white";
+  const subColor = dark ? "text-black/50" : "text-white/40";
+  const btnBg = dark ? "bg-black text-white hover:bg-black/80" : "bg-white text-black hover:bg-white/90";
+  const secondaryColor = dark ? "text-black/40 hover:text-black" : "text-white/40 hover:text-white";
 
   return (
     <section
-      className={`min-h-[70vh] flex items-center ${bg} border-t ${dark ? "border-white/10" : "border-black/10"}`}
+      className={`min-h-[70vh] flex items-center ${bg} border-t ${dark ? "border-black/10" : "border-white/10"}`}
       aria-labelledby="cta-heading"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">

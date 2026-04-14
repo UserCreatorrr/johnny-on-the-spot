@@ -238,9 +238,9 @@ export default function HomePage() {
 
         {/* CTA Final */}
         <div data-nav-theme="dark"><CTASection
-          title="¿Tienes un proyecto urgente?"
-          subtitle="Perfecto. Somos Johnny on the Spot. Cuéntanoslo hoy y trabajamos mañana."
-          primaryCTA="Hablemos ahora"
+          title="¿Tienes un proyecto en mente?"
+          subtitle="Cuéntanoslo. Un equipo sénior leerá tu brief hoy y te proponemos una llamada en menos de 24 horas."
+          primaryCTA="Hablemos"
           primaryHref="/contacto"
         /></div>
       </main>

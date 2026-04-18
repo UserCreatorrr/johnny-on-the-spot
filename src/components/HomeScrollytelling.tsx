@@ -11,7 +11,7 @@ const sections = [
     body: "Antes de producir una sola pieza, entendemos el negocio, el mercado y el objetivo real. Diseño de estrategia 360°, plataforma de marca, brand storytelling. La estrategia no es un extra: es la razón por la que las campañas funcionan.",
     visual: {
       label: "Estrategia",
-      items: ["Diseño de Estrategia 360°", "Plataforma de marca", "Brand storytelling", "Branded Content"],
+      items: ["Diseño de Estrategia 360°", "Consultoría en marketing y comunicación", "Análisis reputacional", "Plataforma de marca", "Identificación de insights", "Brand storytelling", "Branded Content", "Desarrollo Conceptual", "Gestión de crisis"],
       accent: "01",
     },
   },

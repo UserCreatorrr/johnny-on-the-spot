@@ -10,7 +10,7 @@ import CasesVideoSection from "@/components/CasesVideoSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
-import { CASES, BLOG_POSTS } from "@/lib/data";
+import { CASES } from "@/lib/data";
 import FullPageSection from "@/components/FullPageSection";
 
 export const metadata: Metadata = {
@@ -52,7 +52,6 @@ const homeFaqs = [
 
 export default function HomePage() {
   const featuredCases = CASES.filter((c) => (c as typeof c & { videoUrl?: string }).videoUrl);
-  const featuredPosts = BLOG_POSTS.slice(0, 3);
 
   return (
     <>
@@ -141,95 +140,6 @@ export default function HomePage() {
         </section>
         </FullPageSection>
 
-        {/* DIFERENCIAL */}
-        <FullPageSection scrollHeight={210} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
-        <section data-nav-theme="light" className="w-full py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="diferencial-heading">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16">
-              <h2
-                id="diferencial-heading"
-                className="text-4xl lg:text-5xl font-black tracking-tighter text-black leading-tight"
-              >
-                Lo que nos hace diferentes
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              {[
-                {
-                  num: "01",
-                  title: "Equipo senior en todos los proyectos",
-                  body: "No eres el proyecto de prácticas de nadie. Cada cuenta tiene un partner sénior responsable. Siempre.",
-                },
-                {
-                  num: "02",
-                  title: "Multidisciplinar de verdad",
-                  body: "Estrategia, creatividad, producción, digital, eventos. No subcontratamos lo que no sabemos hacer. Lo hacemos.",
-                },
-                {
-                  num: "03",
-                  title: "Red internacional activa",
-                  body: "Proyectos en Europa, América y Oriente Medio. Proveedores locales en cada mercado. Sin costes de agencia intermediaria.",
-                },
-              ].map((item) => (
-                <div key={item.num} className="border-t border-black/10 pt-8">
-                  <p className="text-black/20 text-sm font-mono mb-4">{item.num}</p>
-                  <h3 className="text-black font-black text-xl tracking-tight mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-black/50 text-base leading-relaxed">
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        </FullPageSection>
-
-        {/* BLOG */}
-        <FullPageSection scrollHeight={240} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
-        <section data-nav-theme="light" className="w-full py-20 lg:py-28 px-6 lg:px-8 bg-white" aria-labelledby="blog-heading">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <p className="text-black/30 text-xs tracking-widest uppercase mb-3">Blog</p>
-                <h2
-                  id="blog-heading"
-                  className="text-4xl lg:text-5xl font-black tracking-tighter text-black"
-                >
-                  Criterio sobre comunicación.
-                </h2>
-              </div>
-              <Link
-                href="/blog"
-                className="hidden lg:block text-sm text-black/40 hover:text-black border-b border-black/10 hover:border-black/40 transition-colors pb-0.5"
-              >
-                Ver todos →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/5">
-              {featuredPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="bg-white p-8 group hover:bg-black/[0.02] transition-colors"
-                >
-                  <p className="text-black/25 text-xs tracking-widest uppercase mb-4">
-                    {post.category} · {post.readingTime} min
-                  </p>
-                  <h3 className="text-black font-bold text-lg leading-snug mb-3 group-hover:text-black/70 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-black/40 text-sm leading-relaxed">
-                    {post.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-        </FullPageSection>
 
         {/* FAQs */}
         <FullPageSection scrollHeight={260} innerStyle={{ background: "#000", display: "flex", alignItems: "center" }}>

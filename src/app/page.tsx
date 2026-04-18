@@ -8,7 +8,6 @@ import HomeScrollytelling from "@/components/HomeScrollytelling";
 import ServicesScrollSection from "@/components/ServicesScrollSection";
 import CasesVideoSection from "@/components/CasesVideoSection";
 import CTASection from "@/components/CTASection";
-import FAQSection from "@/components/FAQSection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { CASES } from "@/lib/data";
 import FullPageSection from "@/components/FullPageSection";
@@ -22,33 +21,6 @@ export const metadata: Metadata = {
   },
 };
 
-const homeFaqs = [
-  {
-    question: "¿Qué significa agencia de comunicación integral?",
-    answer:
-      "Significa que hacemos todo bajo el mismo techo: desde la estrategia hasta la producción final, pasando por la creatividad, el diseño, el copy, los eventos o el marketing digital. No coordinamos proveedores distintos con criterios distintos. Un equipo, una dirección, un resultado coherente.",
-  },
-  {
-    question: "¿Cuál es vuestro proceso de trabajo?",
-    answer:
-      "Empezamos por entender el problema real. Después diseñamos la solución más eficiente no la más cara ni la más aparente. Y luego producimos con el estándar más alto que el presupuesto permita. Cada proyecto tiene un partner senior responsable del principio al final.",
-  },
-  {
-    question: "¿Trabajáis solo con grandes empresas?",
-    answer:
-      "Hemos trabajado con Coca-Cola, SAP, Novartis y Porsche, sí. Pero también con startups y empresas medianas que quieren comunicar como las grandes. El criterio no es el tamaño de la empresa, sino la ambición del proyecto.",
-  },
-  {
-    question: "¿Cuánto cuesta trabajar con vosotros?",
-    answer:
-      "Depende del alcance. Tenemos proyectos desde pocas semanas de trabajo hasta producciones que duran meses. Lo que garantizamos en todos los casos es transparencia presupuestaria desde el principio y ningún coste oculto.",
-  },
-  {
-    question: "¿Podéis haceros cargo de un proyecto con poco tiempo?",
-    answer:
-      "Sí. De hecho, es una de nuestras señas de identidad. Johnny on the Spot no es solo un nombre: es una promesa operativa. Somos la agencia a la que llamas cuando el tiempo aprieta y no puedes arriesgar.",
-  },
-];
 
 export default function HomePage() {
   const featuredCases = CASES.filter((c) => (c as typeof c & { videoUrl?: string }).videoUrl);
@@ -141,12 +113,7 @@ export default function HomePage() {
         </FullPageSection>
 
 
-        {/* FAQs */}
-        <FullPageSection scrollHeight={260} innerStyle={{ background: "#000", display: "flex", alignItems: "center" }}>
-        <div data-nav-theme="dark" style={{ width: "100%", height: "100%" }}><FAQSection faqs={homeFaqs} title="Preguntas que nos hacen siempre" /></div>
-        </FullPageSection>
-
-        {/* CTA Final */}
+{/* CTA Final */}
         <div data-nav-theme="dark"><CTASection
           title="¿Tienes un proyecto en mente?"
           subtitle="Cuéntanoslo. Un equipo sénior leerá tu brief hoy y te proponemos una llamada en menos de 24 horas."

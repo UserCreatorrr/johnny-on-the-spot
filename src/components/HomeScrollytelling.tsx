@@ -160,6 +160,7 @@ const sections = [
 ];
 
 function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
+  const many = visual.items.length > 6;
   return (
     <div className="w-full h-full flex flex-col justify-between p-6 lg:p-12 xl:p-16">
       <div className="flex justify-end">
@@ -168,12 +169,12 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
         </span>
       </div>
       <div>
-        <p className="text-white/20 text-xs tracking-widest uppercase mb-10">{visual.label}</p>
-        <ul className="space-y-5" role="list">
+        <p className="text-white/20 text-xs tracking-widest uppercase mb-6">{visual.label}</p>
+        <ul className={many ? "grid grid-cols-2 gap-x-6 gap-y-3" : "space-y-5"} role="list">
           {visual.items.map((item, i) => (
-            <li key={i} className="flex items-center gap-5">
-              <span className="w-px h-8 bg-white/15 flex-shrink-0" aria-hidden="true" />
-              <span className="text-white/70 font-light text-sm lg:text-xl xl:text-2xl tracking-tight">{item}</span>
+            <li key={i} className="flex items-start gap-3">
+              <span className={`flex-shrink-0 bg-white/15 ${many ? "w-px h-5 mt-1" : "w-px h-8"}`} aria-hidden="true" />
+              <span className={`text-white/70 font-light tracking-tight ${many ? "text-xs lg:text-sm xl:text-base leading-snug" : "text-sm lg:text-xl xl:text-2xl"}`}>{item}</span>
             </li>
           ))}
         </ul>

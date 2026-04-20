@@ -27,7 +27,7 @@ export default function CTASection({
 
   return (
     <section
-      className={`min-h-[70vh] flex items-center ${bg} border-t ${dark ? "border-black/10" : "border-white/10"}`}
+      className={`min-h-[70vh] flex items-center ${bg}`}
       aria-labelledby="cta-heading"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">

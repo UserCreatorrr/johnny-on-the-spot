@@ -170,10 +170,10 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
       </div>
       <div>
         <p className="text-white/20 text-xs tracking-widest uppercase mb-6">{visual.label}</p>
-        <ul className={many ? "grid grid-cols-2 gap-x-6 gap-y-3" : "space-y-5"} role="list">
+        <ul className={many ? "columns-2 gap-x-8" : "space-y-5"} role="list">
           {visual.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className={`flex-shrink-0 bg-white/15 ${many ? "w-px h-5 mt-1" : "w-px h-8"}`} aria-hidden="true" />
+            <li key={i} className={`flex items-start gap-3 break-inside-avoid ${many ? "mb-3" : ""}`}>
+              <span className={`flex-shrink-0 bg-white/15 ${many ? "w-px h-4 mt-1" : "w-px h-8"}`} aria-hidden="true" />
               <span className={`text-white/70 font-light tracking-tight ${many ? "text-xs lg:text-sm xl:text-base leading-snug" : "text-sm lg:text-xl xl:text-2xl"}`}>{item}</span>
             </li>
           ))}

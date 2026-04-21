@@ -174,7 +174,7 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
           {visual.items.map((item, i) => (
             <li key={i} className={`flex items-start gap-3 break-inside-avoid ${many ? "mb-3" : ""}`}>
               <span className={`flex-shrink-0 bg-white/15 ${many ? "w-px h-4 mt-1" : "w-px h-8"}`} aria-hidden="true" />
-              <span className={`text-white/70 font-light tracking-tight ${many ? "text-xs lg:text-sm xl:text-base leading-snug" : "text-sm lg:text-xl xl:text-2xl"}`}>{item}</span>
+              <span className="text-white/70 font-light tracking-tight text-sm lg:text-base xl:text-lg leading-snug">{item}</span>
             </li>
           ))}
         </ul>

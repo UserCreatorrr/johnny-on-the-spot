@@ -6,7 +6,7 @@ import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-
 const sections = [
   {
     id: "estrategia",
-    eyebrow: "01: Estrategia",
+    eyebrow: "Estrategia",
     title: "Primero pensamos. Después hacemos.",
     body: "",
     visual: {
@@ -27,7 +27,7 @@ const sections = [
   },
   {
     id: "creatividad",
-    eyebrow: "02: Dirección Creativa",
+    eyebrow: "Dirección Creativa",
     title: "Ideas que construyen marcas.",
     body: "",
     visual: {
@@ -47,7 +47,7 @@ const sections = [
   },
   {
     id: "eventos",
-    eyebrow: "03: Eventos",
+    eyebrow: "Eventos",
     title: "Presencia donde importa.",
     body: "",
     visual: {
@@ -71,7 +71,7 @@ const sections = [
   },
   {
     id: "activaciones",
-    eyebrow: "04: Activaciones y Experiencias",
+    eyebrow: "Activaciones y Experiencias",
     title: "La marca en el mundo real.",
     body: "",
     visual: {
@@ -89,7 +89,7 @@ const sections = [
   },
   {
     id: "digital",
-    eyebrow: "05: Marketing Digital",
+    eyebrow: "Marketing Digital",
     title: "Comunidades que convierten.",
     body: "",
     visual: {
@@ -106,7 +106,7 @@ const sections = [
   },
   {
     id: "soluciones-digitales",
-    eyebrow: "06: Desarrollo y Soluciones Digitales",
+    eyebrow: "Desarrollo y Soluciones Digitales",
     title: "La tecnología al servicio de la marca.",
     body: "",
     visual: {
@@ -124,7 +124,7 @@ const sections = [
   },
   {
     id: "foto-video",
-    eyebrow: "07: Foto y Video",
+    eyebrow: "Foto y Video",
     title: "Imágenes que trabajan para la marca.",
     body: "",
     visual: {
@@ -140,7 +140,7 @@ const sections = [
   },
   {
     id: "rrpp",
-    eyebrow: "08: RR.PP y Prensa",
+    eyebrow: "RR.PP y Prensa",
     title: "Relaciones que abren puertas.",
     body: "",
     visual: {

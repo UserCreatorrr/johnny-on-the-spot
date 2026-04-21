@@ -4,8 +4,6 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
-import HomeScrollytelling from "@/components/HomeScrollytelling";
-import ServicesScrollSection from "@/components/ServicesScrollSection";
 import CasesVideoSection from "@/components/CasesVideoSection";
 import CTASection from "@/components/CTASection";
 import { NumberTicker } from "@/components/ui/NumberTicker";
@@ -72,13 +70,7 @@ export default function HomePage() {
           <CasesVideoSection cases={featuredCases} />
         </section>
 
-        {/* SCROLLYTELLING: SERVICIOS */}
-        <div data-nav-theme="dark"><HomeScrollytelling /></div>
-
-        {/* SERVICIOS — horizontal scroll driven by vertical scroll */}
-        <ServicesScrollSection />
-
-        {/* CIFRAS */}
+{/* CIFRAS */}
         <FullPageSection scrollHeight={210} innerStyle={{ background: "#fff", display: "flex", alignItems: "center" }}>
         <section data-nav-theme="light" className="w-full py-20 lg:py-28 bg-white" aria-label="Cifras clave">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

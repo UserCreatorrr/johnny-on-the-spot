@@ -12,7 +12,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   title = "¿Tienes un proyecto en mente?",
-  subtitle = "Cuéntanoslo. Un equipo sénior leerá tu brief hoy y te proponemos una llamada en menos de 24 horas.",
+  subtitle = "",
   primaryCTA = "Hablemos",
   primaryHref = "/contacto",
   secondaryCTA,
@@ -38,9 +38,11 @@ export default function CTASection({
           >
             {title}
           </h2>
-          <p className={`text-lg leading-relaxed mb-12 max-w-xl ${subColor}`}>
-            {subtitle}
-          </p>
+          {subtitle && (
+            <p className={`text-lg leading-relaxed mb-12 max-w-xl ${subColor}`}>
+              {subtitle}
+            </p>
+          )}
           <div className="flex flex-col sm:flex-row items-start gap-4">
             <Link
               href={primaryHref}

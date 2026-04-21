@@ -239,7 +239,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       <CTASection
         title={post.cta}
-        subtitle="Cuéntanoslo. Un equipo sénior leerá tu mensaje hoy."
         primaryCTA="Hablemos"
         secondaryCTA="Ver todos los artículos"
         secondaryHref="/blog"

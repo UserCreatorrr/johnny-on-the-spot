@@ -60,8 +60,8 @@ export default function NosotrosPage() {
       {/* Clientes */}
       <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Clientes">
         <div className="max-w-7xl mx-auto w-full">
-          <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Han confiado en nosotros</p>
-          <div className="flex flex-wrap gap-x-10 gap-y-8 items-center">
+          <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Confían en nosotros</p>
+          <div className="flex flex-wrap gap-x-10 gap-y-8 items-center justify-center">
             {[
               { name: "Alcon",            file: "Alcon-Emblem.png",                                          h: 92,  maxW: 92   },
               { name: "Novartis",         file: "novartis.png",                                              h: 66,  maxW: 200  },

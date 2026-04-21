@@ -132,6 +132,16 @@ export const SECTORS = [
 
 export const CASES = [
   {
+    slug: "alcon-hydra-glide",
+    client: "Alcon",
+    title: "Hydraglide Family",
+    description: "Conceptualización y producción del evento de lanzamiento Hydra Glide de Alcon.",
+    services: ["Eventos", "Producción Creativa", "Contenido"],
+    sector: "Farmacéutico",
+    results: "Producción integral del evento de lanzamiento Hydra Glide",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom_alcon.mp4",
+  },
+  {
     slug: "sd-distribuciones-sand-games",
     client: "SD Distribuciones",
     title: "The Sand Games",
@@ -140,16 +150,6 @@ export const CASES = [
     sector: "Gran Consumo",
     results: "Concepto creativo y desarrollo gráfico, site dedicado, staff, localizaciones y logística de viajes",
     videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/sandgames.mp4",
-  },
-  {
-    slug: "alcon-hydra-glide",
-    client: "Alcon",
-    title: "Evento Hydra Glide: Alcon",
-    description: "Conceptualización y producción del evento de lanzamiento Hydra Glide de Alcon.",
-    services: ["Eventos", "Producción Creativa", "Contenido"],
-    sector: "Farmacéutico",
-    results: "Producción integral del evento de lanzamiento Hydra Glide",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom_alcon.mp4",
   },
   {
     slug: "cocacola-kfc-together",

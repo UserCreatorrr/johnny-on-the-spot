@@ -239,13 +239,13 @@ export default function HomeScrollytelling() {
                   className="flex items-center"
                   style={{ minHeight: "100vh" }}
                 >
-                  <div className="py-20 lg:pr-16 max-w-xl text-center">
-                    <p className="text-white/25 text-xs tracking-widest uppercase font-medium mb-6">
+                  <div className="py-20 lg:pr-16 max-w-xl">
+                    <p className="text-white font-black tracking-tighter text-5xl lg:text-6xl xl:text-7xl leading-none mb-4">
                       {section.eyebrow}
                     </p>
                     <h3
                       id={section.id === "estrategia" ? "scrolly-heading" : undefined}
-                      className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter text-white leading-none"
+                      className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/50 leading-snug"
                     >
                       {section.title}
                     </h3>

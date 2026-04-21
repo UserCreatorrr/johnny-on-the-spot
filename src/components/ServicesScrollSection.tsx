@@ -84,7 +84,7 @@ export default function ServicesScrollSection() {
             <Link
               key={service.slug}
               href={`/servicios/${service.slug}`}
-              className="flex-none w-72 lg:w-80 bg-black p-8 group hover:bg-white/[0.03] transition-colors border-r border-white/5 border-t border-white/5"
+              className="flex-none w-72 lg:w-80 bg-black p-8 group hover:bg-white/[0.03] transition-colors"
             >
               <p className="text-white/20 text-xs tracking-widest font-mono mb-6">
                 {String(i + 1).padStart(2, "0")}

@@ -199,7 +199,7 @@ export default function HomeScrollytelling() {
   return (
     <section
       aria-labelledby="scrolly-heading"
-      className="border-t border-white/5"
+      className=""
     >
       <div
         ref={containerRef}
@@ -212,7 +212,7 @@ export default function HomeScrollytelling() {
             {/* Left spacer: mirrors left column width */}
             <div className="hidden lg:block lg:w-1/2" />
             {/* Right panel */}
-            <div className="hidden lg:flex lg:w-1/2 border-l border-white/5 items-center pointer-events-auto">
+            <div className="hidden lg:flex lg:w-1/2 items-center pointer-events-auto">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}

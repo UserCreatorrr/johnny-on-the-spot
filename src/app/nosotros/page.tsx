@@ -84,13 +84,13 @@ export default function NosotrosPage() {
               { name: "Walk Me",        file: "walkme-eu-icon-unplated.png" },
               { name: "Avianca",        file: "Avianca-Logo.wine.png" },
             ].map((client) => (
-              <div key={client.name} className="flex items-center justify-center h-12">
+              <div key={client.name} className="flex items-center justify-center w-20 h-10">
                 <Image
                   src={`/logos/${client.file}`}
                   alt={client.name}
                   width={80}
-                  height={48}
-                  className="max-h-10 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                  height={40}
+                  className="w-full h-full object-contain"
                 />
               </div>
             ))}

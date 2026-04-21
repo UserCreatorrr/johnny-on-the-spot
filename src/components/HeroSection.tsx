@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export default function HeroSection() {
   const [panelX,    setPanelX]    = useState(100);
   const [videoRise, setVideoRise] = useState(0.06);
-  const [muted,     setMuted]     = useState(true);
+  const [muted,     setMuted]     = useState(false);
   const sectionRef   = useRef<HTMLElement>(null);
   const videoRef     = useRef<HTMLVideoElement>(null);
   const isPlayingRef = useRef(false);

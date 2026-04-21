@@ -61,36 +61,37 @@ export default function NosotrosPage() {
       <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Clientes">
         <div className="max-w-7xl mx-auto w-full">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Han confiado en nosotros</p>
-          <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-6 items-center">
+          <div className="flex flex-wrap gap-x-10 gap-y-8 items-center">
             {[
-              { name: "Alcon",          file: "Alcon-Emblem.png" },
-              { name: "Novartis",       file: "novartis.png" },
-              { name: "Coca-Cola",      file: "cocacola.png" },
-              { name: "SAP",            file: "SAP_2011_logo.svg.png" },
-              { name: "Porsche",        file: "porsche-logo-0.png" },
-              { name: "Meliá Hotels",   file: "melia-logo.png" },
-              { name: "Puig",           file: "Logo_puig.png" },
-              { name: "Chopard",        file: "chopard-1-logo-png-transparent.png" },
-              { name: "Carolina Herrera", file: "carolina-herrera-logo-0.png" },
-              { name: "Haribo",         file: "Haribo-logo.png" },
-              { name: "Glenfiddich",    file: "glenfiddich-logo-png-2-Transparent-Images.png" },
-              { name: "IKEA",           file: "ikea.png" },
-              { name: "Perrier",        file: "Perrier_logo.svg.png" },
-              { name: "ISDIN",          file: "isdin.png" },
-              { name: "Ipsen Farma",    file: "Ipsen_logo.svg.png" },
-              { name: "Coty Prestige",  file: "Coty_Inc_logo_2016.png" },
-              { name: "GFT",            file: "GFT-Technologies_Logo_SafeSpace_DarkBlue_rgb_2025.svg.png" },
-              { name: "Applus",         file: "LOGO-APPLUS.png" },
-              { name: "Walk Me",        file: "walkme-eu-icon-unplated.png" },
-              { name: "Avianca",        file: "Avianca-Logo.wine.png" },
+              { name: "Alcon",            file: "Alcon-Emblem.png",                                          h: 36 },
+              { name: "Novartis",         file: "novartis.png",                                              h: 28 },
+              { name: "Coca-Cola",        file: "cocacola.png",                                              h: 28 },
+              { name: "SAP",              file: "SAP_2011_logo.svg.png",                                     h: 22 },
+              { name: "Porsche",          file: "porsche-logo-0.png",                                        h: 44 },
+              { name: "Meliá Hotels",     file: "melia-logo.png",                                            h: 22 },
+              { name: "Puig",             file: "Logo_puig.png",                                             h: 28 },
+              { name: "Chopard",          file: "chopard-1-logo-png-transparent.png",                        h: 20 },
+              { name: "Carolina Herrera", file: "carolina-herrera-logo-0.png",                               h: 36 },
+              { name: "Haribo",           file: "Haribo-logo.png",                                           h: 28 },
+              { name: "Glenfiddich",      file: "glenfiddich-logo-png-2-Transparent-Images.png",             h: 40 },
+              { name: "IKEA",             file: "ikea.png",                                                  h: 22 },
+              { name: "Perrier",          file: "Perrier_logo.svg.png",                                      h: 36 },
+              { name: "ISDIN",            file: "isdin.png",                                                 h: 22 },
+              { name: "Ipsen Farma",      file: "Ipsen_logo.svg.png",                                        h: 28 },
+              { name: "Coty Prestige",    file: "Coty_Inc_logo_2016.png",                                    h: 22 },
+              { name: "GFT",              file: "GFT-Technologies_Logo_SafeSpace_DarkBlue_rgb_2025.svg.png", h: 22 },
+              { name: "Applus",           file: "LOGO-APPLUS.png",                                           h: 24 },
+              { name: "Walk Me",          file: "walkme-eu-icon-unplated.png",                               h: 28 },
+              { name: "Avianca",          file: "Avianca-Logo.wine.png",                                     h: 28 },
             ].map((client) => (
-              <div key={client.name} className="flex items-center justify-center w-20 h-10">
+              <div key={client.name} className="flex items-center justify-center">
                 <Image
                   src={`/logos/${client.file}`}
                   alt={client.name}
-                  width={80}
-                  height={40}
-                  className="w-full h-full object-contain"
+                  width={200}
+                  height={client.h}
+                  style={{ height: client.h, width: "auto" }}
+                  className="object-contain"
                 />
               </div>
             ))}

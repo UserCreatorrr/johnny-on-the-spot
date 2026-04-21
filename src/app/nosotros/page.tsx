@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function NosotrosPage() {
   return (
     <PageLayout>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden" data-nav-theme="light">
         <video
           src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/JotsCut.mp4"
           autoPlay

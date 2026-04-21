@@ -150,6 +150,7 @@ export const CASES = [
     sector: "Gran Consumo",
     results: "Concepto creativo y desarrollo gráfico, site dedicado, staff, localizaciones y logística de viajes",
     videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/sandgames.mp4",
+    previewVideoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/SDcut.mp4",
   },
   {
     slug: "cocacola-kfc-together",

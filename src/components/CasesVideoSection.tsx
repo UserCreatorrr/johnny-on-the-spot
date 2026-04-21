@@ -12,6 +12,7 @@ type Case = {
   client: string;
   title: string;
   videoUrl?: string;
+  previewVideoUrl?: string;
 };
 
 const OVERLAY_SLUGS = [
@@ -83,7 +84,7 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
               <>
                 {c.videoUrl && (
                   <video
-                    src={c.videoUrl}
+                    src={c.previewVideoUrl ?? c.videoUrl}
                     autoPlay
                     muted
                     loop

@@ -51,7 +51,6 @@ export default function ContactForm() {
           Recibido. Gracias.
         </h3>
         <p className="text-white/40 text-sm max-w-sm mx-auto">
-          Nos ponemos en contacto contigo antes de 24 horas. (Los viernes, el lunes.)
         </p>
       </div>
     );

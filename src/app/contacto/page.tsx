@@ -95,7 +95,6 @@ function NewContactScreen() {
             </svg>
           </div>
           <p className="text-[15px] font-semibold text-black mb-1">Mensaje enviado</p>
-          <p className="text-[12px] text-black/40">Te responderemos en menos de 24h.</p>
         </div>
       ) : (
         <>
@@ -134,7 +133,6 @@ function NewContactScreen() {
               className="w-full bg-black text-white text-[13px] font-semibold py-3 rounded-xl tracking-wide hover:bg-black/85 transition-colors">
               Enviar →
             </button>
-            <p className="text-center text-[10px] text-black/30 mt-2">Respondemos en menos de 24h</p>
           </div>
         </>
       )}

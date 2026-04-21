@@ -193,7 +193,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
                 <div className="border border-white/10 p-6">
                   <p className="text-white font-bold text-sm mb-2">{post.cta}</p>
-                  <p className="text-white/40 text-xs mb-4">Cuéntanoslo. Respondemos en menos de 24 horas.</p>
                   <Link href="/contacto" className="block text-center bg-white text-black text-sm px-4 py-3 font-medium hover:bg-white/90 transition-colors">
                     Hablemos
                   </Link>

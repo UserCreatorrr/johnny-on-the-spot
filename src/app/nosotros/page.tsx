@@ -76,7 +76,6 @@ export default function NosotrosPage() {
 
       <CTASection
         title="¿Tienes un reto de comunicación?"
-        subtitle="Cuéntanos el proyecto. Un equipo sénior lo leerá hoy y te propone una llamada en menos de 24 horas."
         primaryCTA="Hablemos de tu proyecto"
         secondaryCTA="Ver servicios"
         secondaryHref="/servicios"

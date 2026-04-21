@@ -154,7 +154,7 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
               </div>
               <div>
                 <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, margin: "0 0 0.6rem" }}>
-                  Comunicación
+                  Material
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 clamp(0.8rem, 1.5vh, 1.8rem)" }}>
                     <li key="Dirección Creativa" style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.7rem, 1.2vw, 0.8rem)", lineHeight: "1.6" }}>Dirección Creativa</li>
@@ -163,12 +163,6 @@ export default function SandGamesMcCann({ onBack }: { onBack?: () => void }) {
                     <li key="Marketing Digital" style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.7rem, 1.2vw, 0.8rem)", lineHeight: "1.6" }}>Marketing Digital</li>
                     <li key="Foto & Video" style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.7rem, 1.2vw, 0.8rem)", lineHeight: "1.6" }}>Foto & Video</li>
                 </ul>
-                <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, margin: "0 0 0.5rem" }}>Material</p>
-                <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
-                    <span key="Gráfica" style={{ border: "1px solid rgba(255,255,255,0.22)", color: "rgba(255,255,255,0.55)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.25rem 0.6rem", fontWeight: 600 }}>Gráfica</span>
-                    <span key="Fotos" style={{ border: "1px solid rgba(255,255,255,0.22)", color: "rgba(255,255,255,0.55)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.25rem 0.6rem", fontWeight: 600 }}>Fotos</span>
-                    <span key="Video" style={{ border: "1px solid rgba(255,255,255,0.22)", color: "rgba(255,255,255,0.55)", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.25rem 0.6rem", fontWeight: 600 }}>Video</span>
-                </div>
               </div>
             </div>
           </div>

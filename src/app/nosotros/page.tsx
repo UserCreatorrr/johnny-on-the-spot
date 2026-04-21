@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 
@@ -60,15 +61,37 @@ export default function NosotrosPage() {
       <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Clientes">
         <div className="max-w-7xl mx-auto w-full">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Han confiado en nosotros</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-6 items-center">
             {[
-              "Alcon", "Novartis", "Coca-Cola", "SAP", "Porsche",
-              "Meliá Hotels", "Puig", "Chopard", "Carolina Herrera", "Haribo",
-              "Glenfiddich", "IKEA", "Perrier", "ISDIN", "Ipsen Farma",
-              "Coty Prestige", "GFT", "Applus", "Walk Me", "Avianca",
+              { name: "Alcon",          file: "Alcon-Emblem.png" },
+              { name: "Novartis",       file: "novartis.png" },
+              { name: "Coca-Cola",      file: "cocacola.png" },
+              { name: "SAP",            file: "SAP_2011_logo.svg.png" },
+              { name: "Porsche",        file: "porsche-logo-0.png" },
+              { name: "Meliá Hotels",   file: "melia-logo.png" },
+              { name: "Puig",           file: "Logo_puig.png" },
+              { name: "Chopard",        file: "chopard-1-logo-png-transparent.png" },
+              { name: "Carolina Herrera", file: "carolina-herrera-logo-0.png" },
+              { name: "Haribo",         file: "Haribo-logo.png" },
+              { name: "Glenfiddich",    file: "glenfiddich-logo-png-2-Transparent-Images.png" },
+              { name: "IKEA",           file: "ikea.png" },
+              { name: "Perrier",        file: "Perrier_logo.svg.png" },
+              { name: "ISDIN",          file: "isdin.png" },
+              { name: "Ipsen Farma",    file: "Ipsen_logo.svg.png" },
+              { name: "Coty Prestige",  file: "Coty_Inc_logo_2016.png" },
+              { name: "GFT",            file: "GFT-Technologies_Logo_SafeSpace_DarkBlue_rgb_2025.svg.png" },
+              { name: "Applus",         file: "LOGO-APPLUS.png" },
+              { name: "Walk Me",        file: "walkme-eu-icon-unplated.png" },
+              { name: "Avianca",        file: "Avianca-Logo.wine.png" },
             ].map((client) => (
-              <div key={client} className="border-b border-black/10 pb-4">
-                <p className="text-black/40 text-sm font-medium">{client}</p>
+              <div key={client.name} className="flex items-center justify-center h-12">
+                <Image
+                  src={`/logos/${client.file}`}
+                  alt={client.name}
+                  width={80}
+                  height={48}
+                  className="max-h-10 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>

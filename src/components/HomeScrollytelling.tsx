@@ -240,7 +240,7 @@ export default function HomeScrollytelling() {
                   style={{ minHeight: "100vh" }}
                 >
                   <div className="py-20 lg:pr-16 max-w-xl">
-                    <p className="text-white font-black tracking-tighter text-5xl lg:text-6xl xl:text-7xl leading-none mb-4">
+                    <p className="text-white font-black tracking-tighter text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4 text-balance">
                       {section.eyebrow}
                     </p>
                     <h3

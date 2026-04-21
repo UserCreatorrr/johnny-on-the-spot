@@ -8,7 +8,7 @@ const sections = [
     id: "estrategia",
     eyebrow: "01: Estrategia",
     title: "Primero pensamos. Después hacemos.",
-    body: "Antes de producir una sola pieza, entendemos el negocio, el mercado y el objetivo real. Diseño de estrategia 360°, plataforma de marca, brand storytelling. La estrategia no es un extra: es la razón por la que las campañas funcionan.",
+    body: "",
     visual: {
       label: "Estrategia",
       items: [
@@ -29,7 +29,7 @@ const sections = [
     id: "creatividad",
     eyebrow: "02: Dirección Creativa",
     title: "Ideas que construyen marcas.",
-    body: "Dirección de arte, branding, naming, identidad corporativa, producción gráfica y packaging. Creatividad al servicio de un propósito. Con estándar de grandes marcas y la agilidad de un equipo pequeño.",
+    body: "",
     visual: {
       label: "Dirección Creativa",
       items: [

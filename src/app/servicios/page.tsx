@@ -33,9 +33,6 @@ export default function ServiciosPage() {
           >
             Servicios de comunicación que funcionan.
           </h1>
-          <p className="text-white/40 text-lg lg:text-xl max-w-2xl leading-relaxed">
-            No somos especialistas en una sola cosa. Somos la agencia que cubre todo el proceso: desde la estrategia hasta la entrega final. Sin fisuras, sin pérdidas de criterio por el camino.
-          </p>
         </div>
       </section>
 

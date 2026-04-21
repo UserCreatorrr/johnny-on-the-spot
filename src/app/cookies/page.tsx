@@ -64,7 +64,7 @@ export default function CookiesPage() {
             <div>
               <h2 className="text-white font-bold text-xl mb-4">Más información</h2>
               <p>
-                Para cualquier duda sobre el uso de cookies, puedes contactarnos en hola@johnnyonthespot.es. Consulta también nuestra <a href="/privacidad" className="text-white underline hover:text-white/70 transition-colors">Política de Privacidad</a>.
+                Para cualquier duda sobre el uso de cookies, puedes contactarnos en info@jotsagency.com. Consulta también nuestra <a href="/privacidad" className="text-white underline hover:text-white/70 transition-colors">Política de Privacidad</a>.
               </p>
             </div>
 

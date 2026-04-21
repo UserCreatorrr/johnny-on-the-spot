@@ -29,7 +29,7 @@ export default function PrivacidadPage() {
             <div>
               <h2 className="text-white font-bold text-xl mb-4">1. Responsable del tratamiento</h2>
               <p>
-                Johnny on the Spot (en adelante, «la Agencia») es responsable del tratamiento de los datos personales recogidos a través de este sitio web. Dirección: Carrer de Provença 385, 08025 Barcelona. Correo de contacto: hola@johnnyonthespot.es.
+                Johnny on the Spot (en adelante, «la Agencia») es responsable del tratamiento de los datos personales recogidos a través de este sitio web. Dirección: Carrer de Provença 385, 08025 Barcelona. Correo de contacto: info@jotsagency.com.
               </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function PrivacidadPage() {
             <div>
               <h2 className="text-white font-bold text-xl mb-4">6. Tus derechos</h2>
               <p>
-                Tienes derecho a acceder, rectificar, suprimir, oponerte y solicitar la portabilidad de tus datos. Puedes ejercer estos derechos enviando un correo a hola@johnnyonthespot.es indicando tu nombre y el derecho que deseas ejercer. También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).
+                Tienes derecho a acceder, rectificar, suprimir, oponerte y solicitar la portabilidad de tus datos. Puedes ejercer estos derechos enviando un correo a info@jotsagency.com indicando tu nombre y el derecho que deseas ejercer. También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).
               </p>
             </div>
 

@@ -164,7 +164,7 @@ function ContactSection() {
 
   const contactLinks = (
     <>
-      <a href="mailto:hola@johnnyonthespot.es"
+      <a href="mailto:info@jotsagency.com"
         className="group w-12 hover:w-44 h-12 hover:bg-black relative bg-zinc-800 rounded text-neutral-50 duration-700 before:duration-700 font-bold flex justify-start gap-2 items-center p-2 before:absolute before:-z-10 before:left-8 before:hover:left-40 before:w-6 before:h-6 before:bg-zinc-800 before:hover:bg-black before:rotate-45">
         <svg className="w-8 h-8 shrink-0 fill-neutral-50" viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all text-sm whitespace-nowrap">Email</span>

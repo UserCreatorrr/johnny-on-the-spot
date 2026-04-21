@@ -34,7 +34,7 @@ export default function AvisoLegalPage() {
               <ul className="mt-4 space-y-2 list-disc list-inside text-white/40">
                 <li>Denominación social: Johnny on the Spot</li>
                 <li>Domicilio: Carrer de Provença 385, 08025 Barcelona</li>
-                <li>Correo electrónico: hola@johnnyonthespot.es</li>
+                <li>Correo electrónico: info@jotsagency.com</li>
                 <li>Sitio web: www.johnnyonthespot.es</li>
               </ul>
             </div>

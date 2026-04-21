@@ -67,8 +67,8 @@ export default function Footer() {
             <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">Contacto</h3>
             <address className="not-italic space-y-3">
               <p className="text-white/45 text-sm">Barcelona, España</p>
-              <a href="mailto:hola@johnnyonthespot.es" className="block text-white/45 hover:text-white text-sm transition-colors">
-                hola@johnnyonthespot.es
+              <a href="mailto:info@jotsagency.com" className="block text-white/45 hover:text-white text-sm transition-colors">
+                info@jotsagency.com
               </a>
             </address>
           </div>

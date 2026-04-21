@@ -77,7 +77,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "hola@johnnyonthespot.es",
+    email: "info@jotsagency.com",
     availableLanguage: ["Spanish", "English"],
   },
   sameAs: [

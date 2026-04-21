@@ -65,12 +65,12 @@ export default function NosotrosPage() {
             {[
               { name: "Alcon",            file: "Alcon-Emblem.png",                                          h: 92,  maxW: 92   },
               { name: "Novartis",         file: "novartis.png",                                              h: 66,  maxW: 200  },
-              { name: "Coca-Cola",        file: "cocacola.png",                                              h: 30,  maxW: 100  },
+              { name: "Coca-Cola",        file: "cocacola.png",                                              h: 90,  maxW: 300  },
               { name: "SAP",              file: "SAP_2011_logo.svg.png",                                     h: 40,  maxW: 100  },
               { name: "Porsche",          file: "porsche-logo-0.png",                                        h: 130, maxW: 130  },
-              { name: "Meliá Hotels",     file: "melia-logo.png",                                            h: 33,  maxW: 113  },
-              { name: "Puig",             file: "Logo_puig.png",                                             h: 23,  maxW: 60   },
-              { name: "Chopard",          file: "chopard-1-logo-png-transparent.png",                        h: 35,  maxW: 120  },
+              { name: "Meliá Hotels",     file: "melia-logo.png",                                            h: 99,  maxW: 339  },
+              { name: "Puig",             file: "Logo_puig.png",                                             h: 69,  maxW: 180  },
+              { name: "Chopard",          file: "chopard-1-logo-png-transparent.png",                        h: 105, maxW: 360  },
               { name: "Carolina Herrera", file: "carolina-herrera-logo-0.png",                               h: 100, maxW: 180  },
               { name: "Haribo",           file: "Haribo-logo.png",                                           h: 46,  maxW: 146  },
               { name: "Glenfiddich",      file: "glenfiddich-logo-png-2-Transparent-Images.png",             h: 60,  maxW: 140  },
@@ -81,8 +81,8 @@ export default function NosotrosPage() {
               { name: "Coty Prestige",    file: "Coty_Inc_logo_2016.png",                                    h: 70,  maxW: 200  },
               { name: "GFT",              file: "GFT-Technologies_Logo_SafeSpace_DarkBlue_rgb_2025.svg.png", h: 40,  maxW: 180  },
               { name: "Applus",           file: "LOGO-APPLUS.png",                                           h: 40,  maxW: 150  },
-              { name: "Walk Me",          file: "walkme-eu-icon-unplated.png",                               h: 40,  maxW: 95   },
-              { name: "Avianca",          file: "Avianca-Logo.wine.png",                                     h: 30,  maxW: 100  },
+              { name: "Walk Me",          file: "walkme-eu-icon-unplated.png",                               h: 120, maxW: 285  },
+              { name: "Avianca",          file: "Avianca-Logo.wine.png",                                     h: 90,  maxW: 300  },
             ].map((client) => (
               <div key={client.name} className="flex items-center justify-center">
                 <Image

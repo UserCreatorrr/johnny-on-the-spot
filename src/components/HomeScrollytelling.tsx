@@ -49,7 +49,7 @@ const sections = [
     id: "eventos",
     eyebrow: "03: Eventos",
     title: "Presencia donde importa.",
-    body: "Eventos corporativos nacionales e internacionales, convenciones, desfiles, road shows, ferias y trade shows. Producción integral: concepto, localización, AV, F&B, staff y logística. Sin fisuras del briefing a la entrega.",
+    body: "",
     visual: {
       label: "Eventos",
       items: [
@@ -73,7 +73,7 @@ const sections = [
     id: "activaciones",
     eyebrow: "04: Activaciones y Experiencias",
     title: "La marca en el mundo real.",
-    body: "Activaciones que conectan la marca con el consumidor en el lugar y el momento exactos. Brand experience, marketing de guerilla, sampling y acciones disruptivas que generan conversación y recuerdo.",
+    body: "",
     visual: {
       label: "Activaciones y Experiencias",
       items: [
@@ -91,7 +91,7 @@ const sections = [
     id: "digital",
     eyebrow: "05: Marketing Digital",
     title: "Comunidades que convierten.",
-    body: "Estrategia de redes sociales, creación de contenidos, gestión de comunidades, influencer marketing y Social Ads. Todo integrado en la estrategia global, no como canal aislado.",
+    body: "",
     visual: {
       label: "Marketing Digital",
       items: [
@@ -108,7 +108,7 @@ const sections = [
     id: "soluciones-digitales",
     eyebrow: "06: Desarrollo y Soluciones Digitales",
     title: "La tecnología al servicio de la marca.",
-    body: "Desarrollo web y de aplicaciones, diseño UI/UX, e-learning, inteligencia artificial, cloud y automatización de procesos. Soluciones digitales construidas sobre estrategia, no sobre tendencia.",
+    body: "",
     visual: {
       label: "Desarrollo y Soluciones Digitales",
       items: [
@@ -126,7 +126,7 @@ const sections = [
     id: "foto-video",
     eyebrow: "07: Foto y Video",
     title: "Imágenes que trabajan para la marca.",
-    body: "Shooting foto y vídeo, guión, edición y producción audiovisual completa. Del concepto al archivo final, con el criterio de quien entiende la marca y sabe cómo tiene que verse.",
+    body: "",
     visual: {
       label: "Foto y Video",
       items: [
@@ -142,7 +142,7 @@ const sections = [
     id: "rrpp",
     eyebrow: "08: RR.PP y Prensa",
     title: "Relaciones que abren puertas.",
-    body: "Estrategia de relaciones públicas, ruedas de prensa, convocatorias de medios y gestión de prescriptores. Contratación de celebrities y embajadores de marca a nivel nacional e internacional.",
+    body: "",
     visual: {
       label: "RR.PP y Prensa",
       items: [
@@ -239,19 +239,16 @@ export default function HomeScrollytelling() {
                   className="flex items-center"
                   style={{ minHeight: "100vh" }}
                 >
-                  <div className="py-20 lg:pr-16 max-w-xl">
+                  <div className="py-20 lg:pr-16 max-w-xl text-center">
                     <p className="text-white/25 text-xs tracking-widest uppercase font-medium mb-6">
                       {section.eyebrow}
                     </p>
                     <h3
                       id={section.id === "estrategia" ? "scrolly-heading" : undefined}
-                      className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter text-white leading-none mb-6"
+                      className="text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter text-white leading-none"
                     >
                       {section.title}
                     </h3>
-                    <p className="text-white/45 text-base lg:text-lg leading-relaxed">
-                      {section.body}
-                    </p>
 
                     {/* Mobile fallback */}
                     <div className="mt-10 lg:hidden border border-white/10 p-8">

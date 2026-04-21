@@ -83,25 +83,25 @@ export default function HomePage() {
         <section data-nav-theme="light" className="w-full py-20 lg:py-28 bg-white" aria-label="Cifras clave">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-              <div>
+              <div className="text-center">
                 <p className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none mb-2">
                   +<NumberTicker value={100} className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none" />
                 </p>
                 <p className="text-black/40 text-sm leading-snug">proyectos producidos</p>
               </div>
-              <div>
+              <div className="text-center">
                 <p className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none mb-2">
                   <NumberTicker value={20} delay={0.2} className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none" />+
                 </p>
                 <p className="text-black/40 text-sm leading-snug">años de experiencia acumulada</p>
               </div>
-              <div>
+              <div className="text-center">
                 <p className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none mb-2">
                   <NumberTicker value={3} delay={0.4} className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none" />
                 </p>
                 <p className="text-black/40 text-sm leading-snug">continentes con proyectos activos</p>
               </div>
-              <div>
+              <div className="text-center">
                 <p className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none mb-2">
                   <NumberTicker value={100} delay={0.6} className="text-black font-black text-5xl lg:text-6xl tracking-tighter leading-none" />%
                 </p>

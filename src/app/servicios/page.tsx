@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
-import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
 
@@ -36,13 +36,15 @@ export default function ServiciosPage() {
       </section>
 
       <HomeScrollytelling />
-      {/* <ServicesScrollSection /> */}
 
-      <CTASection
-        title="¿Necesitas más de un servicio?"
-        subtitle="La mayoría de nuestros clientes trabajan con nosotros en varios frentes a la vez. Cuéntanos el alcance y diseñamos la solución más eficiente."
-        primaryCTA="Hablemos"
-      />
+      <div className="py-24 px-6 lg:px-8 flex justify-center">
+        <Link
+          href="/contacto"
+          className="bg-white text-black px-12 py-4 text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
+        >
+          Hablemos →
+        </Link>
+      </div>
     </PageLayout>
   );
 }

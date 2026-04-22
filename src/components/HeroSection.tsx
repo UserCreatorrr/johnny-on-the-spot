@@ -32,7 +32,7 @@ export default function HeroSection() {
                 videoRef.current.muted = false;
                 setMuted(false);
               }
-            }, 200);
+            }, 1000);
           }
         }
         if (p2 === 0 && isPlayingRef.current) {

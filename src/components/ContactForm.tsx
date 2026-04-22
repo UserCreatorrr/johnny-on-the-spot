@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
+import SkewButton from "./SkewButton";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -177,13 +178,9 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="w-full sm:w-auto bg-white text-black px-10 py-4 text-sm font-medium tracking-wide hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
+      <SkewButton type="submit" disabled={status === "sending"} dark={false}>
         {status === "sending" ? "Enviando..." : "Enviar mensaje"}
-      </button>
+      </SkewButton>
     </form>
   );
 }

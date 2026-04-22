@@ -1,8 +1,8 @@
 ﻿import type { Metadata } from "next";
-import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
+import SkewButton from "@/components/SkewButton";
 
 export const metadata: Metadata = {
   title: "Servicios de Comunicación Integral | Johnny on the Spot",
@@ -38,12 +38,9 @@ export default function ServiciosPage() {
       <HomeScrollytelling />
 
       <div className="py-24 px-6 lg:px-8 flex justify-center">
-        <Link
-          href="/contacto"
-          className="bg-white text-black px-12 py-4 text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
-        >
+        <SkewButton href="/contacto" dark={false}>
           Hablemos →
-        </Link>
+        </SkewButton>
       </div>
     </PageLayout>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SkewButton from "./SkewButton";
 
 interface CTASectionProps {
   title?: string;
@@ -43,13 +44,10 @@ export default function CTASection({
               {subtitle}
             </p>
           )}
-          <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Link
-              href={primaryHref}
-              className={`inline-block px-8 py-4 text-sm font-semibold tracking-wide transition-colors ${btnBg}`}
-            >
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            <SkewButton href={primaryHref} dark={dark}>
               {primaryCTA} →
-            </Link>
+            </SkewButton>
             {secondaryCTA && secondaryHref && (
               <Link
                 href={secondaryHref}

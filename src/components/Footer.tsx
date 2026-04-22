@@ -38,14 +38,6 @@ export default function Footer() {
             <p className="text-white/35 text-sm leading-relaxed max-w-xs">
               Agencia de comunicación integral en Barcelona. Estrategia, creatividad y producción para empresas que no pueden esperar.
             </p>
-            <div className="mt-8">
-              <Link
-                href="/contacto"
-                className="inline-block text-sm bg-white text-black px-5 py-3 font-medium hover:bg-white/90 transition-colors"
-              >
-                Hablemos
-              </Link>
-            </div>
           </div>
 
           {/* Services */}

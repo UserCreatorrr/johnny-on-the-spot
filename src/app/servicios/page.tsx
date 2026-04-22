@@ -37,7 +37,7 @@ export default function ServiciosPage() {
       </section>
 
       <HomeScrollytelling />
-      <ServicesScrollSection />
+      {/* <ServicesScrollSection /> */}
 
       <CTASection
         title="¿Necesitas más de un servicio?"

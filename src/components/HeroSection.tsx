@@ -13,6 +13,9 @@ export default function HeroSection() {
   const hasUnmutedRef = useRef(false);
 
   useEffect(() => {
+    // Arrancar siempre muted para que el autoplay funcione al instante
+    if (videoRef.current) videoRef.current.muted = true;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const vh      = window.innerHeight;
@@ -30,7 +33,7 @@ export default function HeroSection() {
             setTimeout(() => {
               if (videoRef.current) {
                 videoRef.current.muted = false;
-                setMuted(false);
+                setMuted(false); // solo para actualizar el icono del botón
               }
             }, 1000);
           }
@@ -75,7 +78,7 @@ export default function HeroSection() {
           height: `${videoRise * 100}%`, overflow: "hidden",
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
-          <video ref={videoRef} muted={muted} loop playsInline preload="auto" style={{
+          <video ref={videoRef} loop playsInline preload="auto" style={{
             position: "absolute", bottom: 0, left: "50%",
             transform: "translateX(-50%)",
             height: "100vh", width: "auto", maxWidth: "none",

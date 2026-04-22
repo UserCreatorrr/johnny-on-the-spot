@@ -25,11 +25,15 @@ export default function HeroSection() {
         if (p2 > 0 && !isPlayingRef.current) {
           video.play().catch(() => {});
           isPlayingRef.current = true;
-        }
-        if (p2 > 0 && !hasUnmutedRef.current) {
-          hasUnmutedRef.current = true;
-          video.muted = false;
-          setMuted(false);
+          if (!hasUnmutedRef.current) {
+            hasUnmutedRef.current = true;
+            setTimeout(() => {
+              if (videoRef.current) {
+                videoRef.current.muted = false;
+                setMuted(false);
+              }
+            }, 200);
+          }
         }
         if (p2 === 0 && isPlayingRef.current) {
           video.pause();

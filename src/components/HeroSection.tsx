@@ -7,9 +7,10 @@ export default function HeroSection() {
   const [panelX,    setPanelX]    = useState(100);
   const [videoRise, setVideoRise] = useState(0.06);
   const [muted,     setMuted]     = useState(true);
-  const sectionRef   = useRef<HTMLElement>(null);
-  const videoRef     = useRef<HTMLVideoElement>(null);
-  const isPlayingRef = useRef(false);
+  const sectionRef    = useRef<HTMLElement>(null);
+  const videoRef      = useRef<HTMLVideoElement>(null);
+  const isPlayingRef  = useRef(false);
+  const hasUnmutedRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +25,13 @@ export default function HeroSection() {
         if (p2 > 0 && !isPlayingRef.current) {
           video.play().catch(() => {});
           isPlayingRef.current = true;
-        } else if (p2 === 0 && isPlayingRef.current) {
+        }
+        if (p2 > 0 && !hasUnmutedRef.current) {
+          hasUnmutedRef.current = true;
+          video.muted = false;
+          setMuted(false);
+        }
+        if (p2 === 0 && isPlayingRef.current) {
           video.pause();
           video.currentTime = 0;
           isPlayingRef.current = false;

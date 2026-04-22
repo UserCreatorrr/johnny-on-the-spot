@@ -23,8 +23,8 @@ export default function SkewButton({
     "relative inline-block px-8 py-4 text-sm font-semibold uppercase tracking-wide cursor-pointer overflow-hidden " +
     "skew-x-[-21deg] transition-colors duration-300 " +
     (dark
-      ? "bg-white text-black border border-black/10 hover:text-white"
-      : "bg-black text-white border border-white/20 hover:text-black");
+      ? "bg-white text-black hover:text-white"
+      : "bg-black text-white hover:text-black");
 
   const before =
     "before:content-[''] before:absolute before:inset-y-0 before:left-0 before:right-full " +

@@ -23,7 +23,6 @@ export default function CTASection({
   const bg = dark ? "bg-white" : "bg-black";
   const headingColor = dark ? "text-black" : "text-white";
   const subColor = dark ? "text-black/50" : "text-white/40";
-  const btnBg = dark ? "bg-black text-white hover:bg-black/80" : "bg-white text-black hover:bg-white/90";
   const secondaryColor = dark ? "text-black/40 hover:text-black" : "text-white/40 hover:text-white";
 
   return (

@@ -147,7 +147,7 @@ export default function CocaColaKFC({ onBack }: { onBack?: () => void }) {
               </div>
               <div>
                 <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, margin: "0 0 0.6rem" }}>
-                  Material
+                  Servicios
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 clamp(0.8rem, 1.5vh, 1.8rem)" }}>
                     <li key="Comunicación" style={{ color: "rgba(255,255,255,0.72)", fontSize: "clamp(0.7rem, 1.2vw, 0.8rem)", lineHeight: "1.6" }}>Comunicación</li>

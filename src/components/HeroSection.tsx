@@ -7,15 +7,11 @@ export default function HeroSection() {
   const [panelX,    setPanelX]    = useState(100);
   const [videoRise, setVideoRise] = useState(0.06);
   const [muted,     setMuted]     = useState(true);
-  const sectionRef    = useRef<HTMLElement>(null);
-  const videoRef      = useRef<HTMLVideoElement>(null);
-  const isPlayingRef  = useRef(false);
-  const hasUnmutedRef = useRef(false);
+  const sectionRef   = useRef<HTMLElement>(null);
+  const videoRef     = useRef<HTMLVideoElement>(null);
+  const isPlayingRef = useRef(false);
 
   useEffect(() => {
-    // Arrancar siempre muted para que el autoplay funcione al instante
-    if (videoRef.current) videoRef.current.muted = true;
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const vh      = window.innerHeight;
@@ -28,15 +24,6 @@ export default function HeroSection() {
         if (p2 > 0 && !isPlayingRef.current) {
           video.play().catch(() => {});
           isPlayingRef.current = true;
-          if (!hasUnmutedRef.current) {
-            hasUnmutedRef.current = true;
-            setTimeout(() => {
-              if (videoRef.current) {
-                videoRef.current.muted = false;
-                setMuted(false); // solo para actualizar el icono del botón
-              }
-            }, 1000);
-          }
         }
         if (p2 === 0 && isPlayingRef.current) {
           video.pause();
@@ -78,7 +65,7 @@ export default function HeroSection() {
           height: `${videoRise * 100}%`, overflow: "hidden",
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
-          <video ref={videoRef} loop playsInline preload="auto" style={{
+          <video ref={videoRef} muted loop playsInline preload="auto" style={{
             position: "absolute", bottom: 0, left: "50%",
             transform: "translateX(-50%)",
             height: "100vh", width: "auto", maxWidth: "none",

@@ -190,9 +190,6 @@ function ContactSection() {
           <h2 className="text-4xl font-black text-black tracking-tighter leading-none mb-4">
             Call<br />Johnny.
           </h2>
-          <p className="text-black/50 text-base leading-relaxed">
-            Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
-          </p>
         </div>
         <div className="flex gap-3 mb-8">
           {contactLinks}
@@ -215,9 +212,6 @@ function ContactSection() {
             <h2 className="text-7xl font-black text-black tracking-tighter leading-none mb-6">
               Call<br />Johnny.
             </h2>
-            <p className="text-black/50 text-lg leading-relaxed max-w-sm">
-              Leemos todos los mensajes ese mismo día. Si el proyecto es viable, proponemos una llamada en las próximas 48 horas.
-            </p>
           </motion.div>
 
           <motion.div

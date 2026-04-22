@@ -64,7 +64,7 @@ export default function HeroSection() {
           height: `${videoRise * 100}%`, overflow: "hidden",
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
-          <video ref={videoRef} muted={muted} loop playsInline style={{
+          <video ref={videoRef} muted={muted} loop playsInline preload="auto" style={{
             position: "absolute", bottom: 0, left: "50%",
             transform: "translateX(-50%)",
             height: "100vh", width: "auto", maxWidth: "none",

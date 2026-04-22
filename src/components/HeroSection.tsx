@@ -69,7 +69,7 @@ export default function HeroSection() {
             transform: "translateX(-50%)",
             height: "100vh", width: "auto", maxWidth: "none",
           }}>
-            <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4" type="video/mp4" />
+            <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/JohnnyV11.mp4" type="video/mp4" />
           </video>
           {/* Mute button — only visible when video is rising */}
           {videoRise > 0.1 && (

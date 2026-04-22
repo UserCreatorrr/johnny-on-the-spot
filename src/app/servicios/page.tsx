@@ -3,7 +3,6 @@ import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import HomeScrollytelling from "@/components/HomeScrollytelling";
-import ServicesScrollSection from "@/components/ServicesScrollSection";
 
 export const metadata: Metadata = {
   title: "Servicios de Comunicación Integral | Johnny on the Spot",

@@ -46,7 +46,7 @@ export default function NovartisCase({ onBack }: { onBack?: () => void }) {
       <div style={{ height: "310vh", position: "relative" }}>
         <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", background: "#000" }}>
 
-          <video ref={videoRef} autoPlay muted={muted} loop playsInline style={{
+          <video ref={videoRef} autoPlay muted={muted} loop playsInline className="video-portrait-fit" style={{
             position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover",
             transform: zoomed ? "scale(0.78)" : "scale(1.0)",
             transformOrigin: "center center",

@@ -89,7 +89,7 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
                     muted
                     loop
                     playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover video-portrait-fit"
                     aria-hidden="true"
                   />
                 )}

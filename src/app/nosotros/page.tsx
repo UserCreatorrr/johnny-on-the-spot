@@ -15,7 +15,7 @@ export default function NosotrosPage() {
     <PageLayout>
 
       {/* VIDEO — reemplaza la sección SOMOS */}
-      <section className="sticky top-0 h-screen overflow-hidden" data-nav-theme="light" aria-label="Quiénes somos">
+      <section className="lg:sticky lg:top-0 h-screen overflow-hidden" data-nav-theme="light" aria-label="Quiénes somos">
         <video
           src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/JotsCut.mp4"
           autoPlay
@@ -27,7 +27,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* NOSOTROS — descripción del equipo */}
-      <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-black overflow-hidden" aria-labelledby="equipo-heading">
+      <section className="lg:sticky lg:top-0 lg:h-screen flex items-center px-6 lg:px-8 bg-black lg:overflow-hidden py-20 lg:py-0" aria-labelledby="equipo-heading">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>

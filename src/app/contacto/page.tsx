@@ -188,7 +188,7 @@ function ContactSection() {
         <div className="mb-8">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
           <h2 className="text-4xl font-black text-black tracking-tighter leading-none mb-4">
-            Call<br />Johnny.
+            Donde lo necesites,<br />cuando lo necesites.<br />¿Empezamos?
           </h2>
         </div>
         <div className="flex gap-3 mb-8">
@@ -209,8 +209,8 @@ function ContactSection() {
             transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
           >
             <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
-            <h2 className="text-7xl font-black text-black tracking-tighter leading-none mb-6">
-              Call<br />Johnny.
+            <h2 className="text-5xl font-black text-black tracking-tighter leading-none mb-6">
+              Donde lo necesites,<br />cuando lo necesites.<br />¿Empezamos?
             </h2>
           </motion.div>
 

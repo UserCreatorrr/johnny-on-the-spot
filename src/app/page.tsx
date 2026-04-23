@@ -107,7 +107,7 @@ export default function HomePage() {
 
 {/* CTA Final */}
         <div data-nav-theme="dark"><CTASection
-          title="¿Tienes un proyecto en mente?"
+          title="Donde lo necesites, cuando lo necesites. ¿Empezamos?"
           primaryCTA="Hablemos"
           primaryHref="/contacto"
         /></div>

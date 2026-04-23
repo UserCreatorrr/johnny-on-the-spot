@@ -66,7 +66,7 @@ export default function HeroSection() {
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
           <video ref={videoRef} muted loop playsInline preload="auto"
-            className="video-portrait-rotate"
+            className="video-portrait-fit"
             style={{
               position: "absolute", bottom: 0, left: "50%",
               transform: "translateX(-50%)",

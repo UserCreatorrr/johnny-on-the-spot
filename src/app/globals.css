@@ -64,28 +64,18 @@ body {
   background: #666;
 }
 
-/* ── Mobile portrait: rotate landscape videos to fill screen ── */
+/* ── Mobile portrait: show full landscape video (no crop, no rotation) ── */
 @media screen and (max-width: 768px) and (orientation: portrait) {
-  .video-portrait-rotate {
+  .video-portrait-fit {
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
     bottom: auto !important;
-    width: 100vh !important;
-    height: 100vw !important;
-    max-width: none !important;
-    transform: translate(-50%, -50%) rotate(90deg) !important;
-    object-fit: cover !important;
-  }
-
-  /* Full-screen cover for nosotros and section videos */
-  .video-cover-mobile {
-    position: absolute !important;
-    inset: 0 !important;
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    transform: none !important;
+    height: auto !important;
+    max-width: none !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: contain !important;
   }
 }
 

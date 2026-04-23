@@ -203,12 +203,12 @@ export default function HomeScrollytelling() {
     >
       <div
         ref={containerRef}
-        className="relative"
+        className="relative scrollytelling-container"
         style={{ minHeight: `${sections.length * 100}vh` }}
       >
-        {/* Sticky right-panel: full viewport height, centered within max-w */}
-        <div className="sticky top-0 h-screen z-10 pointer-events-none">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex">
+        {/* Sticky right-panel: desktop only */}
+        <div className="lg:sticky lg:top-0 lg:h-screen z-10 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 lg:h-full flex">
             {/* Left spacer: mirrors left column width */}
             <div className="hidden lg:block lg:w-1/2" />
             {/* Right panel */}
@@ -229,8 +229,8 @@ export default function HomeScrollytelling() {
           </div>
         </div>
 
-        {/* Scrolling left content: absolute, full height */}
-        <div className="absolute top-0 left-0 w-full">
+        {/* Scrolling left content: absolute on desktop, normal flow on mobile */}
+        <div className="lg:absolute lg:top-0 lg:left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="lg:w-1/2">
               {sections.map((section) => (

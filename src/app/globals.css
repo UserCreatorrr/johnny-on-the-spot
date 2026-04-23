@@ -79,6 +79,13 @@ body {
   }
 }
 
+/* ── Mobile: disable forced height on scrollytelling container ── */
+@media (max-width: 1023px) {
+  .scrollytelling-container {
+    min-height: 0 !important;
+  }
+}
+
 /* Utilities */
 @layer utilities {
   .text-balance {

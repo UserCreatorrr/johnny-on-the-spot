@@ -58,7 +58,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Clientes */}
-      <section className="sticky top-0 h-screen flex items-center px-6 lg:px-8 bg-white overflow-hidden" aria-label="Clientes">
+      <section className="lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex items-center px-6 lg:px-8 bg-white py-20 lg:py-0" aria-label="Clientes">
         <div className="max-w-7xl mx-auto w-full">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-10">Confían en nosotros</p>
           <div className="flex flex-wrap gap-x-10 gap-y-8 items-center justify-center">

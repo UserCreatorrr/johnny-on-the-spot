@@ -65,11 +65,13 @@ export default function HeroSection() {
           height: `${videoRise * 100}%`, overflow: "hidden",
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
-          <video ref={videoRef} muted loop playsInline preload="auto" style={{
-            position: "absolute", bottom: 0, left: "50%",
-            transform: "translateX(-50%)",
-            height: "100vh", width: "auto", maxWidth: "none",
-          }}>
+          <video ref={videoRef} muted loop playsInline preload="auto"
+            className="video-portrait-rotate"
+            style={{
+              position: "absolute", bottom: 0, left: "50%",
+              transform: "translateX(-50%)",
+              height: "100vh", width: "auto", maxWidth: "none",
+            }}>
             <source src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/JohnnyV11.mp4" type="video/mp4" />
           </video>
           {/* Mute button — only visible when video is rising */}

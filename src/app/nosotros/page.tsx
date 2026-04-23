@@ -22,7 +22,7 @@ export default function NosotrosPage() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover video-portrait-rotate"
         />
       </section>
 

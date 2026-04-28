@@ -2,14 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "Estrategia de Comunicación", href: "/servicios/estrategia-de-comunicacion" },
-  { label: "Dirección Creativa", href: "/servicios/direccion-produccion-creativa" },
-  { label: "Dirección de Arte", href: "/servicios/direccion-de-arte" },
-  { label: "Diseño de Identidad", href: "/servicios/diseno-de-identidad" },
-  { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
-  { label: "Activación de Marca", href: "/servicios/activacion-de-marca" },
-  { label: "Creación de Contenido", href: "/servicios/creacion-de-contenido" },
-  { label: "IA y Automatizaciones", href: "/servicios/ia-y-automatizaciones" },
+  { label: "Estrategia" },
+  { label: "Comunicación" },
+  { label: "Dirección Creativa" },
+  { label: "Eventos" },
+  { label: "Activación y Experiencias" },
+  { label: "Marketing Digital" },
+  { label: "IA & Automatizaciones" },
+  { label: "Foto y Video" },
+  { label: "RR.PP. y Prensa" },
 ];
 
 const legal = [
@@ -45,8 +46,8 @@ export default function Footer() {
             <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">Servicios</h3>
             <ul className="space-y-3" role="list">
               {services.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-white/45 hover:text-white text-sm transition-colors">
+                <li key={item.label}>
+                  <Link href="/servicios" className="text-white/45 hover:text-white text-sm transition-colors">
                     {item.label}
                   </Link>
                 </li>

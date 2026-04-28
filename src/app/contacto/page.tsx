@@ -188,7 +188,7 @@ function ContactSection() {
         <div className="mb-8">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
           <h2 className="text-4xl font-black text-black tracking-tighter leading-none mb-4">
-            Dónde lo necesites,<br />cuando lo necesites.<br /><br />¿Empezamos?<br />Call Johnny
+            <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?<br />Call Johnny</span>
           </h2>
         </div>
         <div className="flex gap-3 mb-8">
@@ -210,7 +210,7 @@ function ContactSection() {
           >
             <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
             <h2 className="text-5xl font-black text-black tracking-tighter leading-none mb-6">
-              Dónde lo necesites,<br />cuando lo necesites.<br /><br />¿Empezamos?<br />Call Johnny
+              <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?<br />Call Johnny</span>
             </h2>
           </motion.div>
 

@@ -1,5 +1,4 @@
 ﻿import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -45,28 +44,7 @@ export default function HomePage() {
         </FullPageSection>
 
         {/* CASOS DE ÉXITO */}
-        <section data-nav-theme="dark" className="border-t border-white/5" aria-labelledby="cases-heading">
-          {/* Header */}
-          <div className="px-6 lg:px-8 pt-20 lg:pt-28 pb-10 max-w-7xl mx-auto flex items-end justify-between">
-            <div>
-              <p className="text-white/30 text-xs tracking-widest uppercase mb-3">Casos de éxito</p>
-              <h2
-                id="cases-heading"
-                className="text-4xl lg:text-5xl font-black tracking-tighter text-white"
-              >
-                Proyectos reales.
-                <br />
-                Resultados reales.
-              </h2>
-            </div>
-            <Link
-              href="/casos-de-exito"
-              className="hidden lg:block text-sm text-white/40 hover:text-white border-b border-white/10 hover:border-white/40 transition-colors pb-0.5"
-            >
-              Ver todos →
-            </Link>
-          </div>
-
+        <section data-nav-theme="dark" aria-label="Casos de éxito">
           <CasesVideoSection cases={featuredCases} />
         </section>
 

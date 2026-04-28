@@ -63,6 +63,9 @@ export default function Footer() {
               <a href="mailto:info@jotsagency.com" className="block text-white/45 hover:text-white text-sm transition-colors">
                 info@jotsagency.com
               </a>
+              <a href="https://www.linkedin.com/company/johnny-on-the-spot-agency/" target="_blank" rel="noopener noreferrer" className="block text-white/45 hover:text-white text-sm transition-colors">
+                LinkedIn
+              </a>
             </address>
           </div>
         </div>

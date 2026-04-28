@@ -66,6 +66,9 @@ export default function Footer() {
               <a href="https://www.linkedin.com/company/johnny-on-the-spot-agency/" target="_blank" rel="noopener noreferrer" className="block text-white/45 hover:text-white text-sm transition-colors">
                 LinkedIn
               </a>
+              <a href="https://www.instagram.com/jotsagency?igsh=MXJteW8zam5saGNvcg==" target="_blank" rel="noopener noreferrer" className="block text-white/45 hover:text-white text-sm transition-colors">
+                Instagram
+              </a>
             </address>
           </div>
         </div>

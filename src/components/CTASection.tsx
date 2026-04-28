@@ -1,8 +1,9 @@
+import React from "react";
 import Link from "next/link";
 import SkewButton from "./SkewButton";
 
 interface CTASectionProps {
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   primaryCTA?: string;
   primaryHref?: string;

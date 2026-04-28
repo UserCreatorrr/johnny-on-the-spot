@@ -85,7 +85,7 @@ export default function HomePage() {
 
 {/* CTA Final */}
         <div data-nav-theme="dark"><CTASection
-          title="Donde lo necesites, cuando lo necesites. ¿Empezamos?"
+          title={<><span className="block">Donde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?</span></>}
           primaryCTA="Call Johnny"
           primaryHref="/contacto"
         /></div>

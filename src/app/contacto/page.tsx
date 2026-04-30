@@ -255,14 +255,17 @@ function ContactSection() {
       <div className="hidden lg:block">
         <div className="relative flex items-center justify-center h-screen overflow-hidden">
           <motion.div
-            className="absolute left-24 max-w-md z-10"
+            className="absolute left-24 z-10"
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
           >
             <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
             <h2 className="text-5xl font-black text-black tracking-tighter leading-none mb-6">
-              <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-8">¿Empezamos?</span><span className="block mt-6">Call Johnny</span>
+              <span className="block whitespace-nowrap">Dónde lo necesites,</span>
+              <span className="block whitespace-nowrap">cuando lo necesites.</span>
+              <span className="block mt-8">¿Empezamos?</span>
+              <span className="block mt-6">Call Johnny</span>
             </h2>
           </motion.div>
 

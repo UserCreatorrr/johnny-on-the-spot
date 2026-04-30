@@ -25,12 +25,12 @@ export default function ServiciosPage() {
 
       <section className="pt-8 pb-16 lg:pb-24 px-6 lg:px-8" aria-labelledby="servicios-heading">
         <div className="max-w-7xl mx-auto">
-          <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Lo que hacemos</p>
+          <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Servicios</p>
           <h1
             id="servicios-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tighter text-white leading-none mb-8"
           >
-            Servicios de comunicación que funcionan.
+            Comunicación y eventos que convierten ideas en resultados.
           </h1>
         </div>
       </section>

@@ -7,7 +7,7 @@ const sections = [
   {
     id: "estrategia",
     eyebrow: "Estrategia",
-    title: "Primero pensamos. Después hacemos.",
+    title: "Saber qué decir… y cuándo hacer que pase.",
     body: "",
     visual: {
       label: "Estrategia",
@@ -26,9 +26,27 @@ const sections = [
     },
   },
   {
+    id: "comunicacion",
+    eyebrow: "Comunicación",
+    title: "Cuando el mensaje deja de ser tuyo y pasa a ser de todos.",
+    body: "",
+    visual: {
+      label: "Comunicación",
+      items: [
+        "Estrategia de comunicación integral",
+        "Comunicación corporativa",
+        "Comunicación interna",
+        "Gestión de imagen y reputación",
+        "Comunicación de crisis",
+        "Portavocía y media training",
+      ],
+      accent: "02",
+    },
+  },
+  {
     id: "creatividad",
     eyebrow: "Dirección Creativa",
-    title: "Ideas que construyen marcas.",
+    title: "El diseño habla el idioma del concepto.",
     body: "",
     visual: {
       label: "Dirección Creativa",
@@ -42,13 +60,13 @@ const sections = [
         "Producción Gráfica",
         "Packaging & Material POS",
       ],
-      accent: "02",
+      accent: "03",
     },
   },
   {
     id: "eventos",
     eyebrow: "Eventos",
-    title: "Presencia donde importa.",
+    title: "Precisión detrás, magia delante.",
     body: "",
     visual: {
       label: "Eventos",
@@ -66,13 +84,13 @@ const sections = [
         "AV y Producción Técnica",
         "Logística y traslados",
       ],
-      accent: "03",
+      accent: "04",
     },
   },
   {
     id: "activaciones",
     eyebrow: "Activaciones y Experiencias",
-    title: "La marca en el mundo real.",
+    title: "La diferencia entre estar y dejar huella.",
     body: "",
     visual: {
       label: "Activaciones y Experiencias",
@@ -84,13 +102,13 @@ const sections = [
         "Acciones disruptivas",
         "Team Buildings",
       ],
-      accent: "04",
+      accent: "05",
     },
   },
   {
     id: "digital",
     eyebrow: "Marketing Digital",
-    title: "Comunidades que convierten.",
+    title: "Internet está lleno de ruido. Hagamos otra cosa.",
     body: "",
     visual: {
       label: "Marketing Digital",
@@ -101,13 +119,13 @@ const sections = [
         "Influencer marketing y gestión de colaboraciones",
         "Estrategia, compra y optimización de Social Ads",
       ],
-      accent: "05",
+      accent: "06",
     },
   },
   {
     id: "soluciones-digitales",
     eyebrow: "Desarrollo y Soluciones Digitales",
-    title: "La tecnología al servicio de la marca.",
+    title: "Tecnología al servicio de la experiencia.",
     body: "",
     visual: {
       label: "Desarrollo y Soluciones Digitales",
@@ -119,32 +137,32 @@ const sections = [
         "Soluciones cloud",
         "Automatización de procesos",
       ],
-      accent: "06",
+      accent: "07",
     },
   },
   {
     id: "foto-video",
-    eyebrow: "Foto y Video",
-    title: "Imágenes que trabajan para la marca.",
+    eyebrow: "Foto y Vídeo",
+    title: "Contenido que se mueve… y mueve.",
     body: "",
     visual: {
-      label: "Foto y Video",
+      label: "Foto y Vídeo",
       items: [
         "Shooting Foto & Video",
         "Guión",
         "Edición de Video",
         "Producción Audiovisual",
       ],
-      accent: "07",
+      accent: "08",
     },
   },
   {
     id: "rrpp",
-    eyebrow: "RR.PP y Prensa",
-    title: "Relaciones que abren puertas.",
+    eyebrow: "RRPP y Prensa",
+    title: "Construimos conversación alrededor de las marcas.",
     body: "",
     visual: {
-      label: "RR.PP y Prensa",
+      label: "RRPP y Prensa",
       items: [
         "Estrategia de relaciones públicas",
         "Ruedas de Prensa",
@@ -154,7 +172,7 @@ const sections = [
         "Identificación y gestión de relaciones con prescriptores, líderes de opinión",
         "Contratación nacional e internacional de celebrities y embajadores de marca",
       ],
-      accent: "08",
+      accent: "09",
     },
   },
 ];

@@ -35,14 +35,12 @@ export default function CTASection({
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">
         <div className="max-w-5xl">
-          {!largeCTA && (
-            <h2
-              id="cta-heading"
-              className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-10 ${headingColor}`}
-            >
-              {title}
-            </h2>
-          )}
+          <h2
+            id="cta-heading"
+            className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-10 ${headingColor}`}
+          >
+            {title}
+          </h2>
           {subtitle && (
             <p className={`text-lg leading-relaxed mb-12 max-w-xl ${subColor}`}>
               {subtitle}

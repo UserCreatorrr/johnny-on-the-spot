@@ -90,7 +90,7 @@ function NewContactScreen() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, servicios }),
       });
-    } catch (_) {
+    } catch {
       // silent fail — still show success to user
     }
     setLoading(false);

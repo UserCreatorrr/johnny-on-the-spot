@@ -10,6 +10,7 @@ interface CTASectionProps {
   secondaryCTA?: string;
   secondaryHref?: string;
   dark?: boolean;
+  largeCTA?: boolean;
 }
 
 export default function CTASection({
@@ -20,6 +21,7 @@ export default function CTASection({
   secondaryCTA,
   secondaryHref,
   dark = true,
+  largeCTA = false,
 }: CTASectionProps) {
   const bg = dark ? "bg-white" : "bg-black";
   const headingColor = dark ? "text-black" : "text-white";
@@ -32,22 +34,30 @@ export default function CTASection({
       aria-labelledby="cta-heading"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24">
-        <div className="max-w-3xl">
-          <h2
-            id="cta-heading"
-            className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-6 ${headingColor}`}
-          >
-            {title}
-          </h2>
+        <div className="max-w-5xl">
+          {!largeCTA && (
+            <h2
+              id="cta-heading"
+              className={`text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-none mb-10 ${headingColor}`}
+            >
+              {title}
+            </h2>
+          )}
           {subtitle && (
             <p className={`text-lg leading-relaxed mb-12 max-w-xl ${subColor}`}>
               {subtitle}
             </p>
           )}
-          <div className="flex flex-col sm:flex-row items-start gap-6">
-            <SkewButton href={primaryHref} dark={dark}>
-              {primaryCTA} →
-            </SkewButton>
+          <div className="flex flex-col items-start gap-6">
+            {largeCTA ? (
+              <SkewButton href={primaryHref} dark={dark} large uppercase={false}>
+                {primaryCTA}
+              </SkewButton>
+            ) : (
+              <SkewButton href={primaryHref} dark={dark}>
+                {primaryCTA} →
+              </SkewButton>
+            )}
             {secondaryCTA && secondaryHref && (
               <Link
                 href={secondaryHref}

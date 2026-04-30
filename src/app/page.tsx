@@ -88,6 +88,7 @@ export default function HomePage() {
           title={<><span className="block">Donde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?</span></>}
           primaryCTA="Call Johnny"
           primaryHref="/contacto"
+          largeCTA
         /></div>
       </main>
       <Footer />

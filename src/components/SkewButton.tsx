@@ -6,7 +6,9 @@ interface SkewButtonProps {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  dark?: boolean; // dark=true → fondo negro al hover; dark=false → fondo blanco al hover
+  dark?: boolean;
+  large?: boolean;
+  uppercase?: boolean;
   type?: "button" | "submit";
   disabled?: boolean;
 }
@@ -16,15 +18,20 @@ export default function SkewButton({
   onClick,
   children,
   dark = true,
+  large = false,
+  uppercase = true,
   type = "button",
   disabled = false,
 }: SkewButtonProps) {
+  const size = large
+    ? "px-12 py-6 text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter"
+    : "px-8 py-4 text-sm font-semibold tracking-wide";
+
   const base =
-    "relative inline-block px-8 py-4 text-sm font-semibold uppercase tracking-wide cursor-pointer overflow-hidden " +
-    "skew-x-[-21deg] transition-colors duration-300 " +
-    (dark
-      ? "bg-white text-black hover:text-white"
-      : "bg-black text-white hover:text-black");
+    `relative inline-block ${size} cursor-pointer overflow-hidden ` +
+    `skew-x-[-21deg] transition-colors duration-300 ` +
+    (uppercase ? "uppercase " : "") +
+    (dark ? "bg-white text-black hover:text-white" : "bg-black text-white hover:text-black");
 
   const before =
     "before:content-[''] before:absolute before:inset-y-0 before:left-0 before:right-full " +

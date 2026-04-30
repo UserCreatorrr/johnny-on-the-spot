@@ -59,9 +59,26 @@ function IncomingCallScreen() {
   );
 }
 
+const SERVICIOS = [
+  "Estrategia",
+  "Comunicación",
+  "Dirección Creativa",
+  "Eventos",
+  "Activación y Experiencias",
+  "Marketing Digital",
+  "IA & Automatizaciones",
+  "Foto y Video",
+  "RR.PP. y Prensa",
+];
+
 function NewContactScreen() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ nombre: "", empresa: "", email: "", ayuda: "" });
+  const [servicios, setServicios] = useState<string[]>([]);
+  const [openServicios, setOpenServicios] = useState(false);
+
+  const toggleServicio = (s: string) =>
+    setServicios(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
 
   return (
     <div className="flex flex-col h-full bg-white overflow-hidden"
@@ -117,6 +134,41 @@ function NewContactScreen() {
               <input type="email" placeholder="tu@email.com"
                 className="w-full text-[13px] text-black placeholder:text-black/25 bg-transparent outline-none"
                 value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} />
+            </div>
+            {/* Servicios multichoice */}
+            <div className="border-b border-black/10 pb-3">
+              <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">Servicios</label>
+              <button
+                type="button"
+                onClick={() => setOpenServicios(o => !o)}
+                className="w-full flex items-center justify-between text-[13px] bg-transparent outline-none"
+              >
+                <span className={servicios.length ? "text-black" : "text-black/25"}>
+                  {servicios.length ? servicios.join(", ") : "Selecciona servicios..."}
+                </span>
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={`flex-shrink-0 transition-transform ${openServicios ? "rotate-180" : ""}`}>
+                  <path d="M1 1l4 4 4-4" stroke="black" strokeOpacity="0.4" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </button>
+              {openServicios && (
+                <div className="mt-2 space-y-1">
+                  {SERVICIOS.map(s => (
+                    <label key={s} className="flex items-center gap-2 cursor-pointer py-0.5">
+                      <div
+                        onClick={() => toggleServicio(s)}
+                        className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 ${servicios.includes(s) ? "bg-black border-black" : "border-black/20"}`}
+                      >
+                        {servicios.includes(s) && (
+                          <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
+                            <path d="M1 3l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        )}
+                      </div>
+                      <span className="text-[12px] text-black/70" onClick={() => toggleServicio(s)}>{s}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="pb-3">
               <label className="text-[10px] text-black/40 tracking-wider uppercase block mb-1">¿En qué te ayudamos?</label>
@@ -188,7 +240,7 @@ function ContactSection() {
         <div className="mb-8">
           <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
           <h2 className="text-4xl font-black text-black tracking-tighter leading-none mb-4">
-            <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?<br />Call Johnny</span>
+            <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?</span><span className="block mt-2">Call Johnny</span>
           </h2>
         </div>
         <div className="flex gap-3 mb-8">
@@ -210,7 +262,7 @@ function ContactSection() {
           >
             <p className="text-black/30 text-xs tracking-widest uppercase mb-4">Contacto</p>
             <h2 className="text-5xl font-black text-black tracking-tighter leading-none mb-6">
-              <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?<br />Call Johnny</span>
+              <span className="block">Dónde lo necesites,<br />cuando lo necesites.</span><span className="block mt-6">¿Empezamos?</span><span className="block mt-2">Call Johnny</span>
             </h2>
           </motion.div>
 

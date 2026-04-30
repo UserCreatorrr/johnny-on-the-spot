@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
-import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Nosotros: Agencia de Comunicación Integral | Johnny on the Spot",
@@ -34,12 +33,12 @@ export default function NosotrosPage() {
               <p className="text-white/25 text-xs tracking-widest uppercase mb-6">Nosotros</p>
               <h2
                 id="equipo-heading"
-                className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tighter text-white leading-tight"
+                className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter text-white leading-tight"
               >
                 El equipo
               </h2>
             </div>
-            <div className="space-y-4 text-white/55 text-sm lg:text-lg leading-relaxed">
+            <div className="space-y-4 text-white/80 text-base lg:text-2xl leading-relaxed">
               <p>
                 Somos un equipo multidisciplinar y versátil con una amplia experiencia en el Universo de la Comunicación y los Eventos.
               </p>
@@ -99,12 +98,6 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿Tienes un reto de comunicación?"
-        primaryCTA="Hablemos de tu proyecto"
-        secondaryCTA="Ver servicios"
-        secondaryHref="/servicios"
-      />
     </PageLayout>
   );
 }

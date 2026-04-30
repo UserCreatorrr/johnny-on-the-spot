@@ -28,7 +28,7 @@ export default function ServiciosPage() {
           <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Lo que hacemos</p>
           <h1
             id="servicios-heading"
-            className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white leading-none mb-8 max-w-4xl"
+            className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tighter text-white leading-none mb-8"
           >
             Servicios de comunicación que funcionan.
           </h1>
@@ -38,8 +38,8 @@ export default function ServiciosPage() {
       <HomeScrollytelling />
 
       <div className="py-24 px-6 lg:px-8 flex justify-center">
-        <SkewButton href="/contacto" dark={false}>
-          Hablemos →
+        <SkewButton href="/contacto" dark={false} uppercase={false}>
+          Call Johnny →
         </SkewButton>
       </div>
     </PageLayout>

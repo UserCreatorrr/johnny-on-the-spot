@@ -270,7 +270,7 @@ function ContactSection() {
           </motion.div>
 
           <motion.div
-            className="absolute left-[42%] flex flex-col gap-3 z-10"
+            className="absolute left-[55%] flex flex-col gap-3 z-10"
             style={{ top: "50%", y: "-50%" }}
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}

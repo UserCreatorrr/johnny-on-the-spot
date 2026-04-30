@@ -73,12 +73,29 @@ const SERVICIOS = [
 
 function NewContactScreen() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ nombre: "", empresa: "", email: "", ayuda: "" });
   const [servicios, setServicios] = useState<string[]>([]);
   const [openServicios, setOpenServicios] = useState(false);
 
   const toggleServicio = (s: string) =>
     setServicios(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s]);
+
+  const handleSubmit = async () => {
+    if (!form.nombre && !form.email) return;
+    setLoading(true);
+    try {
+      await fetch("https://n8n-n8n.d4s5yj.easypanel.host/webhook-test/0d115b1a-c52c-48cb-8b2e-2c4ebe69ce0b", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, servicios }),
+      });
+    } catch (_) {
+      // silent fail — still show success to user
+    }
+    setLoading(false);
+    setSent(true);
+  };
 
   return (
     <div className="flex flex-col h-full bg-white overflow-hidden"
@@ -181,9 +198,10 @@ function NewContactScreen() {
           {/* CTA */}
           <div className="px-5 pb-6 pt-3 flex-shrink-0" style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}>
             <button
-              onClick={() => { if (form.nombre || form.email) setSent(true); }}
-              className="w-full bg-black text-white text-[13px] font-semibold py-3 rounded-xl tracking-wide hover:bg-black/85 transition-colors">
-              Enviar →
+              onClick={handleSubmit}
+              disabled={loading}
+              className="w-full bg-black text-white text-[13px] font-semibold py-3 rounded-xl tracking-wide hover:bg-black/85 transition-colors disabled:opacity-50">
+              {loading ? "Enviando..." : "Enviar →"}
             </button>
           </div>
         </>

@@ -1,7 +1,7 @@
 ﻿"use client";
 
-import { useRef, useState } from "react";
-import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const sections = [
   {
@@ -203,16 +203,26 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
 
 export default function HomeScrollytelling() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.findIndex((ref) => ref === entry.target);
+            if (index !== -1) setActiveIndex(index);
+          }
+        });
+      },
+      { rootMargin: "-49% 0px -49% 0px", threshold: 0 }
+    );
 
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setActiveIndex(Math.min(Math.floor(v * sections.length), sections.length - 1));
-  });
+    const refs = sectionRefs.current;
+    refs.forEach((ref) => { if (ref) observer.observe(ref); });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -224,6 +234,7 @@ export default function HomeScrollytelling() {
         className="relative scrollytelling-container"
         style={{ minHeight: `${sections.length * 100}vh` }}
       >
+
         {/* Sticky right-panel: desktop only */}
         <div className="lg:sticky lg:top-0 lg:h-screen z-10 pointer-events-none">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 lg:h-full flex">
@@ -251,9 +262,10 @@ export default function HomeScrollytelling() {
         <div className="lg:absolute lg:top-0 lg:left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="lg:w-1/2">
-              {sections.map((section) => (
+              {sections.map((section, i) => (
                 <div
                   key={section.id}
+                  ref={(el) => { sectionRefs.current[i] = el; }}
                   className="flex items-center"
                   style={{ minHeight: "100vh" }}
                 >

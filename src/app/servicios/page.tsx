@@ -23,17 +23,19 @@ export default function ServiciosPage() {
         </div>
       </div>
 
-      <section className="pt-8 pb-16 lg:pb-24 px-6 lg:px-8" aria-labelledby="servicios-heading">
-        <div className="max-w-7xl mx-auto lg:w-1/2">
-          <p className="text-white font-black tracking-tighter text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4">
-            Servicios
-          </p>
-          <h1
-            id="servicios-heading"
-            className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/50 leading-snug"
-          >
-            Comunicación y eventos que convierten ideas en resultados.
-          </h1>
+      <section className="flex items-center px-6 lg:px-8" style={{ minHeight: "100vh" }} aria-labelledby="servicios-heading">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="lg:w-1/2 py-20 lg:pr-16 max-w-xl">
+            <p className="text-white font-black tracking-tighter text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4">
+              Servicios
+            </p>
+            <h1
+              id="servicios-heading"
+              className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/50 leading-snug"
+            >
+              Comunicación y eventos que convierten ideas en resultados.
+            </h1>
+          </div>
         </div>
       </section>
 

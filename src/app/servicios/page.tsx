@@ -24,11 +24,13 @@ export default function ServiciosPage() {
       </div>
 
       <section className="pt-8 pb-16 lg:pb-24 px-6 lg:px-8" aria-labelledby="servicios-heading">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Servicios</p>
+        <div className="max-w-7xl mx-auto lg:w-1/2">
+          <p className="text-white font-black tracking-tighter text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4">
+            Servicios
+          </p>
           <h1
             id="servicios-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tighter text-white leading-none mb-8"
+            className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/50 leading-snug"
           >
             Comunicación y eventos que convierten ideas en resultados.
           </h1>

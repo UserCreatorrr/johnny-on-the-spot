@@ -85,7 +85,7 @@ function NewContactScreen() {
     if (!form.nombre && !form.email) return;
     setLoading(true);
     try {
-      await fetch("https://n8n-n8n.d4s5yj.easypanel.host/webhook-test/0d115b1a-c52c-48cb-8b2e-2c4ebe69ce0b", {
+      await fetch("https://n8n-n8n.d4s5yj.easypanel.host/webhook/bb95f21a-80d4-47a4-a5bf-c096e3aa8a44", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, servicios }),

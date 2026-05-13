@@ -48,9 +48,11 @@ export default function CTASection({
           )}
           <div className="flex flex-col items-start gap-6">
             {largeCTA ? (
-              <SkewButton href={primaryHref} dark={dark} large uppercase={false}>
-                {primaryCTA}
-              </SkewButton>
+              <div className="-ml-12">
+                <SkewButton href={primaryHref} dark={dark} large uppercase={false}>
+                  {primaryCTA}
+                </SkewButton>
+              </div>
             ) : (
               <SkewButton href={primaryHref} dark={dark}>
                 {primaryCTA} →

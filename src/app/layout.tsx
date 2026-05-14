@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Johnny on the Spot",
   },
   description:
-    "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar. Multidisciplinar. Senior. Resolutiva.",
+    "We are a Communications and Events Agency that blends young talent with senior expertise, focused on crafting proposals that actually work, creative, well-executed, and designed for demanding environments.",
   keywords: [
     "agencia comunicación integral Barcelona",
     "agencia publicidad Barcelona",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Johnny on the Spot",
     title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
     description:
-      "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar.",
+      "We are a Communications and Events Agency that blends young talent with senior expertise, focused on crafting proposals that actually work, creative, well-executed, and designed for demanding environments.",
     images: [
       {
         url: "/og-image.jpg",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Johnny on the Spot: Agencia de Comunicación Integral | Barcelona",
     description:
-      "Agencia de comunicación integral en Barcelona. Estrategia, creatividad, producción y activación de marca para empresas que no pueden esperar.",
+      "We are a Communications and Events Agency that blends young talent with senior expertise, focused on crafting proposals that actually work, creative, well-executed, and designed for demanding environments.",
     images: ["/og-image.jpg"],
   },
   robots: {

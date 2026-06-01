@@ -140,7 +140,6 @@ export const CASES = [
     sector: "Farmacéutico",
     results: "Producción integral del evento de lanzamiento Hydra Glide",
     videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom%20alcon.mp4",
-    previewVideoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/Air%20Optix-cut.mp4",
   },
   {
     slug: "sd-distribuciones-sand-games",

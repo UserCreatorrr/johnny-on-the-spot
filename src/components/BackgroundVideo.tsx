@@ -25,7 +25,7 @@ export default function BackgroundVideo() {
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       >
         <source
-          src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/jots-agency.mp4"
+          src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/Jots%20Cut.mp4"
           type="video/mp4"
         />
       </video>

@@ -139,7 +139,8 @@ export const CASES = [
     services: ["Eventos", "Producción Creativa", "Contenido"],
     sector: "Farmacéutico",
     results: "Producción integral del evento de lanzamiento Hydra Glide",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom_alcon.mp4",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/sitcom%20alcon.mp4",
+    previewVideoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/Air%20Optix-cut.mp4",
   },
   {
     slug: "sd-distribuciones-sand-games",
@@ -149,7 +150,7 @@ export const CASES = [
     services: ["Concepto Creativo", "Desarrollo Gráfico", "Eventos", "Logística", "Site Dedicado"],
     sector: "Gran Consumo",
     results: "Concepto creativo y desarrollo gráfico, site dedicado, staff, localizaciones y logística de viajes",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/sandgames.mp4",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/SD_TheSandGames_ShortClip_220516.mp4",
     previewVideoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/SDcut.mp4",
   },
   {
@@ -160,7 +161,7 @@ export const CASES = [
     services: ["Concepto Creativo", "Activación", "Producción"],
     sector: "Gran Consumo",
     results: "Campaña de activación conjunta Coca-Cola x KFC",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/cocacola.mp4",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/CocaColaCCIP_KFC_Together.mp4",
   },
   {
     slug: "novartis-transplant-tomorrow",
@@ -170,7 +171,7 @@ export const CASES = [
     services: ["Concepto Creativo", "Campaña Gráfica", "Eventos", "Vídeo"],
     sector: "Farmacéutico",
     results: "Concepto integral, campaña gráfica, producción de eventos y vídeo corporativo",
-    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/videos/novartis.mp4",
+    videoUrl: "https://evolutionapi-video-jots.d4s5yj.easypanel.host/NOVARTIS%20Tiempo%20para%20crecer.mp4",
   },
   {
     slug: "sap-partner-summit",

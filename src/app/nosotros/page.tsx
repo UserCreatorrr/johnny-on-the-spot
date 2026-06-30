@@ -16,7 +16,7 @@ export default function NosotrosPage() {
       {/* VIDEO — reemplaza la sección SOMOS */}
       <section className="lg:sticky lg:top-0 h-screen overflow-hidden" data-nav-theme="light" aria-label="Quiénes somos">
         <video
-          src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/Jots%20Cut.mp4"
+          src="/videos/jots-cut.mp4"
           autoPlay
           muted
           loop

@@ -21,7 +21,7 @@ export default function VideoReelSection() {
     >
       <video
         ref={videoRef}
-        src="https://evolutionapi-video-jots.d4s5yj.easypanel.host/Jots%20Cut.mp4"
+        src="/videos/jots-cut.mp4"
         autoPlay
         muted
         loop

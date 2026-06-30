@@ -73,7 +73,7 @@ const sections = [
       items: [
         "Eventos Corporativos Nacionales e Internacionales",
         "Convenciones",
-        "Desfilés",
+        "Desfiles",
         "RoadShow",
         "Presentación de Productos",
         "Ferias & Trade Shows",

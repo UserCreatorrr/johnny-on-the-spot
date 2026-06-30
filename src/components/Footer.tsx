@@ -1,25 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { type Locale, localizeHref, t } from "@/lib/i18n";
 
-const services = [
-  { label: "Estrategia" },
-  { label: "Comunicación" },
-  { label: "Dirección Creativa" },
-  { label: "Eventos" },
-  { label: "Activación y Experiencias" },
-  { label: "Marketing Digital" },
-  { label: "IA & Automatizaciones" },
-  { label: "Foto y Video" },
-  { label: "RR.PP. y Prensa" },
-];
+export default function Footer({ locale = "es" }: { locale?: Locale }) {
+  const tt = t(locale);
+  const services = tt.footer.serviceLabels;
+  const legal = tt.footer.legal;
 
-const legal = [
-  { label: "Privacidad", href: "/privacidad" },
-  { label: "Aviso Legal", href: "/aviso-legal" },
-  { label: "Cookies", href: "/cookies" },
-];
-
-export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10" role="contentinfo">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -27,7 +14,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Link href="/" aria-label="Johnny on the Spot: Inicio">
+            <Link href={localizeHref("/", locale)} aria-label={tt.nav.home_aria}>
               <Image
                 src="/logo-white.png"
                 alt="Johnny on the Spot"
@@ -37,18 +24,18 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/35 text-sm leading-relaxed max-w-xs">
-              Agencia de comunicación integral en Barcelona. Estrategia, creatividad y producción para empresas que no pueden esperar.
+              {tt.footer.tagline}
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">Servicios</h3>
+            <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">{tt.footer.services}</h3>
             <ul className="space-y-3" role="list">
-              {services.map((item) => (
-                <li key={item.label}>
-                  <Link href="/servicios" className="text-white/45 hover:text-white text-sm transition-colors">
-                    {item.label}
+              {services.map((label) => (
+                <li key={label}>
+                  <Link href={localizeHref("/servicios", locale)} className="text-white/45 hover:text-white text-sm transition-colors">
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -57,9 +44,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">Contacto</h3>
+            <h3 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-6">{tt.footer.contact}</h3>
             <address className="not-italic space-y-3">
-              <p className="text-white/45 text-sm">Barcelona, España</p>
+              <p className="text-white/45 text-sm">{tt.footer.location}</p>
               <a href="mailto:info@jotsagency.com" className="block text-white/45 hover:text-white text-sm transition-colors">
                 info@jotsagency.com
               </a>
@@ -68,11 +55,11 @@ export default function Footer() {
         </div>
 
         <div className="py-6 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-white/20 text-xs">© {new Date().getFullYear()} Johnny on the Spot. Todos los derechos reservados.</p>
+          <p className="text-white/20 text-xs">© {new Date().getFullYear()} Johnny on the Spot. {tt.footer.rights}</p>
           <ul className="flex items-center gap-6" role="list">
             {legal.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-white/20 hover:text-white/50 text-xs transition-colors">
+                <Link href={localizeHref(item.href, locale)} className="text-white/20 hover:text-white/50 text-xs transition-colors">
                   {item.label}
                 </Link>
               </li>

@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { type Locale, t } from "@/lib/i18n";
 
-export default function HeroSection() {
+export default function HeroSection({ locale = "es" }: { locale?: Locale }) {
+  const tt = t(locale);
   const [panelX,    setPanelX]    = useState(100);
   const [videoRise, setVideoRise] = useState(0.06);
   const [muted,     setMuted]     = useState(true);
@@ -77,7 +79,7 @@ export default function HeroSection() {
           {/* Mute button — only visible when video is rising */}
           {videoRise > 0.1 && (
             <button onClick={() => setMuted(m => { const n = !m; if (videoRef.current) videoRef.current.muted = n; return n; })}
-              aria-label={muted ? "Activar sonido" : "Silenciar"}
+              aria-label={muted ? tt.hero.enableSound : tt.hero.mute}
               style={{
                 position: "absolute", bottom: "2rem", right: "2rem", zIndex: 50,
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -97,7 +99,7 @@ export default function HeroSection() {
                   <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
                 </svg>
               )}
-              {muted ? "Sonido" : "Silenciar"}
+              {muted ? tt.hero.sound : tt.hero.mute}
             </button>
           )}
         </div>

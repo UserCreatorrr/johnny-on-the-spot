@@ -5,21 +5,25 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Nosotros", href: "/nosotros" },
-  { label: "Servicios", href: "/servicios" },
-  { label: "Contacto", href: "/contacto" },
-];
+import { type Locale, localizeHref, alternatePath, t } from "@/lib/i18n";
 
 const NAV_H = 80;
 
 export default function Navigation() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const locale: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+  const tt = t(locale);
 
-  const isContact = pathname === "/contacto";
+  const navItems = [
+    { label: tt.nav.home, href: localizeHref("/", locale) },
+    { label: tt.nav.about, href: localizeHref("/nosotros", locale) },
+    { label: tt.nav.services, href: localizeHref("/servicios", locale) },
+    { label: tt.nav.contact, href: localizeHref("/contacto", locale) },
+  ];
+  const homeHref = localizeHref("/", locale);
+
+  const isHome = pathname === homeHref;
+  const isContact = pathname === localizeHref("/contacto", locale);
   const [open, setOpen] = useState(false);
   const [logoVisible, setLogoVisible] = useState(!isHome && !isContact);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -83,7 +87,7 @@ export default function Navigation() {
           {/* Hamburger — left, always visible, color adapts */}
           <button
             onClick={() => setOpen(!open)}
-            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-label={open ? tt.nav.closeMenu : tt.nav.openMenu}
             aria-expanded={open}
             className="relative z-[60] w-10 h-10 flex flex-col justify-center items-center gap-[7px] pointer-events-auto"
           >
@@ -101,12 +105,12 @@ export default function Navigation() {
 
           {/* Logo — right, hidden on home until hero animation completes */}
           <Link
-            href="/"
+            href={homeHref}
             onClick={() => setOpen(false)}
             className={`relative z-[60] transition-opacity duration-500 pointer-events-auto ${
               logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
-            aria-label="Johnny on the Spot: Inicio"
+            aria-label={tt.nav.home_aria}
             tabIndex={logoVisible ? 0 : -1}
           >
             {/* White logo for dark sections */}
@@ -168,14 +172,36 @@ export default function Navigation() {
               </ul>
             </nav>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45 }}
-              className="text-white/20 text-xs tracking-widest uppercase pb-8"
+              className="pb-8 flex flex-col gap-4"
             >
-              Agencia de comunicación integral · Barcelona
-            </motion.p>
+              {/* Language switcher */}
+              <div className="flex items-center gap-3 text-xs tracking-widest uppercase">
+                <Link
+                  href={alternatePath(pathname, "es")}
+                  onClick={() => setOpen(false)}
+                  aria-current={locale === "es" ? "true" : undefined}
+                  className={locale === "es" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
+                >
+                  ES
+                </Link>
+                <span className="text-white/20" aria-hidden="true">/</span>
+                <Link
+                  href={alternatePath(pathname, "en")}
+                  onClick={() => setOpen(false)}
+                  aria-current={locale === "en" ? "true" : undefined}
+                  className={locale === "en" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
+                >
+                  EN
+                </Link>
+              </div>
+              <p className="text-white/20 text-xs tracking-widest uppercase">
+                {tt.nav.tagline}
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

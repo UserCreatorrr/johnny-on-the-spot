@@ -2,8 +2,10 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Locale } from "@/lib/i18n";
 
-const sections = [
+const sectionsByLocale = {
+  es: [
   {
     id: "estrategia",
     eyebrow: "Estrategia",
@@ -175,9 +177,185 @@ const sections = [
       accent: "09",
     },
   },
-];
+  ],
+  en: [
+    {
+      id: "estrategia",
+      eyebrow: "Strategy",
+      title: "Knowing what to say… and when to make it happen.",
+      body: "",
+      visual: {
+        label: "Strategy",
+        items: [
+          "360° Strategy Design",
+          "Marketing and communications consulting",
+          "Reputation analysis",
+          "Brand platform",
+          "Insight identification",
+          "Brand storytelling",
+          "Branded Content",
+          "Conceptual development",
+          "Crisis management",
+        ],
+        accent: "01",
+      },
+    },
+    {
+      id: "comunicacion",
+      eyebrow: "Communication",
+      title: "When the message stops being yours and becomes everyone's.",
+      body: "",
+      visual: {
+        label: "Communication",
+        items: [
+          "Integrated communications strategy",
+          "Corporate communications",
+          "Internal communications",
+          "Image and reputation management",
+          "Crisis communications",
+          "Spokesperson and media training",
+        ],
+        accent: "02",
+      },
+    },
+    {
+      id: "creatividad",
+      eyebrow: "Creative Direction",
+      title: "Design speaks the language of the concept.",
+      body: "",
+      visual: {
+        label: "Creative Direction",
+        items: [
+          "Art direction",
+          "Graphic Design",
+          "Branding & Naming",
+          "Corporate Identity development",
+          "Creation of amplifiable content",
+          "Copywriting",
+          "Graphic Production",
+          "Packaging & POS Material",
+        ],
+        accent: "03",
+      },
+    },
+    {
+      id: "eventos",
+      eyebrow: "Events",
+      title: "Precision behind, magic in front.",
+      body: "",
+      visual: {
+        label: "Events",
+        items: [
+          "National and International Corporate Events",
+          "Conventions",
+          "Fashion shows",
+          "RoadShow",
+          "Product launches",
+          "Fairs & Trade Shows",
+          "Conceptualization",
+          "Food & Beverage",
+          "Location scouting",
+          "Staff",
+          "AV and Technical Production",
+          "Logistics and transfers",
+        ],
+        accent: "04",
+      },
+    },
+    {
+      id: "activaciones",
+      eyebrow: "Activation & Experiences",
+      title: "The difference between showing up and leaving a mark.",
+      body: "",
+      visual: {
+        label: "Activation & Experiences",
+        items: [
+          "Brand Experience",
+          "Brand Activation",
+          "Guerrilla Marketing",
+          "Sampling",
+          "Disruptive actions",
+          "Team Buildings",
+        ],
+        accent: "05",
+      },
+    },
+    {
+      id: "digital",
+      eyebrow: "Digital Marketing",
+      title: "The internet is full of noise. Let's do something else.",
+      body: "",
+      visual: {
+        label: "Digital Marketing",
+        items: [
+          "Social media strategy and digital amplification",
+          "Content creation and planning",
+          "Management, growth and loyalty of digital communities",
+          "Influencer marketing and partnership management",
+          "Social Ads strategy, buying and optimization",
+        ],
+        accent: "06",
+      },
+    },
+    {
+      id: "soluciones-digitales",
+      eyebrow: "Digital Development & Solutions",
+      title: "Technology in service of the experience.",
+      body: "",
+      visual: {
+        label: "Digital Development & Solutions",
+        items: [
+          "Web and application development",
+          "UI/UX Design",
+          "E-learning solutions",
+          "Artificial intelligence solutions",
+          "Cloud solutions",
+          "Process automation",
+        ],
+        accent: "07",
+      },
+    },
+    {
+      id: "foto-video",
+      eyebrow: "Photo & Video",
+      title: "Content that moves… and moves you.",
+      body: "",
+      visual: {
+        label: "Photo & Video",
+        items: [
+          "Photo & Video Shooting",
+          "Scriptwriting",
+          "Video Editing",
+          "Audiovisual Production",
+        ],
+        accent: "08",
+      },
+    },
+    {
+      id: "rrpp",
+      eyebrow: "PR & Press",
+      title: "We build conversation around brands.",
+      body: "",
+      visual: {
+        label: "PR & Press",
+        items: [
+          "Public relations strategy",
+          "Press conferences",
+          "Media calls",
+          "Social calls",
+          "Protocol management",
+          "Identification and management of relationships with prescribers and opinion leaders",
+          "National and international booking of celebrities and brand ambassadors",
+        ],
+        accent: "09",
+      },
+    },
+  ],
+} as const;
 
-function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
+type Visual = { label: string; items: readonly string[]; accent: string };
+
+function VisualPanel({ visual }: { visual: Visual }) {
   const many = visual.items.length > 6;
   return (
     <div className="w-full h-full flex flex-col justify-between p-6 lg:p-12 xl:p-16">
@@ -201,7 +379,8 @@ function VisualPanel({ visual }: { visual: typeof sections[0]["visual"] }) {
   );
 }
 
-export default function HomeScrollytelling() {
+export default function HomeScrollytelling({ locale = "es" }: { locale?: Locale }) {
+  const sections = sectionsByLocale[locale];
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);

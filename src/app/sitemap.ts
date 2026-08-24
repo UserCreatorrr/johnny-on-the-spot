@@ -1,5 +1,6 @@
 ﻿import type { MetadataRoute } from "next";
 import { SERVICES, SECTORS, CASES, SOLUTIONS, BLOG_POSTS } from "@/lib/data";
+import { OTS_PROJECTS } from "@/lib/on-the-spot";
 
 const baseUrl = "https://www.johnnyonthespot.es";
 
@@ -52,6 +53,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const otsRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/on-the-spot`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${baseUrl}/en/on-the-spot`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
+    ...OTS_PROJECTS.flatMap((p) => [
+      {
+        url: `${baseUrl}/on-the-spot/${p.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      },
+      {
+        url: `${baseUrl}/en/on-the-spot/${p.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+      },
+    ]),
+  ];
+
+  const enRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/en`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${baseUrl}/en/nosotros`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${baseUrl}/en/servicios`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${baseUrl}/en/contacto`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 },
+  ];
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
@@ -59,5 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...caseRoutes,
     ...solutionRoutes,
     ...blogRoutes,
+    ...otsRoutes,
+    ...enRoutes,
   ];
 }

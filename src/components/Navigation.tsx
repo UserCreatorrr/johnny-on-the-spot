@@ -18,6 +18,7 @@ export default function Navigation() {
     { label: tt.nav.home, href: localizeHref("/", locale) },
     { label: tt.nav.about, href: localizeHref("/nosotros", locale) },
     { label: tt.nav.services, href: localizeHref("/servicios", locale) },
+    { label: tt.nav.onTheSpot, href: localizeHref("/on-the-spot", locale) },
     { label: tt.nav.contact, href: localizeHref("/contacto", locale) },
   ];
   const homeHref = localizeHref("/", locale);

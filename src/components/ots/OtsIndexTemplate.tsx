@@ -43,13 +43,13 @@ export default function OtsIndexTemplate({ locale = "es" }: { locale?: Locale })
       <section className="px-6 lg:px-8 pt-10 pb-16 lg:pt-16 lg:pb-24" aria-labelledby="ots-heading">
         <div className="max-w-7xl mx-auto">
           <p className="text-white/30 text-xs tracking-widest uppercase mb-6">{copy.eyebrow}</p>
+          {/* One line, always: "On The Spot" is ~6.5x the font size wide, so the
+              viewport-relative size keeps it inside the container at every width. */}
           <h1
             id="ots-heading"
-            className="text-white font-black tracking-tighter leading-[0.85] text-[16vw] sm:text-[13vw] lg:text-[11vw] xl:text-[9.5rem]"
+            className="text-white font-black tracking-tighter leading-none whitespace-nowrap text-[12.5vw] xl:text-[10.5rem]"
           >
-            On The
-            <br />
-            Spot
+            On The Spot
           </h1>
           <p className="mt-10 text-white/50 text-lg lg:text-2xl font-light leading-snug max-w-2xl">
             {copy.lead}

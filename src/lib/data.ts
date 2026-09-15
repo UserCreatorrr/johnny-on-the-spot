@@ -218,7 +218,7 @@ export const CASES = [
     results: "Campaña 360°, materiales para 6 canales, distribución nacional",
   },
   {
-    slug: "meliá-60-aniversario",
+    slug: "melia-60-aniversario",
     client: "Meliá Hotels",
     title: "60 Aniversario de Meliá Hotels International",
     description: "Evento corporativo de celebración para el 60 aniversario de la cadena hotelera.",

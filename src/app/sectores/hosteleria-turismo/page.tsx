@@ -23,7 +23,7 @@ export default function HosteleriaTurismoPage() {
       services={["Eventos corporativos en hoteles", "Aniversarios y hitos de marca", "Campañas de comunicación hotelera", "Identidad corporativa para hostelería", "Contenido para redes y digital", "Producción de materiales corporativos", "Street marketing para aerolíneas", "Comunicación interna para cadenas hoteleras"]}
       clients="Meliá Hotels International · Avianca"
       cases={[
-        { title: "60 Aniversario de Meliá Hotels International", client: "Meliá Hotels", href: "/casos/meliá-60-aniversario", desc: "Evento corporativo de celebración para el 60 aniversario de la cadena hotelera internacional." },
+        { title: "60 Aniversario de Meliá Hotels International", client: "Meliá Hotels", href: "/casos/melia-60-aniversario", desc: "Evento corporativo de celebración para el 60 aniversario de la cadena hotelera internacional." },
       ]}
       faqs={[
         { question: "¿Podéis producir eventos en nuestros propios hoteles?", answer: "Sí, y es algo que hacemos habitualmente. Conocemos la dinámica de trabajar dentro del propio establecimiento: coordinación con operaciones, gestión de espacios, catering interno versus externo, y todas las particularidades logísticas." },
@@ -34,7 +34,7 @@ export default function HosteleriaTurismoPage() {
       relatedLinks={[
         { label: "Eventos Corporativos", href: "/servicios/eventos-corporativos" },
         { label: "Dirección Creativa", href: "/servicios/direccion-produccion-creativa" },
-        { label: "Caso Meliá 60 Aniversario", href: "/casos/meliá-60-aniversario" },
+        { label: "Caso Meliá 60 Aniversario", href: "/casos/melia-60-aniversario" },
         { label: "Convenciones y Eventos", href: "/soluciones/convenciones-y-eventos" },
       ]}
     />

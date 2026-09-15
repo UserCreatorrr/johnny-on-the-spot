@@ -25,12 +25,15 @@ export async function generateMetadata({
   };
 }
 
+// Paths starting with "/" are self-hosted in /public/videos and play in a native
+// <video>. Carolina Herrera's runway show stays embedded from the brand's own
+// YouTube channel: it is their content, not ours to re-host.
 const caseVideos: Record<string, string> = {
-  "carolina-herrera-desfile-ss2026": "https://drive.google.com/file/d/16_kiluQsVsfJupUn0KHdPMHP6XA-NoeE/preview",
-  "novartis-transplant-tomorrow": "https://drive.google.com/file/d/1TDyZV9g-BhORBsuQR5FQ1RsPdX2mfFgT/preview",
+  "carolina-herrera-desfile-ss2026": "https://www.youtube-nocookie.com/embed/xuLeI_mf4cQ?rel=0",
+  "novartis-transplant-tomorrow": "/videos/novartis.mp4",
   "alcon-air-optix-paneuropeo": "https://drive.google.com/file/d/16WfAhvfWKPY-EipNl0AiGtQ9DcVsAQB8/preview",
   "alcon-astigmatismo-campana": "https://drive.google.com/file/d/1jPJGtUKA_e6ip73I18eON0yR5OXWwq1H/preview",
-  "meliá-60-aniversario": "https://drive.google.com/file/d/1BupzBaXM-kSdNd6eHKzfMZo32glcom3E/preview",
+  "melia-60-aniversario": "/videos/melia.mp4",
 };
 
 const caseDetails: Record<string, {
@@ -70,7 +73,7 @@ const caseDetails: Record<string, {
     solution: "Creación del concepto de campaña 'Transplant Tomorrow: Mañana Empieza Hoy' para Certican. Aplicación en todos los soportes: vídeo, eventos profesionales, materiales gráficos, stand de congreso. Creación del guión, animaciones y edición de vídeos de presentación del concepto.",
     result: "Concepto integral implementado en todos los canales. Campaña gráfica, vídeo y stand de congreso producidos. Material validado por Medical Affairs y distribuido a nivel nacional.",
   },
-  "meliá-60-aniversario": {
+  "melia-60-aniversario": {
     intro: "Meliá Hotels International celebraba su 60 aniversario y necesitaba un evento corporativo para los principales tour-operadores y agencias a la altura de ese hito.",
     challenge: "Crear un concepto de evento que honrara la historia de la empresa y celebrara el presente con los principales socios comerciales, con una producción que reflejara el posicionamiento premium de una de las cadenas hoteleras más importantes del mundo.",
     solution: "Conceptualización del evento bajo el concepto 'Dreamhunters'. Convocatoria, desarrollo de contenidos y producción integral: venue, materiales, producción audiovisual y dirección completa del evento para los principales tour-operadores y agencias.",
@@ -240,7 +243,18 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
       {/* Media box */}
       <div className="px-6 lg:px-8 pb-12">
         <div className="max-w-7xl mx-auto">
-          {caseVideos[caso.slug] ? (
+          {caseVideos[caso.slug]?.startsWith("/") ? (
+            <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: "16/9" }}>
+              <video
+                src={caseVideos[caso.slug]}
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-contain"
+                aria-label={`Vídeo: ${caso.title}`}
+              />
+            </div>
+          ) : caseVideos[caso.slug] ? (
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <iframe
                 src={caseVideos[caso.slug]}

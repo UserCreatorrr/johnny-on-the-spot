@@ -10,15 +10,16 @@ const COPY = {
   en: { play: "Play video", label: "Project video" },
 } as const;
 
-function srcFor(video: OtsVideo) {
+function embedSrc(video: Exclude<OtsVideo, { type: "file" }>) {
   return video.type === "youtube"
     ? `https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`
     : `https://drive.google.com/file/d/${video.id}/preview`;
 }
 
 /**
- * Click-to-load video facade: shows a local poster until the user hits play,
- * so no third-party iframe is requested on page load.
+ * Click-to-load video facade: shows a local poster until the user hits play.
+ * Self-hosted files play in a native <video>; YouTube/Drive fall back to an iframe
+ * that is only requested once the user asks for it.
  */
 export default function VideoEmbed({
   video,
@@ -34,9 +35,20 @@ export default function VideoEmbed({
 
   return (
     <div className="relative w-full aspect-video bg-black overflow-hidden border border-white/10">
-      {active ? (
+      {active && video.type === "file" ? (
+        <video
+          src={video.src}
+          poster={poster?.src}
+          controls
+          autoPlay
+          playsInline
+          preload="metadata"
+          aria-label={copy.label}
+          className="absolute inset-0 w-full h-full object-contain bg-black"
+        />
+      ) : active && video.type !== "file" ? (
         <iframe
-          src={srcFor(video)}
+          src={embedSrc(video)}
           title={copy.label}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

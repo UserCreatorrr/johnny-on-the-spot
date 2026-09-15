@@ -68,7 +68,7 @@ const solutionDetails: Record<string, {
       { label: "Guión y Vídeo", href: "/servicios/guion-edicion-video" },
       { label: "Estrategia de Comunicación", href: "/servicios/estrategia-de-comunicacion" },
     ],
-    cases: ["sap-partner-summit", "puig-brand-ambassadors", "meliá-60-aniversario"],
+    cases: ["sap-partner-summit", "puig-brand-ambassadors", "melia-60-aniversario"],
     faqs: [
       { question: "¿Qué tamaño de eventos producís?", answer: "Desde eventos de 20 personas hasta convenciones de 250+ participantes internacionales. El criterio no es el tamaño, sino la ambición." },
       { question: "¿Producís eventos en el extranjero?", answer: "Sí. Finlandia, Bélgica, Marruecos, Cannes, América Latina. Tenemos red de proveedores locales en los principales destinos." },

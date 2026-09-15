@@ -1,7 +1,9 @@
 // AUTO-GENERADO desde el dossier de credenciales. Editar el copy aquí.
 import type { Locale } from "@/lib/i18n";
 
-export type OtsVideo = { type: "youtube" | "drive"; id: string };
+export type OtsVideo =
+  | { type: "youtube" | "drive"; id: string }
+  | { type: "file"; src: string };
 export type OtsImage = { src: string; w: number; h: number };
 export type OtsProject = {
   slug: string;
@@ -59,7 +61,7 @@ export const OTS_PROJECTS: OtsProject[] = [
       en: "Creation of the campaign concept for Certican and its rollout across every communication medium: video, professional events, graphic materials and stand. Script, animation and editing of the presentation videos.",
     },
     services: { es: ["Concepto creativo", "Campaña gráfica", "Eventos", "Vídeo"], en: ["Creative concept", "Graphic campaign", "Events", "Video"] },
-    video: { type: "youtube", id: "Iobu7Tdk6VI" },
+    video: { type: "file", src: "/videos/novartis.mp4" },
     images: [
       { src: "/casos/novartis-certican/1.webp", w: 1281, h: 800 },
       { src: "/casos/novartis-certican/2.webp", w: 902, h: 587 },
@@ -182,7 +184,7 @@ export const OTS_PROJECTS: OtsProject[] = [
       en: "Celebration of the company’s 60th anniversary. Development and management of the event for leading tour operators and agencies: conceptualization, invitations, content development and production.",
     },
     services: { es: ["Conceptualización", "Eventos", "Producción"], en: ["Conceptualization", "Events", "Production"] },
-    video: { type: "youtube", id: "0QU0ztMIcvw" },
+    video: { type: "file", src: "/videos/melia.mp4" },
     images: [
       { src: "/casos/melia-60-aniversario/1.webp", w: 1600, h: 1455 },
       { src: "/casos/melia-60-aniversario/2.webp", w: 1282, h: 800 },
@@ -426,7 +428,7 @@ export const OTS_PROJECTS: OtsProject[] = [
       en: "Creation of a mini-series for the launch of the brand’s new product range. Development, management and supervision of the script, jingle, wardrobe, locations, casting and shoot.",
     },
     services: { es: ["Concepto creativo", "Dirección de arte", "Rodaje"], en: ["Creative concept", "Art direction", "Shoot"] },
-    video: { type: "youtube", id: "Tk0yQFDO3mM" },
+    video: { type: "file", src: "/videos/sitcom_alcon.mp4" },
     images: [
       { src: "/casos/alcon-air-optix-video/1.webp", w: 1280, h: 801 },
     ],
@@ -535,7 +537,7 @@ export const OTS_PROJECTS: OtsProject[] = [
       en: "Client convention in Morocco: creative concept and graphic development, a dedicated site, staff, locations and travel logistics.",
     },
     services: { es: ["Concepto creativo", "Site dedicado", "Staff", "Logística"], en: ["Creative concept", "Dedicated site", "Staff", "Logistics"] },
-    video: { type: "drive", id: "1tiU8BsonEPSo28B6xs-PiIr01WhJz06L" },
+    video: { type: "file", src: "/videos/sandgames.mp4" },
     images: [
       { src: "/casos/sd-distribucion/1.webp", w: 1439, h: 643 },
     ],

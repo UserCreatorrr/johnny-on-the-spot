@@ -4,6 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { type Locale, t } from "@/lib/i18n";
 
+// Cada idioma tiene su propio montaje del reel, con la locucion en su lengua.
+const HERO_VIDEO: Record<Locale, string> = {
+  es: "/videos/jots-agency.mp4",
+  en: "/videos/jots-agency-en.mp4",
+};
+
 export default function HeroSection({ locale = "es" }: { locale?: Locale }) {
   const tt = t(locale);
   const [panelX,    setPanelX]    = useState(100);
@@ -67,14 +73,14 @@ export default function HeroSection({ locale = "es" }: { locale?: Locale }) {
           height: `${videoRise * 100}%`, overflow: "hidden",
           zIndex: 15, background: "#000", willChange: "height",
         }} aria-hidden="false">
-          <video ref={videoRef} muted loop playsInline preload="auto"
+          <video key={locale} ref={videoRef} muted loop playsInline preload="auto"
             className="video-portrait-fit"
             style={{
               position: "absolute", bottom: 0, left: "50%",
               transform: "translateX(-50%)",
               height: "100vh", width: "auto", maxWidth: "none",
             }}>
-            <source src="/videos/jots-agency.mp4" type="video/mp4" />
+            <source src={HERO_VIDEO[locale]} type="video/mp4" />
           </video>
           {/* Mute button — only visible when video is rising */}
           {videoRise > 0.1 && (

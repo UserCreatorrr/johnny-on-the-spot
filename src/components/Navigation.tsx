@@ -244,7 +244,13 @@ export default function Navigation() {
                   href={alternatePath(pathname, "es")}
                   onClick={(e) => navigate(e, alternatePath(pathname, "es"))}
                   aria-current={locale === "es" ? "true" : undefined}
-                  className={locale === "es" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
+                  className={
+                    pendingHref === alternatePath(pathname, "es")
+                      ? "text-white animate-pulse"
+                      : locale === "es"
+                        ? "text-white"
+                        : "text-white/30 hover:text-white transition-colors"
+                  }
                 >
                   ES
                 </Link>
@@ -253,7 +259,13 @@ export default function Navigation() {
                   href={alternatePath(pathname, "en")}
                   onClick={(e) => navigate(e, alternatePath(pathname, "en"))}
                   aria-current={locale === "en" ? "true" : undefined}
-                  className={locale === "en" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
+                  className={
+                    pendingHref === alternatePath(pathname, "en")
+                      ? "text-white animate-pulse"
+                      : locale === "en"
+                        ? "text-white"
+                        : "text-white/30 hover:text-white transition-colors"
+                  }
                 >
                   EN
                 </Link>

@@ -3,9 +3,9 @@ import Image from "next/image";
 import PageLayout from "@/components/PageLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SkewButton from "@/components/SkewButton";
-import OtsGallery from "./OtsGallery";
+import { projectCover, mediaNote } from "@/lib/ots-editorial";
 import VideoEmbed from "./VideoEmbed";
-import { OTS_CATEGORIES, OTS_PROJECTS, type OtsProject } from "@/lib/on-the-spot";
+import { OTS_CATEGORIES, type OtsProject } from "@/lib/on-the-spot";
 import { type Locale, localizeHref } from "@/lib/i18n";
 
 const COPY = {
@@ -14,9 +14,7 @@ const COPY = {
     client: "Cliente",
     discipline: "Disciplina",
     services: "Qué hicimos",
-    gallery: "El proyecto",
     video: "Vídeo",
-    more: "Más proyectos",
     back: "Ver todos los proyectos",
     cta: "Call Johnny →",
     ctaTitle: "¿Tienes algo parecido entre manos?",
@@ -26,9 +24,7 @@ const COPY = {
     client: "Client",
     discipline: "Discipline",
     services: "What we did",
-    gallery: "The project",
     video: "Video",
-    more: "More projects",
     back: "See all projects",
     cta: "Call Johnny →",
     ctaTitle: "Got something like this on your hands?",
@@ -44,10 +40,7 @@ export default function OtsDetailTemplate({
 }) {
   const copy = COPY[locale];
   const category = OTS_CATEGORIES.find((c) => c.slug === project.category);
-  const related = OTS_PROJECTS.filter(
-    (p) => p.category === project.category && p.slug !== project.slug
-  ).slice(0, 3);
-  const galleryImages = project.video ? project.images.slice(1) : project.images;
+  const cover = projectCover(project);
 
   return (
     <PageLayout locale={locale}>
@@ -99,76 +92,27 @@ export default function OtsDetailTemplate({
         </div>
       </section>
 
+      {!project.video && (
+        <figure className="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+          <Image src={cover.src} alt={`${project.client}: ${project.title[locale]}`} width={cover.w} height={cover.h} quality={90} sizes="(max-width: 1280px) 100vw, 1216px" priority className="w-full h-auto" />
+          <figcaption className="mt-4 flex flex-col sm:flex-row gap-3 sm:justify-between text-xs text-white/60">
+            <span>{mediaNote(project, locale)}</span>
+          </figcaption>
+        </figure>
+      )}
+
       {/* Video */}
       {project.video && (
         <section className="px-6 lg:px-8 pb-16 lg:pb-24" aria-label={copy.video}>
           <div className="max-w-6xl mx-auto">
-            <VideoEmbed video={project.video} poster={project.images[0]} locale={locale} />
+            <VideoEmbed video={project.video} poster={cover} locale={locale} />
           </div>
         </section>
       )}
 
-      {/* Gallery */}
-      {galleryImages.length > 0 && (
-        <section className="px-6 lg:px-8 pb-20 lg:pb-28" aria-label={copy.gallery}>
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-white/20 text-xs tracking-widest uppercase font-medium mb-8">
-              {copy.gallery}
-            </h2>
-            <OtsGallery
-              images={galleryImages}
-              alt={`${project.client}: ${project.title[locale]}`}
-              locale={locale}
-            />
-          </div>
-        </section>
-      )}
-
-      {/* Related */}
-      {related.length > 0 && (
-        <section className="px-6 lg:px-8 pb-20 lg:pb-28 border-t border-white/10 pt-16" aria-label={copy.more}>
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-end justify-between mb-10">
-              <h2 className="text-white font-black text-2xl lg:text-4xl tracking-tighter">
-                {copy.more}
-              </h2>
-              <Link
-                href={localizeHref("/on-the-spot", locale)}
-                className="text-sm text-white/40 hover:text-white border-b border-white/10 hover:border-white/40 transition-colors pb-0.5"
-              >
-                {copy.back} →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {related.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={localizeHref(`/on-the-spot/${p.slug}`, locale)}
-                  className="group block"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-white/[0.03] border border-white/10 group-hover:border-white/30 transition-colors">
-                    {p.images[0] && (
-                      <Image
-                        src={p.images[0].src}
-                        alt={`${p.client}: ${p.title[locale]}`}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      />
-                    )}
-                  </div>
-                  <p className="mt-4 text-white/25 text-[11px] tracking-widest uppercase font-mono">
-                    {p.client}
-                  </p>
-                  <h3 className="mt-1.5 text-white font-bold text-lg tracking-tight group-hover:text-white/70 transition-colors">
-                    {p.title[locale]}
-                  </h3>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <div className="px-6 lg:px-8 pb-16 max-w-7xl mx-auto">
+        <Link href={localizeHref("/on-the-spot", locale)} className="text-white/70 hover:text-white text-sm border-b border-white/30 pb-1">← {copy.back}</Link>
+      </div>
 
       {/* CTA */}
       <section className="px-6 lg:px-8 pb-28 text-center">

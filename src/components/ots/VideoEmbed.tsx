@@ -25,16 +25,18 @@ export default function VideoEmbed({
   video,
   poster,
   locale = "es",
+  compact = false,
 }: {
   video: OtsVideo;
   poster?: OtsImage;
   locale?: Locale;
+  compact?: boolean;
 }) {
   const [active, setActive] = useState(false);
   const copy = COPY[locale];
 
   return (
-    <div className="relative w-full aspect-video bg-black overflow-hidden border border-white/10">
+    <div className={`relative w-full ${compact ? "aspect-[3/2]" : "aspect-video"} bg-black overflow-hidden border border-white/10`}>
       {active && video.type === "file" ? (
         <video
           src={video.src}
@@ -66,8 +68,9 @@ export default function VideoEmbed({
               src={poster.src}
               alt=""
               fill
-              sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+              sizes={compact ? "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 592px" : "(max-width: 1152px) 100vw, 1152px"}
+              quality={90}
+              className="object-contain opacity-80 group-hover:opacity-40 transition-opacity duration-500"
             />
           )}
           <span className="absolute inset-0 flex flex-col items-center justify-center gap-4">

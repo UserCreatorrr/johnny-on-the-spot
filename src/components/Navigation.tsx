@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { type Locale, localizeHref, alternatePath, t } from "@/lib/i18n";
 
 const NAV_H = 80;
@@ -30,6 +30,49 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
   const [logoVisible, setLogoVisible] = useState(!isHome && !isContact);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const router = useRouter();
+  const [isNavigating, startNavigation] = useTransition();
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+  // El header se queda por encima del overlay hasta que acaba su animacion de salida.
+  const [overlayMounted, setOverlayMounted] = useState(false);
+
+  // Precarga las paginas del menu nada mas entrar. Asi, al pulsar, la pagina
+  // ya esta descargada y el cambio es inmediato aunque la red vaya cargada.
+  const navHrefs = navItems.map((item) => item.href).join("|");
+  useEffect(() => {
+    navHrefs.split("|").forEach((href) => router.prefetch(href));
+  }, [navHrefs, router]);
+
+  // Al llegar a otra pagina, cerrar el menu y limpiar el estado de carga.
+  useEffect(() => {
+    setOpen(false);
+    setPendingHref(null);
+  }, [pathname]);
+
+  // Si la navegacion termina sin cambiar de ruta, no dejar la opcion iluminada.
+  useEffect(() => {
+    if (!isNavigating) setPendingHref(null);
+  }, [isNavigating]);
+
+  useEffect(() => {
+    if (open) setOverlayMounted(true);
+  }, [open]);
+
+  // Antes el menu se cerraba al instante y la pagina nueva llegaba despues;
+  // si la red iba lenta parecia que el clic no hacia nada. Ahora la opcion
+  // pulsada se ilumina y el menu sigue abierto hasta que la pagina esta lista.
+  const navigate = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Ctrl/Cmd+clic, clic central, etc.: dejar que el navegador abra otra pestana.
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    if (href === pathname) {
+      setOpen(false);
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    setPendingHref(href);
+    startNavigation(() => router.push(href));
+  };
 
   useEffect(() => {
     const detectTheme = (): "dark" | "light" => {
@@ -85,7 +128,7 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 pointer-events-none" role="banner">
+      <header className={`fixed top-0 left-0 right-0 ${open || overlayMounted ? "z-[10001]" : "z-50"} px-6 lg:px-8 pointer-events-none`} role="banner">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Hamburger — left, always visible, color adapts */}
           <button
@@ -110,8 +153,8 @@ export default function Navigation() {
           <Link
             href={homeHref}
             onClick={() => setOpen(false)}
-            className={`relative z-[60] transition-opacity duration-500 pointer-events-auto ${
-              logoVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+            className={`relative z-[60] transition-opacity duration-500 ${
+              logoVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
             aria-label={tt.nav.home_aria}
             tabIndex={logoVisible ? 0 : -1}
@@ -143,16 +186,17 @@ export default function Navigation() {
       </header>
 
       {/* Fullscreen overlay */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={() => setOverlayMounted(false)}>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-black flex flex-col px-6 lg:px-8 pt-20 overflow-y-auto"
+            className="fixed inset-0 z-[10000] bg-black flex flex-col px-6 lg:px-8 pt-20 overflow-y-auto"
             role="dialog"
             aria-label="Menú principal"
+            aria-busy={pendingHref !== null}
           >
             <nav className="flex-1 flex flex-col justify-center">
               <ul className="space-y-0" role="list">
@@ -165,10 +209,23 @@ export default function Navigation() {
                   >
                     <Link
                       href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="block text-3xl sm:text-4xl lg:text-6xl font-black tracking-tighter text-white/20 hover:text-white transition-colors duration-150 leading-snug py-1"
+                      onClick={(e) => navigate(e, item.href)}
+                      aria-current={item.href === pathname ? "page" : undefined}
+                      className={`block text-3xl sm:text-4xl lg:text-6xl font-black tracking-tighter transition-colors duration-150 leading-snug py-1 ${
+                        pendingHref === item.href
+                          ? "text-white"
+                          : pendingHref
+                            ? "text-white/10"
+                            : "text-white/20 hover:text-white"
+                      }`}
                     >
                       {item.label}
+                      {pendingHref === item.href && (
+                        <span
+                          className="inline-block w-2 h-2 lg:w-3 lg:h-3 ml-3 align-middle rounded-full bg-white animate-pulse"
+                          aria-hidden="true"
+                        />
+                      )}
                     </Link>
                   </motion.li>
                 ))}
@@ -185,7 +242,7 @@ export default function Navigation() {
               <div className="flex items-center gap-3 text-xs tracking-widest uppercase">
                 <Link
                   href={alternatePath(pathname, "es")}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => navigate(e, alternatePath(pathname, "es"))}
                   aria-current={locale === "es" ? "true" : undefined}
                   className={locale === "es" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
                 >
@@ -194,7 +251,7 @@ export default function Navigation() {
                 <span className="text-white/20" aria-hidden="true">/</span>
                 <Link
                   href={alternatePath(pathname, "en")}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => navigate(e, alternatePath(pathname, "en"))}
                   aria-current={locale === "en" ? "true" : undefined}
                   className={locale === "en" ? "text-white" : "text-white/30 hover:text-white transition-colors"}
                 >

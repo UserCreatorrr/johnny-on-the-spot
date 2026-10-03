@@ -6,6 +6,7 @@ import SandGamesMcCann from "@/components/SandGamesMcCann";
 import AlconHydraglyde from "@/components/AlconHydraglyde";
 import CocaColaKFC from "@/components/CocaColaKFC";
 import NovartisCase from "@/components/NovartisCase";
+import LazyLoopVideo from "@/components/LazyLoopVideo";
 
 type Case = {
   slug: string;
@@ -65,14 +66,9 @@ export default function CasesVideoSection({ cases }: { cases: Case[] }) {
           const inner = (
             <div className="relative h-screen overflow-hidden">
               {c.videoUrl && (
-                <video
+                <LazyLoopVideo
                   src={c.previewVideoUrl ?? c.videoUrl}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   className="absolute inset-0 w-full h-full object-cover video-portrait-fit"
-                  aria-hidden="true"
                 />
               )}
               <div className="absolute inset-0 bg-black/50" />
